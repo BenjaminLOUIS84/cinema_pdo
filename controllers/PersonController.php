@@ -8,7 +8,7 @@ class PersonController {
 
         $dao = new DAO();
 
-        $sql = "SELECT p.id_personne, p.nom, p.prenom, p.sexe, p.date_naissance FROM personne p";
+        $sql = "SELECT a.id_acteur, p.nom, p.prenom, p.sexe, p.date_naissance FROM acteur a, personne p WHERE a.id_personne = p.id_personne";
 
         $acteurs = $dao->executerRequete($sql);
 
@@ -19,7 +19,7 @@ class PersonController {
 
         $dao = new DAO();
 
-        $sql = "SELECT p.id_personne, p.nom, p.prenom, p.sexe, p.date_naissance FROM personne p";
+        $sql = "SELECT r.id_realisateur, p.nom, p.prenom, p.sexe, p.date_naissance FROM realisateur r, personne p WHERE r.id_personne = p.id_personne";
 
         $realisateurs = $dao->executerRequete($sql);
 

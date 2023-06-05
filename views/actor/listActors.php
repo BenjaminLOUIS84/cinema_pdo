@@ -9,7 +9,7 @@ ob_start();
 <?php
 while ($acteur = $acteurs->fetch()){
 
-    echo $acteur["id_personne"]." ";
+    echo $acteur["id_acteur"]." ";
     echo $acteur["nom"]." ";
     echo $acteur["prenom"]." ";
     echo $acteur["sexe"]." ";
