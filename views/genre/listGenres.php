@@ -15,7 +15,7 @@ while ($genre = $genres->fetch()){
 
     
     ?>
-    <!-- <a href="index.php?action=detailFilm&id=<?$film['id_film']?>">Détail Film</a> -->
+    <!-- <a href="index.php?action=detailFilm&id=<?$genre['id_film']?>">Détail Film</a> -->
     <?php
 }
 
