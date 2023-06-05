@@ -4,7 +4,7 @@ ob_start();
 
 ?>
 
-<h2>Ceci est une liste de rôle</h2>
+<h2>Les Rôles</h2>
 
 <?php
 

@@ -13,7 +13,7 @@
     <header>
         <nav>
             <ul>
-                <li><a href="index.php">Home</a></li>
+                <li><a href="index.php">Accueil</a></li>
                 <li><a href="index.php?action=listMovies">Liste des films</a></li>
                 <li><a href="index.php?action=listGenres">Genres</a></li>
                 <li><a href="index.php?action=listActors">Acteurs</a></li>
@@ -28,7 +28,7 @@
     </main>
 
     <footer>
-        <span>Ceci est un Footer</span>
+        <span>Cinema ©2023 Make with love by Benjamin LOUIS</span>
     </footer>
 
     

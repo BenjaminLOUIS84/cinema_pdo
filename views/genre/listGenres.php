@@ -4,7 +4,7 @@ ob_start();
 
 ?>
 
-<h2>Ceci est une liste des genres</h2>
+<h2>Les genres de films</h2>
 
 <?php
 

@@ -4,7 +4,7 @@ ob_start();
 
 ?>
 
-<h2>Ceci est une liste de Films</h2>
+<h2>Les Films</h2>
 
 
 

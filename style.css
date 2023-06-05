@@ -3,6 +3,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: radial-gradient(white, gray);
 }
 
 nav {
@@ -11,17 +12,34 @@ nav {
 
 ul {
     display: flex;
+    justify-content: space-around;
 }
 
-::marker {
-    color: darkslategray;
+li::marker {
+    content: none;
 }
+
 
 a {
     text-decoration: none;
-    padding: 20px;
+    padding: 40px;
     color: whitesmoke;
     font-weight: bold;
+}
+
+a:hover {
+    opacity: 70%;
+    color: darkslategray;
+    background: white;
+    font-weight: bold;
+}
+
+.logo {
+    filter: drop-shadow(0 0 20px black);
+    border-radius: 10px;
+    position: relative;
+    width: 220%;
+    right: 170px;
 }
 
 h2 {
@@ -37,4 +55,51 @@ main {
     line-height: 2;
     margin-bottom: 60px;
     margin-top: 60px;
+}
+
+span {
+    background: darkslategrey;
+    color: whitesmoke;
+}
+
+header,
+footer {
+    width: -webkit-fill-available;
+    background: darkslategray;
+    padding: 20px;
+    text-align: center;
+}
+
+
+@media (min-width: 769px) and (max-width: 1024px) {}
+
+@media (min-width: 0) and (max-width: 768px) {
+
+    h2 {
+        font-size: 2em;
+    }
+
+    ul {
+        display: flex;
+        justify-content: space-around;
+        margin-right: 30px;
+    }
+
+    a {
+        padding: 10px;
+        font-size: 0.7em;
+    }
+    
+    .logo {
+        width: 120%;
+        right: 27px;
+    }
+
+    header,
+    footer {
+        width: max-content;
+        padding: 25px;
+
+    }
+
 }

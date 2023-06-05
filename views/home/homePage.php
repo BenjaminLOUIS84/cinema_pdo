@@ -4,7 +4,11 @@ ob_start();
 
 ?>
 
-<h2>Ceci est une page d'accueil</h2>
+<h2>Accueil</h2>
+
+<figure>
+    <img class= logo src="images/accueil.jpg" alt="symbole cinema">
+</figure>
 
 <?php
 

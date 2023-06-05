@@ -4,7 +4,7 @@ ob_start();
 
 ?>
 
-<h2>Ceci est une liste d'acteurs</h2>
+<h2>Les Acteurs</h2>
 
 <?php
 
