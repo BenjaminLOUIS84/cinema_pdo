@@ -1,0 +1,41 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    background: darkslategrey;
+}
+
+ul {
+    display: flex;
+
+}
+
+::marker {
+    color: darkslategray;
+}
+
+a {
+    text-decoration: none;
+    padding: 20px;
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+h2 {
+    margin-bottom: 30px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    line-height: 2;
+    margin-bottom: 80px;
+    margin-top: 80px;
+}

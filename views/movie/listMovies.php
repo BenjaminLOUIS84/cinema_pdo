@@ -8,7 +8,7 @@ ob_start();
 
 
 
-<?= $films->rowCount() ?>
+<!-- <?= $films->rowCount() ?> Pour compter le nombre de films-->
 
 
 <!-- Je vais devoir fetchAll -->
@@ -16,9 +16,9 @@ ob_start();
 <?php
 while ($film = $films->fetch()){
 
-    echo $film["id_film"];
+    echo $film["id_film"]." ";
 
-    echo $film["titre"];
+    echo $film["titre"]."<br>";
 
     //echo $film["synopsis"];
     ?>
