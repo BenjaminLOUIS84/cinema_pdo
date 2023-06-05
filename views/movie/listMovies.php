@@ -22,7 +22,6 @@ while ($film = $films->fetch()){
 
     //echo $film["synopsis"];
     ?>
-
     <!-- <a href="index.php?action=detailFilm&id=<?$film['id_film']?>">Détail Film</a> -->
     <?php
 }
