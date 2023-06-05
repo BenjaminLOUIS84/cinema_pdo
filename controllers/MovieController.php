@@ -4,7 +4,7 @@ require_once "bdd/DAO.php";
 
 class MovieController {
 
-    public function findAllFilms(){
+    public function findAllMovies(){
 
         $dao = new DAO();
 
@@ -12,7 +12,7 @@ class MovieController {
 
         $films = $dao->executerRequete($sql);
 
-        require "views/movie/listFilms.php"; 
+        require "views/movie/listMovies.php"; 
     }
 }
 

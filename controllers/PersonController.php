@@ -6,6 +6,10 @@ class PersonController {
         require "views/actor/listActors.php"; 
     }
 
+    public function findAllDirectors(){
+        require "views/director/listDirectors.php"; 
+    }
+
 }
 
 ?>

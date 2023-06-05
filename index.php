@@ -24,9 +24,11 @@ if(isset($_GET['action'])){
     //$id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_FULLSPECIAL_CHARS);
 
     switch($_GET['action']){
-        case 'listFilms': $movieCtrl->findAllFilms(); break; 
+        case 'listMovies': $movieCtrl->findAllMovies(); break; 
         case 'listActors': $personCtrl->findAllActors(); break;
         case 'listGenres': $genreCtrl->findAllGenres(); break;
+        case 'listRoles': $roleCtrl->findAllRoles(); break;
+        case 'listDirectors': $personCtrl->findAllDirectors(); break;
         
     }
 }

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     
+
     <title><?= $title ?></title>
 </head>
 <body>
@@ -13,11 +14,11 @@
         <nav>
             <ul>
                 <li><a href="index.php">Home</a></li>
-                <li><a href="index.php?action=listFilms">Liste des films</a></li>
+                <li><a href="index.php?action=listMovies">Liste des films</a></li>
                 <li><a href="index.php?action=listGenres">Genres</a></li>
                 <li><a href="index.php?action=listActors">Acteurs</a></li>
                 <li><a href="index.php?action=listRoles">Roles</a></li>
-                <li><a href="#">Réalisateurs</a></li>
+                <li><a href="index.php?action=listDirectors">Réalisateurs</a></li>
             </ul>
         </nav>   
     </header>
