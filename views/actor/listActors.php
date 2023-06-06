@@ -9,15 +9,21 @@ ob_start();
 <?php
 while ($acteur = $acteurs->fetch()){
 
-    echo $acteur["id_acteur"]." ";
-    echo $acteur["nom"]." ";
-    echo $acteur["prenom"]." ";
-    echo $acteur["sexe"]." ";
-    echo $acteur["date_naissance"]."<br>";
-
+    //echo $acteur["id_acteur"]." ";
+    //echo $acteur["prenom"]." ";
+    //echo $acteur["nom"]."<br>";
     
     ?>
-    <!-- <a href="index.php?action=detailFilm&id=<?$acteur['id_film']?>">Détail Film</a> -->
+
+    
+    <a class="detail" href="index.php?action=detailActor&idActor=<?=$acteur['id_acteur']?>">
+        
+        <h2><?=$acteur["prenom"]?></h2>
+        <h2><?=$acteur["nom"]?></h2>
+            
+    </a>
+    
+
     <?php
 }
 

@@ -36,14 +36,16 @@ a:hover {
 }
 
 .detail {
+    display: flex;
     color: darkslategray;
-    font-size: 0.6em;
+    font-size: 0.8em;
     border-radius: 10px;
     padding: 10px;
+    margin-top: 40px;
 }
 
 .detail:hover {
-background: whitesmoke;
+    background: whitesmoke;
 }
 
 .logo {
@@ -59,6 +61,10 @@ h1 {
     font-size: 4em;
 }
 
+h2 {
+    margin: 5px;
+}
+
 main {
     display: flex;
     flex-direction: column;
@@ -70,6 +76,19 @@ main {
     margin-top: 70px;
     font-weight: bold;
     font-size: 1.5em;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 2;
+    margin-bottom: 70px;
+    margin-top: 70px;
+    font-weight: bold;
+    margin: 40px;
 }
 
 span {
@@ -104,7 +123,7 @@ footer {
         padding: 10px;
         font-size: 0.7em;
     }
-    
+
     .logo {
         width: 120%;
         right: 27px;

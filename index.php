@@ -31,6 +31,9 @@ if(isset($_GET['action'])){
         case 'listDirectors': $personCtrl->findAllDirectors(); break;
         
         case 'detailMovie': $movieCtrl->detailMovie($_GET['idFilm']); break;
+        case 'detailGenre': $genreCtrl->detailGenre($_GET['idGenre']); break;
+        case 'detailActor': $personCtrl->detailActor($_GET['idActor']); break;
+        case 'detailDirector': $personCtrl->detailDirector($_GET['idDirector']); break;
         
     }
 }

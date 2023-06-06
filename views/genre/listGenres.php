@@ -9,13 +9,15 @@ ob_start();
 <?php
 while ($genre = $genres->fetch()){
 
-    echo $genre["genre_film"]." ";
-
-    echo $genre["type"]."<br>";
+   // echo $genre["genre_film"]." ";
+   // echo $genre["type"]."<br>";
 
     
     ?>
-    <!-- <a href="index.php?action=detailFilm&id=<?$genre['id_film']?>">Détail Film</a> -->
+    <a class="detail" href="index.php?action=detailGenre&idGenre=<?=$genre['genre_film']?>">
+        <h2><?=$genre["type"]?></h2>    
+    </a>
+
     <?php
 }
 
