@@ -6,6 +6,8 @@ body {
     background: radial-gradient(white, gray);
 }
 
+/*//////////////////////////////////HEADER/////////////////////////////////*/
+
 nav {
     background: darkslategrey;
 }
@@ -33,6 +35,8 @@ a:hover {
     background: white;
     font-weight: bold;
 }
+
+/*//////////////////////////////////MAIN/////////////////////////////////*/
 
 .detail {
     display: flex;
@@ -90,14 +94,49 @@ main {
     margin: 40px;
 }
 
-img {
-    width: 20%;
+/*//////////////////////////////////FILMS/////////////////////////////////*/
+
+.listM {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 2;
+    margin-bottom: 70px;
+    margin-top: 70px;
+    font-weight: bold;
+    margin: 40px;
 }
 
-span {
-    background: darkslategrey;
-    color: whitesmoke;
+.listM img {
+    width: 30%;
+    filter: drop-shadow(0 0 20px black);
+    border-radius: 10px;
 }
+
+/*//////////////////////////////////REALISATEURS/////////////////////////////////*/
+
+.listR {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 2;
+    margin-bottom: 70px;
+    margin-top: 70px;
+    font-weight: bold;
+    margin: 40px;
+}
+
+.listR img {
+    width: 60%;
+    filter: drop-shadow(0 0 20px black);
+    border-radius: 10px;
+}
+
+/*//////////////////////////////////FOOTER/////////////////////////////////*/
 
 header,
 footer {
@@ -107,6 +146,12 @@ footer {
     text-align: center;
 }
 
+span {
+    background: darkslategrey;
+    color: whitesmoke;
+}
+
+/*//////////////////////////////////RESPONSIVE/////////////////////////////////*/
 
 @media (min-width: 769px) and (max-width: 1024px) {}
 

@@ -5,7 +5,7 @@ ob_start();
 
 <h1>Détails</h1>
 
-<div class="list">
+<div class="listM">
 <?php
 
 $film = $films->fetch();
