@@ -34,6 +34,7 @@ if(isset($_GET['action'])){
         case 'detailGenre': $genreCtrl->detailGenre($_GET['idGenre']); break;
         case 'detailActor': $personCtrl->detailActor($_GET['idActor']); break;
         case 'detailDirector': $personCtrl->detailDirector($_GET['idDirector']); break;
+        case 'detailRole': $roleCtrl->detailRole($_GET['idRole']); break;
         
     }
 }

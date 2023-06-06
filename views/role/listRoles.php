@@ -9,14 +9,23 @@ ob_start();
 <?php
 while ($role = $roles->fetch()){
 
-    echo $role["role_acteur"]." ";
-    echo $role["nom"]." ";
-    echo $role["prenom"]." ";
-    echo $role["pseudo"]."<br>";
+    // echo $role["role_acteur"]." ";
+    // echo $role["nom"]." ";
+    // echo $role["prenom"]." ";
+    // echo $role["pseudo"]."<br>";
+    
+    
 
     
     ?>
-    <!-- <a href="index.php?action=detailFilm&id=<?$role['id_film']?>">Détail Film</a> -->
+     <a class="detail" href="index.php?action=detailRole&idRole=<?=$role['role_acteur']?>">
+        
+        <h2><?=$role["prenom"]?></h2>
+        <h2><?=$role["nom"]?></h2>
+        <h2><?=$role["pseudo"]?></h2>
+            
+    </a>
+   
     <?php
 }
 
