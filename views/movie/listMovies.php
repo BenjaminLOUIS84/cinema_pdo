@@ -12,6 +12,9 @@ ob_start();
 <!-- Je vais devoir fetchAll -->
 
 <?php
+
+
+
 while ($film = $films->fetch()){
 
    // echo $film["id_film"]." ";
