@@ -19,7 +19,6 @@ li::marker {
     content: none;
 }
 
-
 a {
     text-decoration: none;
     padding: 40px;
@@ -89,6 +88,10 @@ main {
     margin-top: 70px;
     font-weight: bold;
     margin: 40px;
+}
+
+img {
+    width: 20%;
 }
 
 span {
