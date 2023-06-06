@@ -4,7 +4,7 @@ ob_start();
 
 ?>
 
-<h2>Les Rôles</h2>
+<h1>Les Rôles</h1>
 
 <?php
 while ($role = $roles->fetch()){

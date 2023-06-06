@@ -4,7 +4,7 @@ ob_start();
 
 ?>
 
-<h2>Les Acteurs</h2>
+<h1>Les Acteurs</h1>
 
 <?php
 while ($acteur = $acteurs->fetch()){

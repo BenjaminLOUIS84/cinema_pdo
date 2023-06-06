@@ -4,7 +4,7 @@ ob_start();
 
 ?>
 
-<h2>Les genres de films</h2>
+<h1>Les Genres</h1>
 
 <?php
 while ($genre = $genres->fetch()){

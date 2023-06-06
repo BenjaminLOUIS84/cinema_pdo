@@ -14,7 +14,7 @@
         <nav>
             <ul>
                 <li><a href="index.php">Accueil</a></li>
-                <li><a href="index.php?action=listMovies">Liste des films</a></li>
+                <li><a href="index.php?action=listMovies">Films</a></li>
                 <li><a href="index.php?action=listGenres">Genres</a></li>
                 <li><a href="index.php?action=listActors">Acteurs</a></li>
                 <li><a href="index.php?action=listRoles">Roles</a></li>

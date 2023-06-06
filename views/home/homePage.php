@@ -4,7 +4,7 @@ ob_start();
 
 ?>
 
-<h2>Accueil</h2>
+<h1>Accueil</h1>
 
 <figure>
     <img class= logo src="images/accueil.jpg" alt="symbole cinema">

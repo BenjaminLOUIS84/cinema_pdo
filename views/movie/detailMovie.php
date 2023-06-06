@@ -3,7 +3,7 @@
 ob_start();
 ?>
 
-<h2>Détails</h2>
+<h1>Détails</h1>
 
 <?php
 
@@ -22,6 +22,7 @@ echo "SYNOPSIS: ".$film["synopsis"]."<br>";
 ?>
 
 <a class ="detail" href="index.php?action=listMovies">Retour</a>
+
 <?php
 
 
