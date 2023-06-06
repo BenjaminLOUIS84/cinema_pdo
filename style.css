@@ -54,7 +54,7 @@ background: whitesmoke;
     right: 170px;
 }
 
-h2 {
+h1 {
     margin-bottom: 30px;
     font-size: 4em;
 }
@@ -90,7 +90,7 @@ footer {
 
 @media (min-width: 0) and (max-width: 768px) {
 
-    h2 {
+    h1 {
         font-size: 2em;
     }
 

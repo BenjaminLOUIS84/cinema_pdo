@@ -30,12 +30,14 @@ if(isset($_GET['action'])){
         case 'listRoles': $roleCtrl->findAllRoles(); break;
         case 'listDirectors': $personCtrl->findAllDirectors(); break;
         
+        case 'detailMovie': $movieCtrl->detailMovie($_GET['idFilm']); break;
+        
     }
 }
-    else{
 
-        $homeCtrl->homePage();                                      // Pour revenir sur la page d'accueil
-    }
+else{
+    $homeCtrl->homePage();                                      // Pour revenir sur la page d'accueil
+}
 
 
 ?>

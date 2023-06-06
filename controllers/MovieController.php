@@ -14,6 +14,20 @@ class MovieController {
 
         require "views/movie/listMovies.php"; 
     }
+
+    public function detailMovie($idFilm){
+
+        $dao = new DAO();
+
+        $sql = "SELECT f.titre, f.annee_sortie, f.duree, f.synopsis  FROM film f WHERE f.id_film = $idFilm" ;
+
+
+        $films = $dao->executerRequete($sql);
+
+        require "views/movie/detailMovie.php"; 
+
+    }
+
 }
 
 
