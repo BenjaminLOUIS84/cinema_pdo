@@ -14,20 +14,20 @@ $film = $films->fetch();
 echo $film["titre"]." ";
 echo " - Sortie en ".$film["annee_sortie"]." ";
 echo " - Durée: ".$film["duree"]." minutes<br>";
-
-
+echo "<br>";
 echo $film["affiche"]."<br>";
+
 //echo '<img src="public/images/film1.jpg" >'; Pour afficher la même image dans tous les films 
 //Pour afficher les affiches des films modifier les champs dans la colone affiche de la base SQL par la balise <img src="public/images/film1.jpg" >
-
 
 echo "Note: ".$film["note"]." /10<br>";
 echo "<br>";
 echo "SYNOPSIS<br>";
 echo $film["synopsis"]."<br>";
 
+//Requête pour revenir à la liste des films                     
 ?>
-<a class ="detail" href="index.php?action=listMovies">Retour</a>
+<a class ="detail" href="index.php?action=listMovies">Retour</a>    
 </div>
 <?php
 
