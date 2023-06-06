@@ -14,6 +14,8 @@ echo $realisateur["prenom"]." ";
 echo $realisateur["nom"]." ";
 echo "est de sexe ".$realisateur["sexe"]."<br>";
 echo "Date de naissance: ".$realisateur["date_naissance"]."<br>";
+echo "<br>";
+echo $realisateur["portrait"]."<br>";
 
 
 ?>
