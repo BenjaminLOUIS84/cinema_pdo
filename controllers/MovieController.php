@@ -8,7 +8,7 @@ class MovieController {
 
         $dao = new DAO();
 
-        $sql = "SELECT f.id_film, f.titre FROM film f";
+        $sql = "SELECT f.id_film, f.titre  FROM film f";
 
         $films = $dao->executerRequete($sql);
 

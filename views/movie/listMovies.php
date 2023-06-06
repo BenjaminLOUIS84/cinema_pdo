@@ -20,9 +20,11 @@ while ($film = $films->fetch()){
 
     echo $film["titre"]."<br>";
 
-    //echo $film["synopsis"];
+    //echo $film["affiche"]."<br>";
+
+    
     ?>
-    <!-- <a href="index.php?action=detailFilm&id=<?$film['id_film']?>">Détail Film</a> -->
+    <a class ="detail" href="index.php?action=detailFilm&id=<?$film['id_film']?>">Détail Film</a>
     <?php
 }
 
