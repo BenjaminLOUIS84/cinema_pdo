@@ -21,8 +21,8 @@ $roleCtrl = new RoleController();
 
 if(isset($_GET['action'])){
 
-    //$id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_FULLSPECIAL_CHARS);
-
+    $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT); //Mettre un filtre pour la sécurité
+    
     switch($_GET['action']){
         case 'listMovies': $movieCtrl->findAllMovies(); break; 
         case 'listActors': $personCtrl->findAllActors(); break;

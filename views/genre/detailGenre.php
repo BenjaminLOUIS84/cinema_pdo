@@ -9,11 +9,11 @@ ob_start();
 <?php
 
 $genre = $genres->fetch();
-//$film = $films->fetch();
+
 
 echo $genre["type"];
-//echo $film["titre"];
-
+echo "<br>";
+echo $genre["titre"];
 
 ?>
 <a class ="detail" href="index.php?action=listGenres">Retour</a>
