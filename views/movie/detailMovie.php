@@ -17,7 +17,7 @@ echo " - Durée: ".$film["duree"]." minutes<br>";
 echo "<br>";
 
 //////////////////////////////////////////////////////////////////
-echo "Réalisé par: ".$film["id_realisateur"]."<br>";            //Intégrer le réalisateur
+//echo "Réalisé par: ".$film["id_realisateur"]."<br>";            //Intégrer le réalisateur
 //////////////////////////////////////////////////////////////////
 
 echo $film["affiche"]."<br>";
