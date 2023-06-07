@@ -7,19 +7,17 @@
 
 <div class="list">
 
-    <?php
-        $genre = $genres->fetch();
-        echo $genre["type"];
-        echo "<br>";
-    ?>
-
-        <div class="titreGenre">
-            <?php
-            echo $genre["titre"]."<br>"; // Pour afficher le premier film du genre
-            ?>
-        </div> 
+    <div class="titreGenre">
+        <?php
+            $genre = $genres->fetch();
+            echo $genre["type"];
+            echo "<br>";
+        ?>
+    </div> 
 
     <?php
+
+        echo $genre["titre"]."<br>"; // Pour afficher le premier film du genre
 
         while ($genre = $genres->fetch()){
 
