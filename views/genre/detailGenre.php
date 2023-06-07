@@ -15,7 +15,7 @@ echo $genre["type"];
 echo "<br>";
 
 ////////////////////////////////////////////////////////////////////
-echo $genre["titre"];                                             // Pourquoi les autres films ne s'affichent pas
+echo $genre["titre"];                                             // Pourquoi les autres films ne s'affichent pas et comment accéder aux films au click
 ////////////////////////////////////////////////////////////////////
 
 ?>
