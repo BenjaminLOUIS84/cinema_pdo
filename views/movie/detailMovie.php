@@ -30,8 +30,8 @@
             <h2>Réaliser par <?=$film["prenom"]?></h2>
             <h2><?=$film["nom"]?></h2>
         </a> 
+
         <?php
-        //////////////////////////////////////////////////////////////////
 
         echo "<br>";
         echo $film["affiche"]."<br>";
@@ -49,7 +49,7 @@
         //echo "Distribution: ";                                     //Intégrer les acteurs
         /////////////////////////////////////////////////////////////
 
-        //Requête pour revenir à la liste des films                     
+        //Requête CI DESSOUS pour revenir à la liste des films                     
     ?>
 
     <a class ="detail" href="index.php?action=listMovies">Retour</a>

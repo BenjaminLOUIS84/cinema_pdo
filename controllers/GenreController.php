@@ -19,7 +19,7 @@
 
             $dao = new DAO();
 
-            $sql ="SELECT g.type, f.titre FROM film f, classer c, genre_film g
+            $sql ="SELECT g.type, f.titre, f.id_film FROM film f, classer c, genre_film g
             WHERE c.genre_film = g.genre_film
             AND f.id_film = c.id_film
             AND g.genre_film = $idGenre";

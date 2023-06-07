@@ -35,7 +35,7 @@
 
         while ($genre = $genres->fetch()){
 
-            echo $genre["titre"]."<br>"; // Pour afficher les autres films du genre
+           //echo $genre["titre"]."<br>"; // Pour afficher les autres films du genre
            
             ?>
             <?php
