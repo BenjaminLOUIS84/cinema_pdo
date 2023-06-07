@@ -10,12 +10,11 @@ ob_start();
 
 $film = $films->fetch();
 
-
 echo $film["titre"]." ";
 echo " - Sortie en ".$film["annee_sortie"]." ";
 echo " - Durée: ".$film["duree"]." minutes<br>";
 
-//////////////////////////////////////////////////////////////////En modifiant la requête SQL on peut ajouter le réalisateur 
+//////////////////////////////////////////////////////////////////En modifiant la requête SQL de MovieController on peut ajouter le réalisateur 
 echo "Réalisé par: ".$film["prenom"]." ".$film["nom"]."<br>";     
 echo "<br>";
 //////////////////////////////////////////////////////////////////
