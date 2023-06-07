@@ -13,7 +13,10 @@ $genre = $genres->fetch();
 
 echo $genre["type"];
 echo "<br>";
-echo $genre["titre"];
+
+////////////////////////////////////////////////////////////////////
+echo $genre["titre"];                                             // Pourquoi les autres films ne s'affichent pas
+////////////////////////////////////////////////////////////////////
 
 ?>
 <a class ="detail" href="index.php?action=listGenres">Retour</a>

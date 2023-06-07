@@ -178,7 +178,7 @@ main {
 }
 
 .listRO img {
-    width: 60%;
+    width: 80%;
     filter: drop-shadow(0 0 20px black);
     border-radius: 10px;
 }
