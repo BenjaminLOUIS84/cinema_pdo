@@ -14,7 +14,7 @@
         echo " - Sortie en ".$film["annee_sortie"]." ";
         echo " - Durée: ".$film["duree"]." minutes<br>";
 
-        //////////////////////////////////////////////////////////////////En modifiant la requête SQL de MovieController on peut ajouter le réalisateur 
+        // En modifiant la requête SQL de MovieController on peut ajouter le réalisateur 
         // echo "Réalisé par: ".$film["prenom"]." ".$film["nom"]."<br>";  //Pour juste afficher chaques Réalisateurs  
         // echo "<br>";
 
@@ -22,8 +22,9 @@
         <!-- on contacte index.php (fichier appelé), on lui fournit 2 paramètres (action et idDirector)
         qui sont des pairs clef/valeur et qui seront récupérables en GET (superglobale $_GET de PHP, un tableau associatif (clef/valeur)).
         La valeur de action sera "detailDirector" et celle de idDirector sera par exemple "1" 
-        Pour afficher et accéder aux Réalisateurs de chaques films il faut rajouter dans la requête SQL id_realisateur
-        et intégrer l'echo ci dessus dans une requête HTML-->
+        Pour afficher et accéder aux Réalisateurs de chaques films il faut rajouter dans la requête SQL id_realisateur.
+        Il faut garder la même variable $film et mettre la valeur ajoutée précédement.
+        Pour rendre le nom du réalisateur cliquable, intégrer l'echo ci dessus dans une requête HTML-->
         
         <a class="detail" href="index.php?action=detailDirector&idDirector=<?=$film["id_realisateur"]?>"> 
             <h2>Réaliser par <?=$film["prenom"]?></h2>
