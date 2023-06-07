@@ -27,7 +27,7 @@ echo $acteur["portrait"]."<br>";
 </div>
 <?php
 
-$title = "Détail de l'auteur";
+$title = "Détail de l'acteur";
 $content = ob_get_clean();  // Récupérer et afficher puis nettoyer la mémoire tampon
 require "views/template.php";
 

@@ -23,7 +23,7 @@ echo $genre["titre"];                                             // Pourquoi le
 </div>
 <?php
 
-$title = "Détail du Film";
+$title = "Détail du Genre";
 $content = ob_get_clean();  // Récupérer et afficher puis nettoyer la mémoire tampon
 require "views/template.php";
 

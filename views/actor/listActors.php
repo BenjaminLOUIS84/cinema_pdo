@@ -31,7 +31,7 @@ while ($acteur = $acteurs->fetch()){
 
 <?php
 
-$title = "Liste d'acteurs";
+$title = "Liste des acteurs";
 $content = ob_get_clean();  // Récupérer et afficher puis nettoyer la mémoire tampon
 require "views/template.php";
 
