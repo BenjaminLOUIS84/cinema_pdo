@@ -119,6 +119,7 @@ main {
     filter: drop-shadow(0 0 20px black);
     border-radius: 10px;
 }
+
 /*//////////////////////////////////ACTEURS/////////////////////////////////*/
 
 .listA {
@@ -157,6 +158,27 @@ main {
 
 .listR img {
     width: 60%;
+    filter: drop-shadow(0 0 20px black);
+    border-radius: 10px;
+}
+
+/*//////////////////////////////////ROLES/////////////////////////////////*/
+
+.listRO {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 2;
+    margin-bottom: 70px;
+    margin-top: 70px;
+    font-weight: bold;
+    margin: 40px;
+}
+
+.listRO img {
+    width: 30%;
     filter: drop-shadow(0 0 20px black);
     border-radius: 10px;
 }
