@@ -19,7 +19,7 @@
 
             $dao = new DAO();
 
-            $sql = "SELECT r.prenom, r.nom, r.pseudo, r.perso, p.prenom, p.nom, f.titre FROM role_acteur r, casting c, personne p, acteur a, film f
+            $sql = "SELECT r.prenom, r.nom, r.pseudo, r.perso, p.prenom, p.nom, f.titre, f.id_film FROM role_acteur r, casting c, personne p, acteur a, film f
             WHERE a.id_personne = p.id_personne
             AND c.role_acteur = r.role_acteur
             AND c.id_acteur = a.id_acteur

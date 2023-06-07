@@ -15,10 +15,16 @@
         echo "<br>";
         echo " Ce rôle est interprété par ";
         echo $role["prenom"]." ";                                                   
-        echo $role["nom"]."<br>";
+        echo $role["nom"]." "."dans<br>";
         
-        echo "dans le film: ".$role["titre"]."<br>";
+        //echo "dans le film: ".$role["titre"]."<br>";
     ?>
+
+    <a class="detail" href="index.php?action=detailMovie&idFilm=<?=$role['id_film']?>">
+        <h2><?=$role["titre"]?></h2>    
+    </a> 
+
+
 
     <a class ="detail" href="index.php?action=listRoles">Retour</a>
 
