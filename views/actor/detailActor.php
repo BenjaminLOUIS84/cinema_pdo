@@ -13,7 +13,11 @@ $acteur = $acteurs->fetch();
 echo $acteur["prenom"]." ";
 echo $acteur["nom"]." ";
 echo "est de sexe ".$acteur["sexe"]."<br>";
-echo "Date de naissance: ".$acteur["date_naissance"]."<br>";
+
+//////////////////////////////////////////////////////////////////
+echo "Date de naissance: ".$acteur["date_naissance"]."<br>";    //Changer le format de la date de naissance (dans PersonController)
+//////////////////////////////////////////////////////////////////
+
 echo "<br>";
 echo $acteur["portrait"]."<br>";
 

@@ -15,6 +15,11 @@ echo $film["titre"]." ";
 echo " - Sortie en ".$film["annee_sortie"]." ";
 echo " - Durée: ".$film["duree"]." minutes<br>";
 echo "<br>";
+
+//////////////////////////////////////////////////////////////////
+echo "Réalisé par: ".$film["id_realisateur"]."<br>";            //Intégrer le réalisateur
+//////////////////////////////////////////////////////////////////
+
 echo $film["affiche"]."<br>";
 
 //echo '<img src="public/images/film1.jpg" >'; Pour afficher la même image dans tous les films 
@@ -24,6 +29,11 @@ echo "Note: ".$film["note"]." /10<br>";
 echo "<br>";
 echo "SYNOPSIS<br>";
 echo $film["synopsis"]."<br>";
+echo "<br>";
+
+/////////////////////////////////////////////////////////////
+echo "Distribution: ";                                     //Intégrer les acteurs
+/////////////////////////////////////////////////////////////
 
 //Requête pour revenir à la liste des films                     
 ?>
