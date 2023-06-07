@@ -13,10 +13,23 @@
         echo $film["titre"]." ";
         echo " - Sortie en ".$film["annee_sortie"]." ";
         echo " - Durée: ".$film["duree"]." minutes<br>";
+
         //////////////////////////////////////////////////////////////////En modifiant la requête SQL de MovieController on peut ajouter le réalisateur 
         echo "Réalisé par: ".$film["prenom"]." ".$film["nom"]."<br>";     
         echo "<br>";
+
+        ?>
+        <!-- on contacte index.php (fichier appelé), on lui fournit 2 paramètres (action et idDirector) qui sont des pairs clef/valeur et qui seront récupérables en GET (superglobale $_GET de PHP, un tableau associatif (clef/valeur)). La valeur de action sera "detailDirector" et celle de idDirector sera par exemple "1" -->
+        <!-- ////////////////////////////////////////////////////////////////////////////// -->
+        <!-- <a class="detail" href="index.php?action=detailDirector&idDirector=<?=$film['id_realisateur']?>">
+            <h2>Réaliser par:<?=$film["prenom"]?></h2>
+            <h2><?=$film["nom"]?></h2>
+        </a> -->
+        <!-- ////////////////////////////////////////////////////////////////////////////// -->
+        <?php
         //////////////////////////////////////////////////////////////////
+
+        //echo "<br>";
         echo $film["affiche"]."<br>";
 
         //echo '<img src="public/images/film1.jpg" >'; Pour afficher la même image dans tous les films 
