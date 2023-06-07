@@ -16,6 +16,7 @@
         echo " Ce rôle est interprété par ";
         echo $role["prenom"]." ";                                                   
         echo $role["nom"]."<br>";
+        
         echo "dans le film: ".$role["titre"]."<br>";
     ?>
 
