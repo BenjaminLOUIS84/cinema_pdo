@@ -1,10 +1,12 @@
 <?php
 
-class HomeController {
+  class HomeController {
 
     public function homePage(){
-      require "views/home/homePage.php"; 
+
+      require "views/home/homePage.php";
+       
     }
-}
+  }
 
 ?>

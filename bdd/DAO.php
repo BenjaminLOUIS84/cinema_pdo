@@ -8,28 +8,32 @@ PDO::prepare — Prépare une requête à l'exécution et retourne un objet
 
 <?php
 
-class DAO{
-    private $bdd;
+    class DAO{
 
-    public function __construct(){
-        $this->bdd = new PDO('mysql:host=localhost;dbname=cinema;charset=utf8', 'root', '');
-    }
+        private $bdd;
 
-    function getBDD(){
-        return $this->bdd;
-    }
+        public function __construct(){
 
-    public function executerRequete($sql, $params = NULL){
-        if ($params == NULL){
-            $resultat = $this->bdd->query($sql);
-            
-        }else{
-            $resultat = $this->bdd->prepare($sql);
-            $resultat->execute($params);
+            $this->bdd = new PDO('mysql:host=localhost;dbname=cinema;charset=utf8', 'root', '');
         }
-        return $resultat;
 
+        function getBDD(){
+            
+            return $this->bdd;
+        }
+
+        public function executerRequete($sql, $params = NULL){
+
+            if ($params == NULL){
+                $resultat = $this->bdd->query($sql);
+            
+            }else{
+                $resultat = $this->bdd->prepare($sql);
+                $resultat->execute($params);
+            }
+            return $resultat;
+
+        }
     }
-}
 
 ?>

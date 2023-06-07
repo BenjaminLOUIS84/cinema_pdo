@@ -1,36 +1,36 @@
 <?php
 
-require_once "bdd/DAO.php";
+    require_once "bdd/DAO.php";
 
-class MovieController {
+    class MovieController {
 
-    public function findAllMovies(){
+        public function findAllMovies(){
 
-        $dao = new DAO();
+            $dao = new DAO();
 
-        $sql = "SELECT f.id_film, f.titre  FROM film f";
+            $sql = "SELECT f.id_film, f.titre  FROM film f";
 
-        $films = $dao->executerRequete($sql);
+            $films = $dao->executerRequete($sql);
 
-        require "views/movie/listMovies.php"; 
+            require "views/movie/listMovies.php"; 
+        }
+
+        public function detailMovie($idFilm){
+
+            $dao = new DAO();
+
+            $sql = "SELECT f.titre, f.annee_sortie, f.duree, p.prenom, p.nom, f.affiche, f.note, f.synopsis  FROM film f, personne p, realisateur r
+            WHERE f.id_realisateur = r.id_realisateur
+            AND p.id_personne = r.id_personne
+            AND f.id_film = $idFilm" ;
+
+            $films = $dao->executerRequete($sql);
+
+            require "views/movie/detailMovie.php"; 
+
+        }
+
     }
-
-    public function detailMovie($idFilm){
-
-        $dao = new DAO();
-
-        $sql = "SELECT f.titre, f.annee_sortie, f.duree, p.prenom, p.nom, f.affiche, f.note, f.synopsis  FROM film f, personne p, realisateur r
-        WHERE f.id_realisateur = r.id_realisateur
-        AND p.id_personne = r.id_personne
-        AND f.id_film = $idFilm" ;
-
-        $films = $dao->executerRequete($sql);
-
-        require "views/movie/detailMovie.php"; 
-
-    }
-
-}
 
 
 ?>
