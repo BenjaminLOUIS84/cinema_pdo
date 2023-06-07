@@ -11,12 +11,12 @@ ob_start();
 $genre = $genres->fetch();
 echo $genre["type"];
 echo "<br>";
-echo $genre["titre"]."<br>";
+echo $genre["titre"]."<br>"; // Pour afficher le premier film du genre
 
 
 while ($genre = $genres->fetch()){
 
-    echo $genre["titre"]."<br>";
+    echo $genre["titre"]."<br>"; // Pour afficher les autres films du genre
 }
 
 ?>
