@@ -35,6 +35,19 @@ a:hover {
     background: white;
     font-weight: bold;
 }
+/*//////////////////////////////////HOME/////////////////////////////////*/
+
+.logo {
+    filter: drop-shadow(0 0 20px black);
+    border-radius: 10px;
+    position: relative;
+    width: 220%;
+    right: 170px;
+}
+
+/* .home {
+    background: url(public/images/cinema.jpg);
+} */
 
 /*//////////////////////////////////MAIN/////////////////////////////////*/
 
@@ -49,14 +62,6 @@ a:hover {
 
 .detail:hover {
     background: whitesmoke;
-}
-
-.logo {
-    filter: drop-shadow(0 0 20px black);
-    border-radius: 10px;
-    position: relative;
-    width: 220%;
-    right: 170px;
 }
 
 h1 {
@@ -111,6 +116,26 @@ main {
 
 .listM img {
     width: 30%;
+    filter: drop-shadow(0 0 20px black);
+    border-radius: 10px;
+}
+/*//////////////////////////////////ACTEURS/////////////////////////////////*/
+
+.listA {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 2;
+    margin-bottom: 70px;
+    margin-top: 70px;
+    font-weight: bold;
+    margin: 40px;
+}
+
+.listA img {
+    width: 60%;
     filter: drop-shadow(0 0 20px black);
     border-radius: 10px;
 }

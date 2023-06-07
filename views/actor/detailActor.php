@@ -5,7 +5,7 @@ ob_start();
 
 <h1>Détails</h1>
 
-<div class="list">
+<div class="listA">
 <?php
 
 $acteur = $acteurs->fetch();
@@ -14,6 +14,8 @@ echo $acteur["prenom"]." ";
 echo $acteur["nom"]." ";
 echo "est de sexe ".$acteur["sexe"]."<br>";
 echo "Date de naissance: ".$acteur["date_naissance"]."<br>";
+echo "<br>";
+echo $acteur["portrait"]."<br>";
 
 
 ?>

@@ -20,7 +20,7 @@ class PersonController {
 
         $dao = new DAO();
 
-        $sql = "SELECT p.prenom, p.nom, p.sexe, p.date_naissance FROM acteur a, personne p
+        $sql = "SELECT p.prenom, p.nom, p.sexe, p.date_naissance, p.portrait FROM acteur a, personne p
         WHERE a.id_personne = p.id_personne 
         AND a.id_acteur = $idActor" ;
 

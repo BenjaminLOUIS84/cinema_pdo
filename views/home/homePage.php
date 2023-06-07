@@ -4,11 +4,14 @@ ob_start();
 
 ?>
 
+<!-- <div class="home"> -->
 <h1>Accueil</h1>
 
 <figure>
-    <img class= logo src="images/accueil.jpg" alt="symbole cinema">
+    <img class= logo src="public/images/accueil.jpg" alt="symbole cinema">
 </figure>
+
+<!-- </div> -->
 
 <?php
 
