@@ -14,10 +14,10 @@ $film = $films->fetch();
 echo $film["titre"]." ";
 echo " - Sortie en ".$film["annee_sortie"]." ";
 echo " - Durée: ".$film["duree"]." minutes<br>";
-echo "<br>";
 
-//////////////////////////////////////////////////////////////////
-//echo "Réalisé par: ".$film["id_realisateur"]."<br>";            //Intégrer le réalisateur
+//////////////////////////////////////////////////////////////////En modifiant la requête SQL on peut ajouter le réalisateur 
+echo "Réalisé par: ".$film["prenom"]." ".$film["nom"]."<br>";     
+echo "<br>";
 //////////////////////////////////////////////////////////////////
 
 echo $film["affiche"]."<br>";
@@ -32,7 +32,7 @@ echo $film["synopsis"]."<br>";
 echo "<br>";
 
 /////////////////////////////////////////////////////////////
-echo "Distribution: ";                                     //Intégrer les acteurs
+//echo "Distribution: ";                                     //Intégrer les acteurs
 /////////////////////////////////////////////////////////////
 
 //Requête pour revenir à la liste des films                     
