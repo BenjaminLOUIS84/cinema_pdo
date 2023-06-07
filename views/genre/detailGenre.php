@@ -9,18 +9,19 @@ ob_start();
 <?php
 
 $genre = $genres->fetch();
-
-
 echo $genre["type"];
 echo "<br>";
 
-////////////////////////////////////////////////////////////////////
-echo $genre["titre"];                                             // Pourquoi les autres films ne s'affichent pas et comment accéder aux films au click
-////////////////////////////////////////////////////////////////////
+while ($genre = $genres->fetch()){
+
+    echo $genre["titre"]."<br>";
+}
 
 ?>
 <a class ="detail" href="index.php?action=listGenres">Retour</a>
+
 </div>
+
 <?php
 
 $title = "Détail du Genre";
