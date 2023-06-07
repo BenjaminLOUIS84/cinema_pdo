@@ -11,6 +11,8 @@ ob_start();
 $genre = $genres->fetch();
 echo $genre["type"];
 echo "<br>";
+echo $genre["titre"]."<br>";
+
 
 while ($genre = $genres->fetch()){
 
