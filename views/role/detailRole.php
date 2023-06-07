@@ -14,7 +14,6 @@
         echo $role["perso"]."<br>";
         echo "<br>";
         echo " Ce rôle est interprété par <br>";
-
     
         //echo $role["prenom"]." ";                                                   
         //echo $role["nom"]."<br>";
