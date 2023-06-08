@@ -35,7 +35,9 @@
             case 'detailActor': $personCtrl->detailActor($_GET['idActor']); break;
             case 'detailDirector': $personCtrl->detailDirector($_GET['idDirector']); break;
             case 'detailRole': $roleCtrl->detailRole($_GET['idRole']); break;
-        
+            
+            case 'filmographyDirector': $personCtrl->filmographyDirector(); break;  // $_GET['idDirect']
+            
         }
     }
 

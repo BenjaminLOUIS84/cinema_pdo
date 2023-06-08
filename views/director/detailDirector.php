@@ -18,6 +18,7 @@
         echo $realisateur["portrait"]."<br>";
     ?>
 
+    <a class ="filmo" href="index.php?action=filmographyDirector">Fimographie</a>
     <a class ="detail" href="index.php?action=listDirectors">Retour</a>
 
 </div>
@@ -27,3 +28,5 @@
     $content = ob_get_clean();  // Récupérer et afficher puis nettoyer la mémoire tampon
     require "views/template.php";
 ?>
+
+<!-- &idDirect=<?=$realisateur['id_realisateur']?> -->

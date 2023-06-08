@@ -11,8 +11,6 @@
         //echo $realisateur["id_realisateur"]." ";
         //echo $realisateur["nom"]." ";
         //echo $realisateur["prenom"]." ";
-        //echo $realisateur["sexe"]." ";
-        //echo $realisateur["date_naissance"]."<br>";
 
         ?>
         <a class="detail" href="index.php?action=detailDirector&idDirector=<?=$realisateur['id_realisateur']?>">

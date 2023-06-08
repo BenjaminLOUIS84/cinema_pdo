@@ -53,6 +53,24 @@
 
             require "views/director/detailDirector.php"; 
         }
+
+        public function filmographyDirector(){
+
+            $dao = new DAO();   
+
+            $sql = "SELECT f.titre, p.nom, p.prenom, r.id_realisateur, f.id_film FROM film f
+            INNER JOIN realisateur r
+            ON f.id_realisateur = r.id_realisateur
+            INNER JOIN personne p
+            ON r.id_realisateur = p.id_personne";
+            
+            // AND r.id_realisateur = $idDirect" ;
+
+            $realisateurs = $dao->executerRequete($sql);
+
+            require "views/director/filmographyDirector.php";
+        }
+
     }
 
 ?>

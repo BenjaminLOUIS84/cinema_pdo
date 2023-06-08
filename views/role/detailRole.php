@@ -20,7 +20,7 @@
     ?>
 
     <a class="detail" href="index.php?action=detailActor&idActor=<?=$role['id_acteur']?>">
-        <h2><?=$role["prenom"]?></h2>    
+        <h2><?=$role["prenom"]?></h2>  
         <h2><?=$role["nom"]?></h2>    
     </a>
 
