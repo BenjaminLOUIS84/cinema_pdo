@@ -20,12 +20,11 @@
 
 
     <a class ="filmo" href="index.php?action=filmographyDirector">Fimographie</a>
-
     
-
     <a class ="detail" href="index.php?action=listDirectors">Retour</a>
 
 </div>
+
 
 <?php
     $title = "Détail du réalisateur";

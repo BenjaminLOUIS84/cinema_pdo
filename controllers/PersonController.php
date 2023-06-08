@@ -62,9 +62,9 @@
             INNER JOIN realisateur r
             ON f.id_realisateur = r.id_realisateur
             INNER JOIN personne p
-            ON p.id_personne = r.id_personne
-            
-            AND r.id_realisateur = 1";
+            ON p.id_personne = r.id_personne";
+
+            //AND r.id_realisateur = 1"; Affiche le premier réalisateur OBJECTIF ->Créer un filtre pour afficher les films de chaque Réalisateur séparement
 
             $realisateurs = $dao->executerRequete($sql);
 
