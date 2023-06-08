@@ -47,7 +47,7 @@
 
             $sql = "SELECT p.prenom, p.nom, p.sexe, DATE_FORMAT(p.date_naissance,'%d-%m-%Y') AS date_nais, p.portrait FROM realisateur r, personne p
             WHERE r.id_personne = p.id_personne 
-            AND r.id_realisateur = $idDirector" ;
+            AND r.id_realisateur = $idDirector";
 
             $realisateurs = $dao->executerRequete($sql);
 
@@ -62,9 +62,9 @@
             INNER JOIN realisateur r
             ON f.id_realisateur = r.id_realisateur
             INNER JOIN personne p
-            ON r.id_realisateur = p.id_personne";
+            ON p.id_personne = r.id_personne
             
-            // AND r.id_realisateur = $idDirect" ;
+            AND r.id_realisateur = 1";
 
             $realisateurs = $dao->executerRequete($sql);
 
