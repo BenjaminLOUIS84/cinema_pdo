@@ -10,22 +10,22 @@
 
         $realisateur = $realisateurs->fetch();
 
-        echo $realisateur["titre"]."<br>";
+        //echo $realisateur["titre"]."<br>";
         
-        //      ?>
-        <!-- //     <a class="detail" href="index.php?action=detailMovie&idFilm=<?=$realisateur['id_film']?>">
-        //         <h2><?=$realisateur["titre"]?></h2>   
-        //     </a> -->
-                <?php
+        ?>
+            <a class="detail" href="index.php?action=detailMovie&idFilm=<?=$realisateur['id_film']?>">
+                <h2><?=$realisateur["titre"]?></h2>   
+            </a>
+        <?php
 
-        // while ($realisateur = $realisateurs->fetch()){
+        while ($realisateur = $realisateurs->fetch()){
 
-        //     ?>
-        <!-- //         <a class="detail" href="index.php?action=detailMovie&idFilm=<?=$realisateur['id_film']?>">
-        //             <h2><?=$realisateur["titre"]?></h2>   
-        //         </a> -->
-                <?php
-        // }
+            ?>
+                <a class="detail" href="index.php?action=detailMovie&idFilm=<?=$realisateur['id_film']?>">
+                    <h2><?=$realisateur["titre"]?></h2>   
+                </a> 
+            <?php
+        }
     ?>
 
     <a class ="detail" href="index.php?action=listDirectors">Retour</a>
