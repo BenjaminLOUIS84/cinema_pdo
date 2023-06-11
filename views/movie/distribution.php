@@ -11,8 +11,15 @@
         
 <a class="detail" href="index.php?action=detailActor&idActor=<?=$acteur['id_acteur']?>">
     <h2><?=$acteur["prenom"]?></h2>
-    <h2><?=$acteur["nom"]?></h2>    
+    <h2><?=$acteur["nom"]?></h2>
 </a>
+
+<!-- <p>joue le rôle de</p> -->
+
+<!-- <a class="detail" href="index.php?action=detailRole&idRole=<?=$acteur['role_acteur']?>">
+    <h2><?=$acteur["prenom"]?></h2>
+    <h2><?=$acteur["nom"]?></h2>
+</a> -->
 
 <?php
     
@@ -24,6 +31,11 @@
                 <h2><?=$acteur["nom"]?></h2>    
             </a>
             
+            <!-- <a class="detail" href="index.php?action=detailRole&idRole=<?=$acteur['role_acteur']?>">
+                <h2><?=$acteur["prenom"]?></h2>
+                <h2><?=$acteur["nom"]?></h2>
+            </a> -->
+
         <?php
     }
 
@@ -31,7 +43,7 @@
 
 <a class ="detail" href="index.php?action=listMovies">Retour</a>
 
-<!-- <a class="detail" href="index.php?action=detailMovie&idFilm=<?=$film['id_film']?>">Retour</a> -->
+<!-- <a class="detail" href="index.php?action=detailMovie&idFilm=<?=$acteur['id_film']?>">Retour</a> -->
 
 <?php
     $title = "Distribution";
