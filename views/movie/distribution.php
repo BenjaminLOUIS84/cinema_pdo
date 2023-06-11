@@ -29,7 +29,7 @@
 
 ?>
 
-<!-- <a class ="detail" href="index.php?action=listMovies">Retour</a> -->
+<a class ="detail" href="index.php?action=listMovies">Retour</a>
 
 <!-- <a class="detail" href="index.php?action=detailMovie&idFilm=<?=$film['id_film']?>">Retour</a> -->
 
