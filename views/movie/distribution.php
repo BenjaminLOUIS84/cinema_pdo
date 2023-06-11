@@ -20,6 +20,7 @@
     <a class="detail" href="index.php?action=detailRole&idRole=<?=$acteur['role_acteur']?>">
         <h2><?=$acteur["firstname"]?></h2>
         <h2><?=$acteur["name"]?></h2>
+        <h2><?=$acteur["pseudo"]?></h2>
     </a> 
 </div>
 
@@ -39,6 +40,7 @@
                 <a class="detail" href="index.php?action=detailRole&idRole=<?=$acteur['role_acteur']?>">
                     <h2><?=$acteur["firstname"]?></h2>
                     <h2><?=$acteur["name"]?></h2>
+                    <h2><?=$acteur["pseudo"]?></h2>
                 </a>
             </div>
             
