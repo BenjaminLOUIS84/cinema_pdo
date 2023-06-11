@@ -3,13 +3,14 @@
     ob_start();
 ?>
 
-<!-- <div class="home"> -->
+
 <h1>Accueil</h1>
 
 <figure>
     <img class= logo src="public/images/accueil.jpg" alt="symbole cinema">
 </figure>
-<!-- </div> -->
+
+<a class ="detail" href="index.php?action=formulaire">FORMULAIRE</a>
 
 <?php
     $title = "Page d'accueil";

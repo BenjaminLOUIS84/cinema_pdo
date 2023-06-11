@@ -34,6 +34,7 @@ a:hover {
     color: darkslategray;
     background: white;
     font-weight: bold;
+    transition: 0.5s ease-in-out;
 }
 
 /*//////////////////////////////////HOME/////////////////////////////////*/
@@ -62,6 +63,7 @@ a:hover {
 
 .detail:hover {
     background: whitesmoke;
+    transition: 0.5s ease-in-out;
 }
 
 h1 {
@@ -214,6 +216,38 @@ main {
 
 .titreGenre {
     font-size: 2em;
+}
+
+/*//////////////////////////////////FORMULAIRE/////////////////////////////////*/
+
+.formulaire {
+    display: flex;
+    flex-direction: column;
+    background: darkslategray;
+    color: white;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    filter: drop-shadow(0 0 20px black);
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 20px;
+}
+
+.nameGenre {
+    color: gray;
+    border-radius: 10px;
+}
+
+.addGenre {
+    border-radius: 10px;
+}
+
+.addGenre:hover {
+    background: grey;
+    color: white;
+    transition: 0.5s ease-in-out;
 }
 
 /*//////////////////////////////////FOOTER/////////////////////////////////*/
