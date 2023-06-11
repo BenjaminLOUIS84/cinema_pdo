@@ -38,8 +38,7 @@
             
             case 'filmographyDirector': $personCtrl->filmographyDirector($_GET['idDirector']); break;  
             case 'filmographyActor': $personCtrl->filmographyActor($_GET['idActor']); break;  
-            
-            case 'distribution': $movieCtrl->distribution($_GET['idFilm']); break;  //
+            case 'distribution': $movieCtrl->distribution($_GET['idFilm']); break; 
             
         }
     }
