@@ -33,7 +33,6 @@
 
     <?php
 
-
         echo "<br>";
         
         //echo $film["affiche"]."<br>";//Pour afficher la même image dans tous les films
@@ -45,15 +44,14 @@
         echo "SYNOPSIS<br>";
         echo $film["synopsis"]."<br>";
         echo "<br>";
-
-        /////////////////////////////////////////////////////////////
-        //echo "Distribution: ";                                     //Intégrer les acteurs
-        /////////////////////////////////////////////////////////////
-
-        //Requête CI DESSOUS pour revenir à la liste des films                     
+              
     ?>
     
+    <a class="detail" href="index.php?action=distribution&idFilm=<?=$film['id_film']?>">
+        <h2>Distribution</h2>
+    </a>
 
+    <!--Requête CI DESSOUS pour revenir à la liste des films  -->
     <a class ="detail" href="index.php?action=listMovies">Retour</a>
 
 </div>
