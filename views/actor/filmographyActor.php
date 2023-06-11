@@ -11,7 +11,7 @@
          $acteur = $acteurs->fetch();
         
         ?>
-            <a class="detail" href="index.php?action=detailMovie&idFilm=<?=$acteur['id_acteur']?>">
+            <a class="detail" href="index.php?action=detailMovie&idFilm=<?=$acteur['id_film']?>">
                 <h2><?=$acteur["titre"]?></h2>   
             </a>
         <?php
@@ -19,7 +19,7 @@
         while ($acteur = $acteurs->fetch()){
 
             ?>
-                <a class="detail" href="index.php?action=detailMovie&idFilm=<?=$acteur['id_acteur']?>">
+                <a class="detail" href="index.php?action=detailMovie&idFilm=<?=$acteur['id_film']?>">
                     <h2><?=$acteur["titre"]?></h2>   
                 </a> 
             <?php
