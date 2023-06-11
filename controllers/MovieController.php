@@ -19,7 +19,7 @@
 
             $dao = new DAO();
 
-            $sql = "SELECT f.titre, f.annee_sortie, f.duree, p.prenom, p.nom, f.affiche, f.note, f.synopsis, f.id_realisateur  FROM film f, personne p, realisateur r
+            $sql = "SELECT f.titre, f.annee_sortie, f.duree, p.prenom, p.nom, f.affiche, f.note, f.synopsis, f.id_realisateur, f.id_film FROM film f, personne p, realisateur r
             WHERE f.id_realisateur = r.id_realisateur
             AND p.id_personne = r.id_personne
             AND f.id_film = $idFilm" ;
@@ -34,16 +34,15 @@
 
             $dao = new DAO();
 
-            $sql = "SELECT c.id_film, a.id_acteur, c.id_acteur, p.nom, p.prenom, p.sexe
+            $sql = "SELECT c.id_film, p.nom, p.prenom, c.id_acteur
             FROM casting c
             INNER JOIN acteur a
             ON a.id_acteur = c.id_acteur
             INNER JOIN personne p
             ON p.id_personne = a.id_personne
-
             AND c.id_film = $idFilm" ;
 
-            $films = $dao->executerRequete($sql);
+            $acteurs = $dao->executerRequete($sql);
 
             require "views/movie/distribution.php"; 
 

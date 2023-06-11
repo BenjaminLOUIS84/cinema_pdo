@@ -20,7 +20,6 @@
         echo "<img src='./public/images/{$realisateur["portrait"]}'>"."<br>";
     ?>
 
-
     <a class ="filmo" href="index.php?action=filmographyDirector&idDirector=<?=$realisateur['id_realisateur']?>">
         <h2>Filmographie</h2>
     </a>

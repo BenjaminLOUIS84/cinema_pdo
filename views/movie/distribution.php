@@ -29,6 +29,10 @@
 
 ?>
 
+<!-- <a class ="detail" href="index.php?action=listMovies">Retour</a> -->
+
+<!-- <a class="detail" href="index.php?action=detailMovie&idFilm=<?=$film['id_film']?>">Retour</a> -->
+
 <?php
     $title = "Distribution";
     $content = ob_get_clean();  // Récupérer et afficher puis nettoyer la mémoire tampon
