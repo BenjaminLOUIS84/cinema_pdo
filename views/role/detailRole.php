@@ -11,7 +11,7 @@
 
         $role = $roles->fetch();
 
-        echo $role["perso"]."<br>";
+        echo "<img src='./public/images/{$role['perso']}'>";
         echo "<br>";
         echo " Ce rôle est interprété par <br>";
     

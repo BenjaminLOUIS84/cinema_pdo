@@ -10,18 +10,21 @@
 
         $acteur = $acteurs->fetch();
 
+        //var_dump($acteur);
+
         echo $acteur["prenom"]." ";
         echo $acteur["nom"]." ";
         echo "est de sexe ".$acteur["sexe"]."<br>";
-
-        //////////////////////////////////////////////////////////////////
-        echo "Date de naissance le ".$acteur["date_nais"]."<br>";    //Changer le format de la date de naissance avec DATE_FORMAT(date_naissance, '%d-%m-%Y') AS date_nais (dans PersonController)
-        //////////////////////////////////////////////////////////////////
-
+        echo "Date de naissance le ".$acteur["date_nais"]."<br>";    //Changer le format de la date de naissance avec DATE_FORMAT(date_naissance, '%d-%m-%Y') AS date_nais
+        //                                                              (dans PersonController)
         echo "<br>";
-        echo $acteur["portrait"]."<br>";
+        echo "<img src='./public/images/{$acteur["portrait"]}'>"."<br>";
 
     ?>
+
+    <a class ="filmo" href="index.php?action=filmographyActor&idActor=<?=$acteur['id_acteur']?>">
+        <h2>Filmographie</h2>
+    </a>
 
     <a class ="detail" href="index.php?action=listActors">Retour</a>
 

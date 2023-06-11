@@ -10,16 +10,20 @@
 
         $realisateur = $realisateurs->fetch();
 
+        // var_dump($realisateur);  Pour vérifier si on récupère les ID
+
         echo $realisateur["prenom"]." ";
         echo $realisateur["nom"]." ";
         echo "est de sexe ".$realisateur["sexe"]."<br>";
         echo "Date de naissance le ".$realisateur["date_nais"]."<br>";
         echo "<br>";
-        echo $realisateur["portrait"]."<br>";
+        echo "<img src='./public/images/{$realisateur["portrait"]}'>"."<br>";
     ?>
 
 
-    <a class ="filmo" href="index.php?action=filmographyDirector">Fimographie</a>
+    <a class ="filmo" href="index.php?action=filmographyDirector&idDirector=<?=$realisateur['id_realisateur']?>">
+        <h2>Filmographie</h2>
+    </a>
     
     <a class ="detail" href="index.php?action=listDirectors">Retour</a>
 

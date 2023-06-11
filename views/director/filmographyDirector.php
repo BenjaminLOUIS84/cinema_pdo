@@ -25,6 +25,8 @@
                     <h2><?=$realisateur["titre"]?></h2>   
                 </a> 
             <?php
+
+            // echo "<img src='./public/images/{$film['affiche']}'>";
         }
     ?>
 
