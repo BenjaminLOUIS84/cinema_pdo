@@ -8,34 +8,40 @@
 <?php
     $acteur = $acteurs->fetch();
 ?>
-        
-<a class="detail" href="index.php?action=detailActor&idActor=<?=$acteur['id_acteur']?>">
-    <h2><?=$acteur["prenom"]?></h2>
-    <h2><?=$acteur["nom"]?></h2>
-</a>
 
-<!-- <p>joue le rôle de</p> -->
+<div class="role">       
+    <a class="detail" href="index.php?action=detailActor&idActor=<?=$acteur['id_acteur']?>">
+        <h2><?=$acteur["prenom"]?></h2>
+        <h2><?=$acteur["nom"]?></h2>
+    </a>
 
-<!-- <a class="detail" href="index.php?action=detailRole&idRole=<?=$acteur['role_acteur']?>">
-    <h2><?=$acteur["prenom"]?></h2>
-    <h2><?=$acteur["nom"]?></h2>
-</a> -->
+    <p>joue le rôle de</p>
+
+    <a class="detail" href="index.php?action=detailRole&idRole=<?=$acteur['role_acteur']?>">
+        <h2><?=$acteur["firstname"]?></h2>
+        <h2><?=$acteur["name"]?></h2>
+    </a> 
+</div>
 
 <?php
     
     while ($acteur = $acteurs->fetch()){
 
-        ?>
-            <a class="detail" href="index.php?action=detailActor&idActor=<?=$acteur['id_acteur']?>">
-                <h2><?=$acteur["prenom"]?></h2>
-                <h2><?=$acteur["nom"]?></h2>    
-            </a>
-            
-            <!-- <a class="detail" href="index.php?action=detailRole&idRole=<?=$acteur['role_acteur']?>">
-                <h2><?=$acteur["prenom"]?></h2>
-                <h2><?=$acteur["nom"]?></h2>
-            </a> -->
+        ?>  
+            <div class="role">
+                <a class="detail" href="index.php?action=detailActor&idActor=<?=$acteur['id_acteur']?>">
+                    <h2><?=$acteur["prenom"]?></h2>
+                    <h2><?=$acteur["nom"]?></h2>    
+                </a>
 
+                <p>joue le rôle de</p>
+
+                <a class="detail" href="index.php?action=detailRole&idRole=<?=$acteur['role_acteur']?>">
+                    <h2><?=$acteur["firstname"]?></h2>
+                    <h2><?=$acteur["name"]?></h2>
+                </a>
+            </div>
+            
         <?php
     }
 

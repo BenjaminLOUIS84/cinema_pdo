@@ -34,18 +34,14 @@
 
             $dao = new DAO();
 
-            $sql = "SELECT c.id_film, p.nom, p.prenom, c.id_acteur
-            -- ra.nom, ra.prenom, ra.pseudo, ra.role_acteur
-
-            FROM casting c
+            $sql = "SELECT c.id_film, p.nom, p.prenom, c.id_acteur, ra.name, ra.firstname, ra.pseudo, ra.role_acteur FROM casting c
             INNER JOIN acteur a
             ON a.id_acteur = c.id_acteur
             INNER JOIN personne p
             ON p.id_personne = a.id_personne
+            INNER JOIN role_acteur ra
+            ON ra.role_acteur = c.role_acteur
 
-            -- INNER JOIN role_acteur ra
-            -- ON ra.role_acteur = c.role_acteur
-            
             AND c.id_film = $idFilm" ;
 
             $acteurs = $dao->executerRequete($sql);

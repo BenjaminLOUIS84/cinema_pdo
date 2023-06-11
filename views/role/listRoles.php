@@ -15,8 +15,8 @@
         // echo $role["pseudo"]."<br>";
         ?>
         <a class="detail" href="index.php?action=detailRole&idRole=<?=$role['role_acteur']?>">
-            <h2><?=$role["prenom"]?></h2>
-            <h2><?=$role["nom"]?></h2>
+            <h2><?=$role["firstname"]?></h2>
+            <h2><?=$role["name"]?></h2>
             <h2><?=$role["pseudo"]?></h2>
         </a>
         <?php

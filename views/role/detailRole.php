@@ -13,10 +13,10 @@
 
         echo "<img src='./public/images/{$role['perso']}'>";
         echo "<br>";
-        echo " Ce rôle est interprété par <br>";
+        echo $role["firstname"]." ";                                                   
+        echo $role["name"]." "; 
+        echo "est interprété par <br>";
     
-        //echo $role["prenom"]." ";                                                   
-        //echo $role["nom"]."<br>";
     ?>
 
     <a class="detail" href="index.php?action=detailActor&idActor=<?=$role['id_acteur']?>">

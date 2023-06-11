@@ -204,6 +204,11 @@ main {
     padding: 10px;
 }
 
+.role {
+    display: flex;
+    align-items: baseline;
+}
+
 
 /*//////////////////////////////////GENRES/////////////////////////////////*/
 
