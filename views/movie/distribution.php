@@ -16,6 +16,16 @@
 
 <?php
     
+    while ($acteur = $acteurs->fetch()){
+
+        ?>
+            <a class="detail" href="index.php?action=detailActor&idActor=<?=$acteur['id_acteur']?>">
+                <h2><?=$acteur["prenom"]?></h2>
+                <h2><?=$acteur["nom"]?></h2>    
+            </a>
+            
+        <?php
+    }
 
 ?>
 

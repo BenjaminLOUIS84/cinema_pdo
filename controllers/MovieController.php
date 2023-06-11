@@ -40,6 +40,7 @@
             ON a.id_acteur = c.id_acteur
             INNER JOIN personne p
             ON p.id_personne = a.id_personne
+
             AND c.id_film = $idFilm" ;
 
             $films = $dao->executerRequete($sql);
