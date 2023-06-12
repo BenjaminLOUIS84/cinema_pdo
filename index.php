@@ -14,6 +14,15 @@
     $genreCtrl = new GenreController();
     $movieCtrl = new MovieController();
     $roleCtrl = new RoleController();
+    
+
+    if(isset($_POST['action'])){
+
+        switch($_POST['action']){
+
+            case 'addMovie': $filmCtrl->addMovie($_POST); break;
+        }
+    }
 
     // L'index va intercepter la requête HTTP et va orienter vers le bon contrôleur et la bonne méthode
 

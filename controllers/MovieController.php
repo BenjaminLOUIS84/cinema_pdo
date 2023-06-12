@@ -65,7 +65,7 @@
         
         public function addMovie($array){
 
-            $titre = filter_input(INPUT_POST , "titre", FILTER_SANITIZE_FULL_SPECIAL_CHARS); //Mettre ce filtre l'input pour éviter les injections SQL ou XSS
+            $titre = filter_input(INPUT_POST , "titre", FILTER_SANITIZE_FULL_SPECIAL_CHARS); //Mettre ce filtre à l'input pour éviter les injections SQL ou XSS
             
             $dao = new DAO();
 
@@ -73,6 +73,8 @@
             VALUES (:titre);";
   
             $addMovie = $dao->executerRequete($sql1, [":titre" =>$titre]);
+            
+            $id_new_film = $dao->getBDD()->lastInsertId(); // Récupère l'ID auto incrémenté qui s'est créé lors de l'ajout du film. 
             
             require "views/movie/formulaireMovie.php";
            
