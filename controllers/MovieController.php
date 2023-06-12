@@ -67,18 +67,24 @@
         public function addMovie($array){
             
             $dao = new DAO();
+            $sql1 = "INSERT INTO film(titre)
+            VALUES (:titre)";
+            
+            $titre = filter_input($array['titre'], FILTER_SANITIZE_FULL_SPECIAL_CHARS); //Mettre ce filtre à l'input pour éviter les injections SQL ou XSS
+            
+            $ajout = $dao->executerRequete($sql1, [":titre" => $titre]);
+            
+            // if(isset($_POST['addMovie'])){
 
-            if(isset($_POST['addMovie'])){
-
-                $titre = filter_input(INPUT_POST , "titre", FILTER_SANITIZE_FULL_SPECIAL_CHARS); //Mettre ce filtre à l'input pour éviter les injections SQL ou XSS
-                //$titre = filter_input(INPUT_POST, "titre", FILTER_SANITIZE_STRING);//Supprime toute présence de caractères spéciaux et de toute balise HTML (Pas d'injection de code HTML possible)
-                $titre = $_POST['titre'];
+            //     $titre = filter_input(INPUT_POST , "titre", FILTER_SANITIZE_FULL_SPECIAL_CHARS); //Mettre ce filtre à l'input pour éviter les injections SQL ou XSS
+            //     //$titre = filter_input(INPUT_POST, "titre", FILTER_SANITIZE_STRING);//Supprime toute présence de caractères spéciaux et de toute balise HTML (Pas d'injection de code HTML possible)
+            //     $titre = $_POST['titre'];
                
-                $sql1 ="INSERT INTO film(titre)                                 
-                VALUES (':titre');";
+            //     $sql1 ="INSERT INTO film(titre)                                 
+            //     VALUES (':titre');";
 
-                $addMovie = $dao->executerRequete($sql1, [":titre" =>$titre]);
-            }
+            //     $addMovie = $dao->executerRequete($sql1, [":titre" =>$titre]);
+            // }
 
             //$id_new_film = $dao->getBDD()->lastInsertId(); // Récupère l'ID auto incrémenté qui s'est créé lors de l'ajout du film. 
             
