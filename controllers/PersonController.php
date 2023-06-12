@@ -22,9 +22,9 @@
 
             $sql = "SELECT a.id_acteur, p.prenom, p.nom, p.sexe, DATE_FORMAT(p.date_naissance,'%d-%m-%Y') AS date_nais, p.portrait FROM acteur a, personne p
             WHERE a.id_personne = p.id_personne 
-            AND a.id_acteur = $idActor" ;
+            AND a.id_acteur = :id";
 
-            $acteurs = $dao->executerRequete($sql);
+            $acteurs = $dao->executerRequete($sql, [":id" => $idActor]);
 
             require "views/actor/detailActor.php"; 
         }
@@ -39,9 +39,9 @@
             AND f.id_film = c.id_film
             AND p.id_personne = a.id_personne
             
-            AND a.id_acteur = $idActor"; 
+            AND a.id_acteur = :id"; 
 
-            $acteurs = $dao->executerRequete($sql);
+            $acteurs = $dao->executerRequete($sql, [":id" => $idActor]);
 
             require "views/actor/filmographyActor.php";
         }
@@ -65,9 +65,9 @@
 
             $sql = "SELECT r.id_realisateur, p.prenom, p.nom, p.sexe, DATE_FORMAT(p.date_naissance,'%d-%m-%Y') AS date_nais, p.portrait FROM realisateur r, personne p
             WHERE r.id_personne = p.id_personne 
-            AND r.id_realisateur = $idDirector";
+            AND r.id_realisateur = :id";
 
-            $realisateurs = $dao->executerRequete($sql);
+            $realisateurs = $dao->executerRequete($sql, [":id" => $idDirector]);
 
             require "views/director/detailDirector.php"; 
         }
@@ -83,9 +83,9 @@
             INNER JOIN personne p
             ON p.id_personne = r.id_personne
 
-            AND r.id_realisateur = $idDirector"; 
+            AND r.id_realisateur = :id"; 
 
-            $realisateurs = $dao->executerRequete($sql);
+            $realisateurs = $dao->executerRequete($sql, [":id" => $idDirector]);
 
             require "views/director/filmographyDirector.php";
         }

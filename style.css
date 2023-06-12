@@ -218,7 +218,7 @@ main {
     font-size: 2em;
 }
 
-/*//////////////////////////////////FORMULAIRE/////////////////////////////////*/
+/*//////////////////////////////////FORMULAIRES/////////////////////////////////*/
 
 
 .formulaire {
@@ -236,21 +236,35 @@ main {
     padding: 20px;
 }
 
-.nameGenre {
+.name {
     color: gray;
     border-radius: 10px;
 }
 
-.addGenre {
+.add {
     border-radius: 10px;
     margin-top: 20px;
 }
 
-.addGenre:hover {
+.add:hover {
     background: grey;
     color: white;
     transition: 0.5s ease-in-out;
 }
+
+.Form {
+    color:whitesmoke;
+    font-size: 1.5em;
+    border-radius: 10px;
+    font-weight: lighter;
+    transition: 0.5s ease-in-out;
+}
+
+.Form:hover {
+    padding: 10px;
+    font-weight: lighter;
+}
+
 
 /*//////////////////////////////////FOOTER/////////////////////////////////*/
 

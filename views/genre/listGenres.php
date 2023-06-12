@@ -22,6 +22,8 @@
 
 ?>
 
+<!-- <a class ="genreForm" href="index.php?action=formulaireGenre">MODIFIER</a> -->
+
 <?php
 
     $title = "Liste des genres";

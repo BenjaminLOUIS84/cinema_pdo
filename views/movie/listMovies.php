@@ -28,6 +28,10 @@
 
 ?>
 
+<!-- Bouton pour afficher un formulaire -->
+
+<a class ="Form" href="index.php?action=formulaireMovie">MODIFIER</a>
+
 <?php
     $title = "Liste des Films";
     $content = ob_get_clean();  // Récupérer et afficher puis nettoyer la mémoire tampon

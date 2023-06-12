@@ -6,8 +6,6 @@
     require_once "controllers/GenreController.php";
     require_once "controllers/MovieController.php";
     require_once "controllers/RoleController.php";
-    
-    require_once "controllers/FormulaireController.php";
 
     // Je créer des instances des controlleurs
 
@@ -16,8 +14,6 @@
     $genreCtrl = new GenreController();
     $movieCtrl = new MovieController();
     $roleCtrl = new RoleController();
-
-    $formulaireCtrl = new FormulaireController();
 
     // L'index va intercepter la requête HTTP et va orienter vers le bon contrôleur et la bonne méthode
 
@@ -43,9 +39,11 @@
             
             case 'filmographyDirector': $personCtrl->filmographyDirector($_GET['idDirector']); break;  
             case 'filmographyActor': $personCtrl->filmographyActor($_GET['idActor']); break;  
-            case 'distribution': $movieCtrl->distribution($_GET['idFilm']); break; 
             
-            case 'formulaire': $formulaireCtrl->openFormulaire(); break;
+            case 'formulaireMovie': $movieCtrl->openFormulaire(); break;
+            case 'addMovie': $movieCtrl->addMovie($_POST); break;
+
+            //case 'formulaireGenre': $genreCtrl->openFormulaire(); break;
             
 
         }

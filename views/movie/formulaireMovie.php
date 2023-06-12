@@ -6,23 +6,23 @@
     //session_start();
 ?>
 
-<h1>Formulaire</h1>
+<h1>Formulaire Films</h1>
 
 <h2>Remplir ce formulaire pour modifier la base SQL</h2>
 
 <div class="formulaire">
 
-    <form action = "#" method = "post">
+    <form action = "index.php?action=addMovie" method = "post">
 
         <p>
             <label>
-                Ajouter un genre de film <br>
-                <input class="nameGenre" type = "text" name = "nameGenre" required>
+                Ajouter un film <br>
+                <input class="name" type = "text" name = "nameMovie" required>
             </label>
         </p> 
 
         <p>
-            <input class="addGenre" type = "submit" name = "addGenre" value = "AJOUTER">
+            <input class="add" type = "submit" name = "addMovie" value = "AJOUTER">
         </p>
 
     </form>
@@ -33,7 +33,7 @@
 
 <?php
 
-    $title = "Formulaire";
+    $title = "Formulaire Movie";
     $content = ob_get_clean();  // Récupérer et afficher puis nettoyer la mémoire tampon
     require "views/template.php";
 

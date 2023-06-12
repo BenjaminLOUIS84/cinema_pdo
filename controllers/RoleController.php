@@ -24,9 +24,9 @@
             AND c.role_acteur = r.role_acteur
             AND c.id_acteur = a.id_acteur
             AND f.id_film = c.id_film
-            AND r.role_acteur = $idRole";
+            AND r.role_acteur = :id";
 
-            $roles = $dao->executerRequete($sql);
+            $roles = $dao->executerRequete($sql, [":id" => $idRole]);
 
             require "views/role/detailRole.php"; 
         }

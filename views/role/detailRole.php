@@ -14,7 +14,9 @@
         echo "<img src='./public/images/{$role['perso']}'>";
         echo "<br>";
         echo $role["firstname"]." ";                                                   
-        echo $role["name"]." "; 
+        echo $role["name"]." ";
+        echo $role["pseudo"]." ";
+
         echo "est interprété par <br>";
     
     ?>
