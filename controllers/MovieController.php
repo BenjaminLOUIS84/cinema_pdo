@@ -19,7 +19,7 @@
 
             $dao = new DAO();
 
-            ////////////////////////////////////////////////////////////Requête SQL1
+            ////////////////////////////////////////////////////////////Requête SQL1 INFORMATIONS FILM
 
             $sql = "SELECT f.titre, f.annee_sortie, f.duree, p.prenom, p.nom, f.affiche, f.note, f.synopsis, f.id_realisateur, f.id_film FROM film f, personne p, realisateur r
             WHERE f.id_realisateur = r.id_realisateur
@@ -29,7 +29,7 @@
 
             $films = $dao->executerRequete($sql, [":id" => $idFilm]);
             
-            ////////////////////////////////////////////////////////////Requête SQL2
+            ////////////////////////////////////////////////////////////Requête SQL2 DISTRIBUTION
         
             $sql2 = "SELECT c.id_film, p.nom, p.prenom, c.id_acteur, ra.name, ra.firstname, ra.pseudo, ra.role_acteur FROM casting c
             INNER JOIN acteur a
@@ -43,7 +43,7 @@
     
             $acteurs = $dao->executerRequete($sql2, [":id" => $idFilm]);
 
-            ////////////////////////////////////////////////////////////Requête SQL3
+            ////////////////////////////////////////////////////////////Requête SQL3 GENRE
 
             $sql3 ="SELECT g.type, g.genre_film FROM film f, classer c, genre_film g
             WHERE c.genre_film = g.genre_film
@@ -63,18 +63,25 @@
             require "views/movie/formulaireMovie.php"; 
         }
         
+
         public function addMovie($array){
 
-            $titre = filter_input(INPUT_POST , "titre", FILTER_SANITIZE_FULL_SPECIAL_CHARS); //Mettre ce filtre à l'input pour éviter les injections SQL ou XSS
+           // $titre = filter_input(INPUT_POST , "titre", FILTER_SANITIZE_FULL_SPECIAL_CHARS); //Mettre ce filtre à l'input pour éviter les injections SQL ou XSS
             
             $dao = new DAO();
 
-            $sql1 ="INSERT INTO film(titre)                                 
-            VALUES (:titre);";
-  
-            $addMovie = $dao->executerRequete($sql1, [":titre" =>$titre]);
-            
-            $id_new_film = $dao->getBDD()->lastInsertId(); // Récupère l'ID auto incrémenté qui s'est créé lors de l'ajout du film. 
+            if(isset($_POST['addMovie'])){
+
+                $titre = filter_input(INPUT_POST, "titre", FILTER_SANITIZE_STRING);//Supprime toute présence de caractères spéciaux et de toute balise HTML (Pas d'injection de code HTML possible)
+                $titre = $_POST['titre'];
+               
+                $sql1 ="INSERT INTO film(titre)                                 
+                VALUES (':titre');";
+
+                $addMovie = $dao->executerRequete($sql1, [":titre" =>$titre]);
+            }
+
+            //$id_new_film = $dao->getBDD()->lastInsertId(); // Récupère l'ID auto incrémenté qui s'est créé lors de l'ajout du film. 
             
             require "views/movie/formulaireMovie.php";
            
