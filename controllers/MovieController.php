@@ -65,14 +65,13 @@
         
 
         public function addMovie($array){
-
-           // $titre = filter_input(INPUT_POST , "titre", FILTER_SANITIZE_FULL_SPECIAL_CHARS); //Mettre ce filtre à l'input pour éviter les injections SQL ou XSS
             
             $dao = new DAO();
 
             if(isset($_POST['addMovie'])){
 
-                $titre = filter_input(INPUT_POST, "titre", FILTER_SANITIZE_STRING);//Supprime toute présence de caractères spéciaux et de toute balise HTML (Pas d'injection de code HTML possible)
+                $titre = filter_input(INPUT_POST , "titre", FILTER_SANITIZE_FULL_SPECIAL_CHARS); //Mettre ce filtre à l'input pour éviter les injections SQL ou XSS
+                //$titre = filter_input(INPUT_POST, "titre", FILTER_SANITIZE_STRING);//Supprime toute présence de caractères spéciaux et de toute balise HTML (Pas d'injection de code HTML possible)
                 $titre = $_POST['titre'];
                
                 $sql1 ="INSERT INTO film(titre)                                 
