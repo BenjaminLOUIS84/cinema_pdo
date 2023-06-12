@@ -12,7 +12,7 @@
 
 <div class="formulaire">
 
-    <form action = "index.php?action=addMovie" method = "post">
+    <form action = "index.php?action=ajouterFilm" method = "post">
 
         <p>
             <label>

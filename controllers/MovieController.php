@@ -72,7 +72,7 @@
             require "views/movie/ajouterFilm.php"; 
         }
 
-        public function addMovie($array){
+        public function addMovie($titre){
             
             $dao = new DAO();
             $sql1 = "INSERT INTO film(titre)
@@ -82,7 +82,7 @@
             
             $ajout = $dao->executerRequete($sql1, [":titre" => $titre]);
             
-            require "views/movie/ajouterFilm.php";
+            require "views/movie/addMovie.php";
            
         }
 
