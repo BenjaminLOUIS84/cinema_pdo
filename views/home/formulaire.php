@@ -1,6 +1,9 @@
 <?php
     // Démarrer la temporisation de sortie
     ob_start();
+
+    //Pour parcourir le tableau de session de la page de FormulaireController on appel la fonction ici
+    //session_start();
 ?>
 
 <h1>Formulaire</h1>
@@ -9,16 +12,15 @@
 
 <div class="formulaire">
 
-
-    <form action = "#" method = "post">
+    <form action = "FormulaireController.php" method = "post">
 
         <p>
             <label>
                 Ajouter un genre de film <br>
                 <input class="nameGenre" type = "text" name = "nameGenre" required>
             </label>
-        </p>
-       
+        </p> 
+
         <p>
             <input class="addGenre" type = "submit" name = "addGenre" value = "AJOUTER">
         </p>
@@ -26,12 +28,6 @@
     </form>
 
 </div>
-
-<?php
-
-   
-
-?>
 
 <a class ="detail" href="index.php">Retour</a>
 
@@ -42,3 +38,4 @@
     require "views/template.php";
 
 ?>
+

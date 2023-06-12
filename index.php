@@ -45,7 +45,8 @@
             case 'filmographyActor': $personCtrl->filmographyActor($_GET['idActor']); break;  
             case 'distribution': $movieCtrl->distribution($_GET['idFilm']); break; 
             
-            case 'formulaire': $formulaireCtrl->openFormulaire(); break; 
+            case 'formulaire': $formulaireCtrl->openFormulaire(); break;
+            
 
         }
     }

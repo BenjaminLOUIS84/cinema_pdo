@@ -220,6 +220,7 @@ main {
 
 /*//////////////////////////////////FORMULAIRE/////////////////////////////////*/
 
+
 .formulaire {
     display: flex;
     flex-direction: column;
@@ -242,6 +243,7 @@ main {
 
 .addGenre {
     border-radius: 10px;
+    margin-top: 20px;
 }
 
 .addGenre:hover {
