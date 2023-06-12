@@ -55,6 +55,8 @@
             require "views/movie/detailMovie.php"; 
 
         }
+           
+        ///////////////////////////////////////////////////////////FORMULAIRE
 
         public function openFormulaire(){
 
@@ -63,6 +65,12 @@
             require "views/movie/formulaireMovie.php"; 
         }
         
+        public function ajouterFilm(){
+
+            $dao = new DAO();
+
+            require "views/movie/ajouterFilm.php"; 
+        }
 
         public function addMovie($array){
             
@@ -74,7 +82,7 @@
             
             $ajout = $dao->executerRequete($sql1, [":titre" => $titre]);
             
-            require "views/movie/formulaireMovie.php";
+            require "views/movie/ajouterFilm.php";
            
         }
 
