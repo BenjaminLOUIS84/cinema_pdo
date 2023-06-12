@@ -19,36 +19,36 @@
             // Vérifier l'éxistence d'une requête POST (vérifier l'existence de la clé "submit dans le tableau POST)
             // Créer une condition pour limiter l'accès à cette page par les seules requêtes HTTP provenant de la soumission de notre formulaire.
 
-            if(isset($_POST['addGenre'])){
+            // if(isset($_POST['addGenre'])){
 
-                //Supprime toute présence de caractères spéciaux et de toute balise HTML (Pas d'injection de code HTML possible)
+            //     //Supprime toute présence de caractères spéciaux et de toute balise HTML (Pas d'injection de code HTML possible)
 
-                $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
+            //     $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
             
-                // Vérifier si les filtres ont tous fonctionnés grâce à la condition ci dessous
+            //     // Vérifier si les filtres ont tous fonctionnés grâce à la condition ci dessous
 
-                if($name){
+            //     if($name){
 
-                    // Organiser les données pour conserver chaque produit renseigné
-                    // Stcoker nos données en session en ajoutant celles-ci au tableau $_SESSION fournis par PHP
-                    // Construire un tableau associatif $newGenre pour conserver chaque genres renseignés
+            //         // Organiser les données pour conserver chaque produit renseigné
+            //         // Stcoker nos données en session en ajoutant celles-ci au tableau $_SESSION fournis par PHP
+            //         // Construire un tableau associatif $newGenre pour conserver chaque genres renseignés
             
-                    $newGenre = [
-                        "name" => $name
-                    ];
+            //         $newGenre = [
+            //             "name" => $name
+            //         ];
 
-                    // Enregistrer le tableau de genre créer en session (tableau contenant des références enregistrer dans le stock)
+            //         // Enregistrer le tableau de genre créer en session (tableau contenant des références enregistrer dans le stock)
             
-                    $_SESSION['genre'][] = $newGenre;
+            //         $_SESSION['genre'][] = $newGenre;
 
-                    // Afficher une message à chaque ajout de genre
+            //         // Afficher une message à chaque ajout de genre
             
-                    $_SESSION['checkSuccess'] = "<div id = messAdd><p>Genre ajouté avec succès !</p></div>";
-                }
+            //         $_SESSION['checkSuccess'] = "<div id = messAdd><p>Genre ajouté avec succès !</p></div>";
+            //     }
 
-                header("Location:formulaire.php");
-                exit;  
-            }
+            //     header("Location:formulaire.php");
+            //     exit;  
+            // }
 
             $dao = new DAO();
 

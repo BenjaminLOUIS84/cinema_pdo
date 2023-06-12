@@ -12,7 +12,7 @@
 
 <div class="formulaire">
 
-    <form action = "FormulaireController.php" method = "post">
+    <form action = "#" method = "post">
 
         <p>
             <label>
