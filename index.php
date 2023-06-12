@@ -18,6 +18,9 @@
 
     if(isset($_POST['action'])){
 
+        
+        $titre = filter_input(INPUT_POST, "titre", FILTER_SANITIZE_STRING);//Supprime toute présence de caractères spéciaux et de toute balise HTML (Pas d'injection de code HTML possible)
+        
         switch($_POST['action']){
 
             case 'addMovie': $filmCtrl->addMovie($_POST); break;
