@@ -25,9 +25,9 @@
             WHERE f.id_realisateur = r.id_realisateur
             AND p.id_personne = r.id_personne
             
-            AND f.id_film = :id" ;                //Pour empécher le piratage on met la clé dans un opérateur de solution de portée
+            AND f.id_film = :id" ;                                       //Pour empécher le piratage on met la clé dans un opérateur de solution de portée 
 
-            $films = $dao->executerRequete($sql, [":id" => $idFilm]);
+            $films = $dao->executerRequete($sql, [":id" => $idFilm]);    //Faire une requête préparée
             
             ////////////////////////////////////////////////////////////Requête SQL2 DISTRIBUTION
         
@@ -70,23 +70,9 @@
             $sql1 = "INSERT INTO film(titre)
             VALUES (:titre)";
             
-            $titre = filter_input($array['titre'], FILTER_SANITIZE_FULL_SPECIAL_CHARS); //Mettre ce filtre à l'input pour éviter les injections SQL ou XSS
+            $titre = filter_input(INPUT_POST, "titre", FILTER_SANITIZE_FULL_SPECIAL_CHARS); //Mettre ce filtre à l'input pour éviter les injections SQL ou XSS
             
             $ajout = $dao->executerRequete($sql1, [":titre" => $titre]);
-            
-            // if(isset($_POST['addMovie'])){
-
-            //     $titre = filter_input(INPUT_POST , "titre", FILTER_SANITIZE_FULL_SPECIAL_CHARS); //Mettre ce filtre à l'input pour éviter les injections SQL ou XSS
-            //     //$titre = filter_input(INPUT_POST, "titre", FILTER_SANITIZE_STRING);//Supprime toute présence de caractères spéciaux et de toute balise HTML (Pas d'injection de code HTML possible)
-            //     $titre = $_POST['titre'];
-               
-            //     $sql1 ="INSERT INTO film(titre)                                 
-            //     VALUES (':titre');";
-
-            //     $addMovie = $dao->executerRequete($sql1, [":titre" =>$titre]);
-            // }
-
-            //$id_new_film = $dao->getBDD()->lastInsertId(); // Récupère l'ID auto incrémenté qui s'est créé lors de l'ajout du film. 
             
             require "views/movie/formulaireMovie.php";
            
