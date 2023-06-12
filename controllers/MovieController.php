@@ -65,13 +65,14 @@
         
         public function addMovie($array){
 
+            $titre = filter_input(INPUT_POST , "titre", FILTER_SANITIZE_FULL_SPECIAL_CHARS); //Mettre ce filtre l'input pour éviter les injections SQL ou XSS
+            
             $dao = new DAO();
 
-            // $sql ="INSERT INTO film(titre)                                 
-            // VALUES (:titre);"
-
-            // $titre = filter_input($array['id_film'], FILTER_SANITIZE_STRING);   //Mettre ce filtre l'input pour éviter les injections SQL ou XSS
-            // $ajout = $dao->executerRequete($sql, [":titre" =>$titre]);
+            $sql1 ="INSERT INTO film(titre)                                 
+            VALUES (:titre);";
+  
+            $addMovie = $dao->executerRequete($sql1, [":titre" =>$titre]);
             
             require "views/movie/formulaireMovie.php";
            
