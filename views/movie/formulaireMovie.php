@@ -58,16 +58,16 @@
 
         <!-- <div class="formAdd"> -->
 
-            <h3>REALISATEURS</h3>
+            <!-- <h3>REALISATEURS</h3> -->
 
             <p>
                 <label>                                                                     <!-- Lier les réalisateurs aux films Ajouter l'input pour saisir le réalisateur-->
-                    Noms <br>                                                          
-                    <input class="name" type = "text" name = "nom" required>          
+                    <!-- Noms <br>                                                           -->
+                    <!-- <input class="name" type = "text" name = "nom" required>           -->
                 </label>
                 <label>                                                                     
-                    Prénoms <br>                                                          
-                    <input class="name" type = "text" name = "prenom" required>          
+                    <!-- Prénoms <br>                                                           -->
+                    <!-- <input class="name" type = "text" name = "prenom" required>           -->
                 </label>
             </p>
         <!-- </div> -->
