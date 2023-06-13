@@ -11,8 +11,8 @@
         <?php
             
             $genre = $genres->fetch();
-            echo $genre["type"];
-            echo "<br>";
+            //echo $genre["type"];
+            //echo "<br>";
         ?>
     </div> 
 
