@@ -7,7 +7,7 @@
         public function findAllGenres(){                                            //Fonction pour afficher la liste des genres
 
             $dao = new DAO();
-            $sql = "SELECT g.genre_film, g.type FROM genre_film g";
+            $sql = "SELECT g.genre_film, g.type FROM genre g";
             $genres = $dao->executerRequete($sql);
             require "views/genre/listGenres.php"; 
         }
@@ -15,7 +15,7 @@
         public function detailGenre($idGenre){
 
             $dao = new DAO();
-            $sql ="SELECT g.type, f.titre, f.id_film FROM film f, classer c, genre_film g
+            $sql ="SELECT g.type, f.titre, f.id_film FROM film f, classer c, genre g
             WHERE c.genre_film = g.genre_film
             AND f.id_film = c.id_film
             AND g.genre_film = :id";
@@ -33,7 +33,7 @@
         public function addGenre(){
 
             $dao = new DAO();
-            $sql1 ="INSERT INTO genre_film(type)
+            $sql1 ="INSERT INTO genre(type)
             VALUES (:type)";
 
             $type = filter_input(INPUT_POST, "type", FILTER_SANITIZE_FULL_SPECIAL_CHARS);

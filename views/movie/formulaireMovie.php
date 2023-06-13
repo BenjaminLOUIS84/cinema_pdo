@@ -47,32 +47,28 @@
 
         <div class="formAdd">
 
-            <h3>Genre</h3>
+            <h3>GENRE</h3>
 
             <p>
                 <label>                                                                     <!-- Lier les réalisateurs aux films Ajouter l'input pour saisir le réalisateur-->
-                    Nom <br>                                                          
-                    <input class="name" type = "text" name = "nom" required>          
-                </label>
-                <label>                                                                     
-                    Prénom <br>                                                          
-                    <input class="name" type = "text" name = "prenom" required>          
+                    Référence <br>                                                          
+                    <input class="name" type = "int" name = "genref" required>          
                 </label>
             </p>
         </div>
 
         <div class="formAdd">
 
-            <h3>Réalisateur</h3>
+            <!-- <h3>Réalisateur</h3> -->
 
             <p>
                 <label>                                                                     <!-- Lier les réalisateurs aux films Ajouter l'input pour saisir le réalisateur-->
-                    Nom <br>                                                          
-                    <input class="name" type = "text" name = "nom" required>          
+                    <!-- Nom <br>                                                           -->
+                    <!-- <input class="name" type = "text" name = "nom" required>           -->
                 </label>
                 <label>                                                                     
-                    Prénom <br>                                                          
-                    <input class="name" type = "text" name = "prenom" required>          
+                    <!-- Prénom <br>                                                           -->
+                    <!-- <input class="name" type = "text" name = "prenom" required>           -->
                 </label>
             </p>
         </div>

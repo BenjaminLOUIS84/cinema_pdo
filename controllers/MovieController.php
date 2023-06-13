@@ -42,7 +42,7 @@
 
             ////////////////////////////////////////////////////////////Requête SQL3 GENRE
 
-            $sql3 ="SELECT g.type, g.genre_film FROM film f, classer c, genre_film g
+            $sql3 ="SELECT g.type, g.genre_film FROM film f, classer c, genre g
             WHERE c.genre_film = g.genre_film
             AND f.id_film = c.id_film
             AND f.id_film = :id" ;
@@ -91,13 +91,16 @@
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             //Ajouter la requête SQL pour ajouter un genre au film
 
-            //$sql2 = "INSERT INTO realisateur(prenom, nom)                                                                              
-            //VALUES (:prenom, :nom)";                                                                         //Les names des inputs doivent correspondre respectivement aux variables $titre, $annee_sortie,...
+            $sql2 = "INSERT INTO genre(genre_film, id_film)                                                                              
+            VALUES (:idGenre, :idFilm)";                                                                         //Les names des inputs doivent correspondre respectivement aux variables $titre, $annee_sortie,...
             
-            //$prenom = filter_input(INPUT_POST, "prenom", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
-            //$nom = filter_input(INPUT_POST, "nom", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
+            $genre_film = filter_input(INPUT_POST, "genref", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
+            
+            foreach ($genre_film as $genreActuel){
+            
+                $ajoutGenre = $dao->executerRequete($sql2, ["idGenre" => $genreActuel,"idFilm" => $dernierID]);
 
-            //$ajoutRealisateur = $dao->executerRequete($sql2, ["prenom" => $prenom,"nom" => $nom]);
+            }
 
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
