@@ -83,7 +83,7 @@
             $id_realisateur = filter_input(INPUT_POST, "id_realisateur", FILTER_VALIDATE_INT);                  // Récupération de l'id_realisateur pour la jonction
 
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            //Ajouter les requêtes SQL pour ajouter les films et les genres aux films
+            //Ajouter les requêtes SQL pour ajouter les réalisateurs et les genres aux films
             
             $dao = new DAO();                                                                                   // Requête SQL INSERT INTO table(...) VALUES (...) pour ajouter un film, celui ci comprendra un titre, une année de sortie,...(Ajouter les inputs en conséquence dans formulaireMovie)
 
@@ -103,13 +103,13 @@
             
                 $ajouterGenre = $dao->executerRequete($sql2, ["id_genre" => $id_genre,"id_film" => $id_new_film]);
             }
-           
-            $this->detailMovie($id_new_film);
 
             //Pour afficher un message Flash à chaque ajout inscrire cette variable dans chaque partie
 
             $_SESSION['flash_message'] = $titre." "."a été ajouté avec succès !";                               
             $this->findAllMovies();                                                                             // Etre redirigé sur la même page  
+        
+            //$this->detailMovie($id_new_film); Pour afficher directement le détail du nouveau film 
         }
     }
 ?>
