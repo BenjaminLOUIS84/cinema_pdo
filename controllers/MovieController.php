@@ -107,13 +107,13 @@
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             //Ajouter la requête SQL pour ajouter un réalisateur au film
 
-            //$sql2 = "INSERT INTO realisateur(prenom, nom)                                                                              
-            //VALUES (:prenom, :nom)";                                                                         //Les names des inputs doivent correspondre respectivement aux variables $titre, $annee_sortie,...
+            $sql2 = "INSERT INTO realisateur(prenom, nom)                                                                              
+            VALUES (:prenom, :nom)";                                                                         //Les names des inputs doivent correspondre respectivement aux variables $titre, $annee_sortie,...
             
-            //$prenom = filter_input(INPUT_POST, "prenom", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
-            //$nom = filter_input(INPUT_POST, "nom", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
+            $prenom = filter_input(INPUT_POST, "prenom", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
+            $nom = filter_input(INPUT_POST, "nom", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
 
-            //$ajoutRealisateur = $dao->executerRequete($sql2, ["prenom" => $prenom,"nom" => $nom]);
+            $ajoutRealisateur = $dao->executerRequete($sql2, ["prenom" => $prenom,"nom" => $nom]);
 
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

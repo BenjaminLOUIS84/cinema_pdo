@@ -41,12 +41,19 @@
         echo "Note: ".$film["note"]." /10<br>";
         echo "<br>";
         echo "SYNOPSIS<br>";
-        echo $film["synopsis"]."<br>";
-        echo "<br>";   
     ?>
 
+    <div class="synopsis">
+
+        <?php
+            echo $film["synopsis"]."<br>";
+            echo "<br>";   
+        ?>
+
+    </div>
+    
     <!-- ///////////////////////////////////////////////////////////////////AFFICHER LA DISTRIBUTION////////////////////////////////////////////////////////////////// -->
-    <div class="distribution">
+    
         <h2>DISTRIBUTION</h2>
 
         <?php
@@ -89,7 +96,7 @@
             }
         ?>
         
-    </div>    
+        
     <!-- ///////////////////////////////////////////////////////////////////AFFICHER LE GENRE////////////////////////////////////////////////////////////////// -->
     
     <div class="listG">
