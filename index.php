@@ -1,4 +1,5 @@
 <?php
+
     // Je demande l'accès aux fichiers physiques soit j'utilise un autoloader
 
     require_once "controllers/HomeController.php";
@@ -15,19 +16,7 @@
     $movieCtrl = new MovieController();
     $roleCtrl = new RoleController();
     
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    // if(isset($_POST['action'])){
- 
-    //     //$titre = filter_input(INPUT_POST, "titre", FILTER_SANITIZE_STRING);//Supprime toute présence de caractères spéciaux et de toute balise HTML (Pas d'injection de code HTML possible)
-    //     $titre = filter_input(INPUT_POST, "titre", FILTER_SANITIZE_FULL_SPECIAL_CHARS); //Mettre ce filtre à l'input pour éviter les injections SQL ou XSS
-           
-    //     switch($_POST['action']){
-
-    //         case 'addMovie': $movieCtrl->addMovie($_POST); break;
-    //     }
-    // }
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+    
     // L'index va intercepter la requête HTTP et va orienter vers le bon contrôleur et la bonne méthode
 
     // Exemple de requête HTTP: index.php?ctrl=action=listFilms
@@ -38,35 +27,42 @@
     
         switch($_GET['action']){
             
+            //Afficher les listes 
+
             case 'listMovies': $movieCtrl->findAllMovies(); break; 
             case 'listActors': $personCtrl->findAllActors(); break;
             case 'listGenres': $genreCtrl->findAllGenres(); break;
             case 'listRoles': $roleCtrl->findAllRoles(); break;
             case 'listDirectors': $personCtrl->findAllDirectors(); break;
         
+            //Afficher les détails 
+
             case 'detailMovie': $movieCtrl->detailMovie($_GET['idFilm']); break;
             case 'detailGenre': $genreCtrl->detailGenre($_GET['idGenre']); break;
             case 'detailActor': $personCtrl->detailActor($_GET['idActor']); break;
             case 'detailDirector': $personCtrl->detailDirector($_GET['idDirector']); break;
             case 'detailRole': $roleCtrl->detailRole($_GET['idRole']); break;
             
+            //Afficher d'autres détails
+
             case 'filmographyDirector': $personCtrl->filmographyDirector($_GET['idDirector']); break;  
             case 'filmographyActor': $personCtrl->filmographyActor($_GET['idActor']); break;  
             
-            case 'formulaireMovie': $movieCtrl->openFormulaire(); break;
+            //Modifier les données
 
+            case 'formulaireMovie': $movieCtrl->openFormulaireMovie(); break;
             case 'addMovie': $movieCtrl->addMovie($_POST); break;
-            
-            case 'ajouterFilm': $movieCtrl->ajouterFilm($_POST); break;
-
-            //case 'formulaireGenre': $genreCtrl->openFormulaire(); break;
-            
+            case 'formulaireGenre': $genreCtrl->openFormulaireGenre(); break;
+            case 'addGenre': $genreCtrl->addGenre($_POST); break;
 
         }
     }
 
     else{
-        $homeCtrl->homePage();                                         // Pour revenir sur la page d'accueil
+
+        // Pour revenir sur la page d'accueil
+
+        $homeCtrl->homePage();  
     }
 
 

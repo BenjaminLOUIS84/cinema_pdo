@@ -28,9 +28,9 @@
 
 ?>
 
-<!-- Bouton pour afficher un formulaire -->
+<!-- Bouton pour afficher la view formulaireMovie -->
 
-<a class ="Form" href="index.php?action=formulaireMovie">MODIFIER</a>
+<a class ="Form" href="index.php?action=formulaireMovie">AJOUTER</a>
 
 <?php
     $title = "Liste des Films";

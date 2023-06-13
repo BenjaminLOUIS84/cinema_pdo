@@ -3,7 +3,7 @@
     require_once "bdd/DAO.php";
 
     class PersonController {
-//////////////////////////////////////////////////////FONCTIONS POUR LES ACTEURS
+        //////////////////////////////////////////////////////FONCTIONS POUR LES ACTEURS
         public function findAllActors(){
 
             $dao = new DAO();
@@ -46,7 +46,7 @@
             require "views/actor/filmographyActor.php";
         }
 
-//////////////////////////////////////////////////////FONCTIONS POUR LES REALISATEURS
+        //////////////////////////////////////////////////////FONCTIONS POUR LES REALISATEURS
         public function findAllDirectors(){
 
             $dao = new DAO();

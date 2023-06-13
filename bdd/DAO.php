@@ -1,5 +1,4 @@
 <!-- DEFINITIONS
-
 DAO Data Accès Object Patron de conception utilisé dans les architectures logicielles objet, regroupe les accès aux données persistantes dans des classes à part plutôt que de les disperser.
 PDO PHP Data Object Pour dialoguer avec MySQL depuis PHP constitue une couche d'abstraction qui intervient entre l'application PHP et un système de gestion de base de données (SGDB) tel que MySQL, PostgreSQL ou MariaDB par exemple. 
 PDO::query — Prépare et Exécute une requête SQL sans marque substitutive
@@ -8,7 +7,6 @@ PDO::prepare — Prépare une requête à l'exécution et retourne un objet
 -->
 
 <?php
-
     class DAO{
 
         private $bdd;

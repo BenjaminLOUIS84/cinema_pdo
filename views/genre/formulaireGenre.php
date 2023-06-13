@@ -8,16 +8,16 @@
 
 <h1>Formulaire Genres</h1>
 
-<h2>Remplir ce formulaire pour modifier la base SQL</h2>
+<h2>Remplir ce formulaire pour ajouter un nouveau genre la base SQL</h2>
 
 <div class="formulaire">
 
-    <form action = "#" method = "post">
+    <form action = "index.php?action=addGenre" method = "post">
 
         <p>
             <label>
-                Ajouter un genre de film <br>
-                <input class="name" type = "text" name = "nameGenre" required>
+                Genre <br>
+                <input class="name" type = "text" name = "type" required>
             </label>
         </p> 
 
