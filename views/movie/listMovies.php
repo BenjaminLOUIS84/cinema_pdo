@@ -30,9 +30,9 @@
 
 <!-- Bouton pour afficher la view formulaireMovie -->
 
-<a class ="Form" href="index.php?action=formulaireMovie">AJOUTER</a>
+<a class ="form" href="index.php?action=formulaireMovie">AJOUTER</a>
 
-<?php
+<?php 
     $title = "Liste des Films";
     $content = ob_get_clean();  // Récupérer et afficher puis nettoyer la mémoire tampon
     require "views/template.php";

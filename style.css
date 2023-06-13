@@ -252,7 +252,7 @@ main {
     transition: 0.5s ease-in-out;
 }
 
-.Form {
+.form {
     color:whitesmoke;
     font-size: 1.5em;
     border-radius: 10px;
@@ -260,11 +260,14 @@ main {
     transition: 0.5s ease-in-out;
 }
 
-.Form:hover {
+.form:hover {
     padding: 10px;
     font-weight: lighter;
 }
 
+.formAdd {
+    color: gray;
+}
 
 /*//////////////////////////////////FOOTER/////////////////////////////////*/
 

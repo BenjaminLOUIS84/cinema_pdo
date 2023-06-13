@@ -59,20 +59,13 @@
             
             $dao = new DAO();                                                                                   //Lier les réalisateurs aux films grâce à une requête SQL
             
-            // $sql = "SELECT p.prenom, p.nom, p.id_personne
+            // $sql = "SELECT p.prenom, p.nom, r.id_realisateur
             // FROM personne p
             // INNER JOIN realisateur r
             // ON r.id_personne = p.id_personne
-            // AND p.id_personne = :id" ; 
+            // AND r.id_realisateur = :id" ; 
             
-            // $realisateurs = $dao->executerRequete($sql, [":id" => $idFilm]);
-
-            // while ($realisateur = $realisateur->fetch()){
-
-            //     echo $realisateur["prenom"]." ";
-            //     echo $realisateur["nom"]."<br>";
-                
-            // }
+           // $realisateurs = $dao->executerRequete($sql, [":id" => $idDirector]);
 
             require "views/movie/formulaireMovie.php"; 
         }
@@ -94,16 +87,31 @@
             "duree" => $duree, "synopsis" => $synopsis, "note" => $note]);                                      //Pour éxecuter les requêtes SQL et renvoyer les valeurs respectives  
 
             $dernierID = $dao->getBDD()->lastInsertID();
+
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            //Ajouter la requête SQL pour ajouter un genre au film
+
+            //$sql2 = "INSERT INTO realisateur(prenom, nom)                                                                              
+            //VALUES (:prenom, :nom)";                                                                         //Les names des inputs doivent correspondre respectivement aux variables $titre, $annee_sortie,...
+            
+            //$prenom = filter_input(INPUT_POST, "prenom", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
+            //$nom = filter_input(INPUT_POST, "nom", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
+
+            //$ajoutRealisateur = $dao->executerRequete($sql2, ["prenom" => $prenom,"nom" => $nom]);
+
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             //Ajouter la requête SQL pour ajouter un réalisateur au film
 
-            // $sql2 = "INSERT INTO realisateur(prenom, nom)                                                                              
-            // VALUES (:prenom, :nom)";                                                                         //Les names des inputs doivent correspondre respectivement aux variables $titre, $annee_sortie,...
+            //$sql2 = "INSERT INTO realisateur(prenom, nom)                                                                              
+            //VALUES (:prenom, :nom)";                                                                         //Les names des inputs doivent correspondre respectivement aux variables $titre, $annee_sortie,...
             
-            // $prenom = filter_input(INPUT_POST, "prenom", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
-            // $nom = filter_input(INPUT_POST, "nom", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
+            //$prenom = filter_input(INPUT_POST, "prenom", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
+            //$nom = filter_input(INPUT_POST, "nom", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
 
-            // $ajout = $dao->executerRequete($sql2, ["prenom" => $prenom,"nom" => $nom]);
+            //$ajoutRealisateur = $dao->executerRequete($sql2, ["prenom" => $prenom,"nom" => $nom]);
+
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             //Pour afficher un message Flash à chaque ajout inscrire cette variable dans chaque partie
