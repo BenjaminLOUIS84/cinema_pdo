@@ -94,7 +94,7 @@
             $sql2 = "INSERT INTO genre(id_genre, id_film)                                                                              
             VALUES (:idGenre, :idFilm)";                                                                         //Les names des inputs doivent correspondre respectivement aux variables $titre, $annee_sortie,...
             
-            $genre_film = filter_input(INPUT_POST, "genref", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
+            $genre_film = filter_var_array ($array, ['genref'], FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
             
             foreach ($genre_film as $genreActuel){
             
