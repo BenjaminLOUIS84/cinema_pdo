@@ -12,12 +12,13 @@
 
 <div class="formulaire">
 
+    <h3>GENRES</h3>
+
     <form action = "index.php?action=addGenre" method = "post">
 
         <p>
             <label>
-                Genre <br>
-                <input class="name" type = "text" name = "type" required>
+                <input class="nameGenre" type = "text" name = "type" required>
             </label>
         </p> 
 

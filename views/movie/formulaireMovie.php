@@ -12,66 +12,65 @@
 
 <div class="formulaire">
 
+    <h3>FILMS</h3>
+
     <form action = "index.php?action=addMovie" method = "post">                         <!-- Le formulaire doit déclencher l'action de la fonction addMovie() -->
 
         <p>
             <label>
-                Titre <br>                                                              <!-- input (champs de saisi de texte) -->
+                Titres <br>                                                              <!-- input (champs de saisi de texte) -->
                 <input class="name" type = "text" name = "titre" required>              <!-- Le name de cet input doit correspondre à la variable $titre -->
             </label>
-        </p> 
-        <p>
             <label>
-                Année de Sortie <br>                                                    <!-- input (champs de saisi de numérique ) -->
+                Années <br>                                                    <!-- input (champs de saisi de numérique ) -->
                 <input class="name" type = "int" name = "annee_sortie" required>        <!-- Le name de l'input doit correspondre à la variable $annee_sortie -->
             </label>
         </p> 
         <p>
             <label>
-                Durée <br>                                                          
+                Durées <br>                                                          
                 <input class="name" type = "int" name = "duree" required>          
             </label>
-        </p> 
-        <p>
             <label>
-                Synopsis <br>                                                          
-                <input class="name" type = "text" name = "synopsis" required>          
-            </label>
-        </p> 
-        <p>
-            <label>
-                Note <br>                                                          
+                Notes <br>                                                          
                 <input class="name" type = "int" name = "note" required>          
             </label>
         </p>
+        <p>
+            <label>
+                Synopsis <br>                                                          
+                <input class="nameSynopsis" type = "text" name = "synopsis" required>          
+            </label>
+        </p> 
+        
 
         <div class="formAdd">
 
-            <h3>GENRE</h3>
+            <h3>GENRES</h3>
 
             <p>
                 <label>                                                                     <!-- Lier les réalisateurs aux films Ajouter l'input pour saisir le réalisateur-->
-                    Référence <br>                                                          
-                    <input class="name" type = "int" name = "genref" required>          
+                    Références <br>                                                          
+                    <input class="nameGenre" type = "int" name = "genref" required>          
                 </label>
             </p>
         </div>
 
-        <div class="formAdd">
+        <!-- <div class="formAdd"> -->
 
-            <!-- <h3>Réalisateur</h3> -->
+            <h3>REALISATEURS</h3>
 
             <p>
                 <label>                                                                     <!-- Lier les réalisateurs aux films Ajouter l'input pour saisir le réalisateur-->
-                    <!-- Nom <br>                                                           -->
-                    <!-- <input class="name" type = "text" name = "nom" required>           -->
+                    Noms <br>                                                          
+                    <input class="name" type = "text" name = "nom" required>          
                 </label>
                 <label>                                                                     
-                    <!-- Prénom <br>                                                           -->
-                    <!-- <input class="name" type = "text" name = "prenom" required>           -->
+                    Prénoms <br>                                                          
+                    <input class="name" type = "text" name = "prenom" required>          
                 </label>
             </p>
-        </div>
+        <!-- </div> -->
 
         <p>                                                                             <!-- Bouton pour envoyer la demande au MovieController -->
             <input class="add" type = "submit" name = "addMovie" value = "AJOUTER">     <!-- Le name de l'input doit correspondre à la fonction  addMovie() -->

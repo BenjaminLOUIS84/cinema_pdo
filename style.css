@@ -246,6 +246,19 @@ main {
     border-radius: 10px;
 }
 
+.nameGenre {
+    color: gray;
+    border-radius: 10px;
+    width: 200px;
+}
+
+.nameSynopsis {
+    color: gray;
+    border-radius: 10px;
+    width: 570px;
+    /* height: 200px; */
+}
+
 .add {
     border-radius: 10px;
     margin-top: 20px;
@@ -258,7 +271,7 @@ main {
 }
 
 .form {
-    color:whitesmoke;
+    color: whitesmoke;
     font-size: 1.5em;
     border-radius: 10px;
     font-weight: lighter;
@@ -272,6 +285,9 @@ main {
 
 .formAdd {
     color: whitesmoke;
+    border: 1px solid gray;
+    border-radius: 10px;
+
 }
 
 /*//////////////////////////////////FOOTER/////////////////////////////////*/
