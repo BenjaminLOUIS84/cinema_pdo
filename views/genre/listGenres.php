@@ -13,7 +13,7 @@
         // echo $genre["type"]."<br>";
         ?>
 
-        <a class="detail" href="index.php?action=detailGenre&idGenre=<?=$genre['genre_film']?>">
+        <a class="detail" href="index.php?action=detailGenre&idGenre=<?=$genre['id_genre']?>">
             <h2><?=$genre["type"]?></h2>    
         </a>
 

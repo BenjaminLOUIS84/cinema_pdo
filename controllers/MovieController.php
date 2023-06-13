@@ -42,8 +42,8 @@
 
             ////////////////////////////////////////////////////////////Requête SQL3 GENRE
 
-            $sql3 ="SELECT g.type, g.genre_film FROM film f, classer c, genre g
-            WHERE c.genre_film = g.genre_film
+            $sql3 ="SELECT g.type, g.id_genre FROM film f, classer c, genre g
+            WHERE c.id_genre = g.id_genre
             AND f.id_film = c.id_film
             AND f.id_film = :id" ;
 
@@ -91,7 +91,7 @@
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             //Ajouter la requête SQL pour ajouter un genre au film
 
-            $sql2 = "INSERT INTO genre(genre_film, id_film)                                                                              
+            $sql2 = "INSERT INTO genre(id_genre, id_film)                                                                              
             VALUES (:idGenre, :idFilm)";                                                                         //Les names des inputs doivent correspondre respectivement aux variables $titre, $annee_sortie,...
             
             $genre_film = filter_input(INPUT_POST, "genref", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
