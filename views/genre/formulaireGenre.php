@@ -1,9 +1,6 @@
 <?php
     // Démarrer la temporisation de sortie
     ob_start();
-
-    //Pour parcourir le tableau de session de la page de FormulaireController on appel la fonction ici
-    //session_start();
 ?>
 
 <h1>Formulaire Genres</h1>
