@@ -9,21 +9,36 @@
 
 <div class="formulaire">
 
-    <h3>REALISATEURS</h3>
+    <div class="formAdd">
 
-    <!-- <form action = "index.php?action=addDirector" method = "post">
+        <h3>REALISATEURS</h3>
 
-        <p>
-            <label>
-                <input class="nameGenre" type = "text" name = "type" required>
-            </label>
-        </p> 
+        <form action = "index.php?action=addDirector" method = "post">
 
-        <p>
-            <input class="add" type = "submit" name = "addGenre" value = "AJOUTER">
-        </p>
+            <p>
+                <label>
+                    <input class="nameGenre" type = "text" name = "nom" required>
+                </label>
+                <label>
+                    <input class="nameGenre" type = "text" name = "prenom" required>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input class="nameGenre" type = "text" name = "sexe" required>
+                </label>
+                <label>
+                    <input class="nameGenre" type = "date" name = "date_naissance" required>
+                </label>
+            </p>
 
-    </form> -->
+            <p>
+                <input class="add" type = "submit" name = "addDirector" value = "AJOUTER">
+            </p>
+
+        </form>
+
+    </div>
 
 </div>
 

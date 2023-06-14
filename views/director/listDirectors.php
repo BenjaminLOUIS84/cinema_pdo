@@ -23,7 +23,7 @@
 
 <!-- Bouton pour afficher la view formulaireDirector -->
 
-<!-- <a class ="form" href="index.php?action=formulaireDirector">AJOUTER</a> -->
+<a class ="form" href="index.php?action=formulaireDirector">AJOUTER</a>
 
 
 <?php

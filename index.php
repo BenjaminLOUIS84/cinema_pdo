@@ -58,9 +58,9 @@
             case 'formulaireGenre': $genreCtrl->openFormulaireGenre(); break;
             case 'addGenre': $genreCtrl->addGenre($_POST); break;
 
-             //Ajouter nouveaux réalisateurs
-             //case 'formulaireDirector': $personCtrl->openFormulaireDirector(); break;
-             //case 'addDirector': $personCtrl->addDirector($_POST); break;
+            //Ajouter nouveaux réalisateurs
+            case 'formulaireDirector': $personCtrl->openFormulaireDirector(); break;
+            case 'addDirector': $personCtrl->addDirector($_POST); break;
         }
     }
 
