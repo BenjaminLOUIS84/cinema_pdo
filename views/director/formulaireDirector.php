@@ -36,6 +36,17 @@
                 </label>
             </p>
 
+            <!-- <h3>FONCTION</h3>
+
+            <select class="nameR" name = "id_realisateur" required> 
+                <option selected>Réalisateur</option>
+
+                <?php
+                echo "<option value =".$realisateur['id_realisateur']."></option>";   // La value permet de récupérer l'id_genre
+                ?>
+
+            </select>  -->
+
             <p>
                 <input class="add" type = "submit" name = "addDirector" value = "AJOUTER">
             </p>
