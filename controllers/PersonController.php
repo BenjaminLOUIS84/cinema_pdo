@@ -96,15 +96,13 @@
                                                                                        
             $dao = new DAO();
 
-            $sql = "SELECT p.prenom, p.nom, r.id_realisateur, p.id_personne
-            FROM personne p
-            INNER JOIN realisateur r
-            ON r.id_personne = p.id_personne" ; 
-            $realisateurs = $dao->executerRequete($sql);
+            $sql = "SELECT p.prenom, p.nom, p.id_personne
+            FROM personne p"; 
+            $personnes = $dao->executerRequete($sql);
 
             $sql2 = "SELECT r.id_personne, r.id_realisateur
-            FROM realisateur r ";            
-            $personnes = $dao->executerRequete($sql2);
+            FROM realisateur r";            
+            $realisateurs = $dao->executerRequete($sql2);
 
             require "views/director/formulaireDirector.php"; 
         }
@@ -115,23 +113,24 @@
             $prenom = filter_input(INPUT_POST, "prenom", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
             $sexe = filter_input(INPUT_POST, "sexe", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
             $date_naissance = filter_input(INPUT_POST, "date_naissance", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
-            //$id_personne = filter_input(INPUT_POST,"id_personne", FILTER_SANITIZE_FULL_SPECIAL_CHARS);              // FILTER VAR ARRAY POUR LA SELECTION MULTIPLE DES GENRES id_genre deviendra un array
-            //$id_realisateur = filter_input(INPUT_POST, "id_realisateur", FILTER_VALIDATE_INT);                  // Récupération de l'id_realisateur pour la jonction
+            
+            $id_personne = filter_input(INPUT_POST, "id_personne", FILTER_SANITIZE_FULL_SPECIAL_CHARS);              // FILTER VAR ARRAY POUR LA SELECTION MULTIPLE DES GENRES id_genre deviendra un array
+            $id_realisateur = filter_input(INPUT_POST, "id_realisateur", FILTER_VALIDATE_INT);                  // Récupération de l'id_realisateur pour la jonction
 
             $dao = new DAO();
 
-            $sql1 ="INSERT INTO personne(nom, prenom, sexe, date_naissance)
-            VALUES (:nom, :prenom, :sexe, :date_naissance)";
+            $sql1 ="INSERT INTO personne(nom, prenom, sexe, date_naissance, id_personne)
+            VALUES (:nom, :prenom, :sexe, :date_naissance, :id_personne)";
 
-            //$sql2 = "INSERT INTO realisateur(id_personne, id_realisateur)                                                                              
-            //VALUES (:id_personne, :id_realisateur)"; 
+            $sql2 = "INSERT INTO realisateur(id_personne, id_realisateur)                                                                              
+            VALUES (:id_personne, :id_realisateur)"; 
 
             $ajouterPersonne = $dao->executerRequete($sql1, ["nom" => $nom, "prenom" => $prenom,
-            "sexe" =>$sexe, "date_naissance" => $date_naissance]);
+            "sexe" =>$sexe, "date_naissance" => $date_naissance, "id_personne" => $id_personne]);
 
-            //$id_new_personne = $dao->getBDD()->lastInsertId();
+            $id_new_personne = $dao->getBDD()->lastInsertId();
 
-            //$ajouterRealisateur = $dao->executerRequete($sql2, ["id_personne" => $id_new_personne,"id_realisateur" => $id_realisateur]);
+            $ajouterRealisateur = $dao->executerRequete($sql2, ["id_personne" => $id_new_personne,"id_realisateur" => $id_realisateur]);
 
             $_SESSION['flash_message'] = $prenom." ".$nom." "."a été ajouté avec succès !";    //Pour afficher un message Flash à chaque ajout inscrire cette variable dans chaque partie
             $this->findAllDirectors();                     

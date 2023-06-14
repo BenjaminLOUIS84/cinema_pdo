@@ -42,7 +42,7 @@
                 <option selected>Réalisateur</option>
 
                 <?php
-                echo "<option value =".$realisateur['id_realisateur']."></option>";   // La value permet de récupérer l'id_genre
+                //echo "<option value =".$realisateur['id_realisateur']."></option>";   // La value permet de récupérer l'id_genre
                 ?>
 
             </select>  -->

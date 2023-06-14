@@ -62,11 +62,11 @@
             $sql = "SELECT p.prenom, p.nom, r.id_realisateur
             FROM personne p
             INNER JOIN realisateur r
-            ON r.id_personne = p.id_personne" ; 
+            ON r.id_personne = p.id_personne"; 
             $realisateurs = $dao->executerRequete($sql);
 
             $sql2 = "SELECT g.type, g.id_genre
-            FROM genre g ";            
+            FROM genre g";            
             $genres = $dao->executerRequete($sql2);
 
             require "views/movie/formulaireMovie.php"; 
