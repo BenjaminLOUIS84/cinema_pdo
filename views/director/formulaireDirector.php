@@ -17,18 +17,22 @@
 
             <p>
                 <label>
-                    <input class="nameGenre" type = "text" name = "nom" required>
+                    Nom <br>
+                    <input class="nameR" type = "text" name = "nom" required>
                 </label>
                 <label>
-                    <input class="nameGenre" type = "text" name = "prenom" required>
+                    Prénom <br>
+                    <input class="nameR" type = "text" name = "prenom" required>
                 </label>
             </p>
             <p>
                 <label>
-                    <input class="nameGenre" type = "text" name = "sexe" required>
+                    Sexe <br>
+                    <input class="nameR" type = "text" name = "sexe" required>
                 </label>
                 <label>
-                    <input class="nameGenre" type = "date" name = "date_naissance" required>
+                    Date de naissance <br>
+                    <input class="nameR" type = "date" name = "date_naissance" required>
                 </label>
             </p>
 

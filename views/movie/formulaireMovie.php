@@ -19,21 +19,21 @@
             <h3>FILMS</h3>
             <p>
                 <label>
-                    Titres <br>                                                                 <!-- input (champs de saisi de texte) -->
+                    Titre <br>                                                                 <!-- input (champs de saisi de texte) -->
                     <input class="name" type = "text" name = "titre" required>                  <!-- Le name de cet input doit correspondre à la variable $titre -->
                 </label>
                 <label>
-                    Années <br>                                                                 <!-- input (champs de saisi de numérique ) -->
+                    Année <br>                                                                 <!-- input (champs de saisi de numérique ) -->
                     <input class="name" type = "int" name = "annee_sortie" required>            <!-- Le name de l'input doit correspondre à la variable $annee_sortie -->
                 </label>
             </p> 
             <p>
                 <label>
-                    Durées <br>                                                          
+                    Durée <br>                                                          
                     <input class="name" type = "int" name = "duree" required>          
                 </label>
                 <label>
-                    Notes <br>                                                          
+                    Note <br>                                                          
                     <input class="name" type = "int" name = "note" required>          
                 </label>
             </p>
