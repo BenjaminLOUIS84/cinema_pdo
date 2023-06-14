@@ -48,13 +48,19 @@
             case 'filmographyDirector': $personCtrl->filmographyDirector($_GET['idDirector']); break;  
             case 'filmographyActor': $personCtrl->filmographyActor($_GET['idActor']); break;  
             
-            //Modifier les données
+            //Modifier les données de la base SQL grâce aux formulaires
 
+            //Ajouter nouveaux films
             case 'formulaireMovie': $movieCtrl->openFormulaireMovie(); break;
             case 'addMovie': $movieCtrl->addMovie($_POST); break;
+
+            //Ajouter nouveaux genres
             case 'formulaireGenre': $genreCtrl->openFormulaireGenre(); break;
             case 'addGenre': $genreCtrl->addGenre($_POST); break;
 
+             //Ajouter nouveaux réalisateurs
+             //case 'formulaireDirector': $personCtrl->openFormulaireDirector(); break;
+             //case 'addDirector': $personCtrl->addDirector($_POST); break;
         }
     }
 

@@ -22,7 +22,7 @@
 
 ?>
 
-<!-- Bouton pour afficher la view formulaireMovie -->
+<!-- Bouton pour afficher la view formulaireGenre -->
 
 <a class ="form" href="index.php?action=formulaireGenre">AJOUTER</a>
 

@@ -90,6 +90,31 @@
             require "views/director/filmographyDirector.php";
         }
 
+        ///////////////////////////////////////////////////////////FORMULAIRE
+
+        // public function openFormulaireDirector(){                                      //Fonction pour accéder au formulaire                                      
+        //     $dao = new DAO();
+        //     require "views/director/formulaireDirector.php"; 
+        // }
+
+        // public function addDirector($array){
+
+        //     $nom = filter_input(INPUT_POST, "nom", FILTER_SANITIZE_FULL_SPECIAL_CHARS);                     // Mettre les filtres aux inputs pour éviter les injections SQL ou XSS
+        //     $prenom = filter_input(INPUT_POST, "prenom", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
+        //     $sexe = filter_input(INPUT_POST, "sexe", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
+        //     $date_naissance = filter_input(INPUT_POST, "date_naissance", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
+
+        //     $dao = new DAO();
+
+        //     $sql1 ="INSERT INTO personne(nom, prenom, sexe, date_naissance)
+        //     VALUES (:nom, :prenom, :sexe, :date_naissance)";
+
+        //     $ajouterPersonne = $dao->executerRequete($sql1, ["nom" => $nom, "prenom" => $prenom,
+        //     "sexe" =>$sexe, "date_naissance" => $date_naissance]);
+
+        //     $_SESSION['flash_message'] = $prenom." ".$nom." "."a été ajouté avec succès !";    //Pour afficher un message Flash à chaque ajout inscrire cette variable dans chaque partie
+        //     $this->findAllDirectors();                     
+        // }
     }
 
 ?>
