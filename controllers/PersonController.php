@@ -148,7 +148,7 @@
             $id_realisateur = filter_input(INPUT_POST, "id_realisateur", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $supprimerRealisateur = $dao->executerRequete($sql1, ["id_realisateur" => $id_realisateur]);
 
-            $_SESSION['flash_message'] = "Supprimé avec succès !";                                              //Pour afficher un message Flash à chaque suppression inscrire cette variable dans chaque partie
+            $_SESSION['flash_message'] = "Supprimé avec succès !";                   //Pour afficher un message Flash à chaque suppression inscrire cette variable dans chaque partie
             $this->findAllDirectors();                                                                          //Etre redirigé sur la même page 
         }
     }

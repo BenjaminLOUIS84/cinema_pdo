@@ -51,9 +51,10 @@
                     <option selected>Réalisateurs</option> 
         
                     <?php
-                        while ($realisateur = $realisateurs->fetch()){                                              // Utilisaion d'un fetch() pour que les Genres soient dans la liste
+                        while ($realisateur = $realisateurs->fetch()){                          // Utilisaion d'un fetch() pour que les Genres soient dans la liste
 
-                            echo "<option value =".$realisateur['id_realisateur'].">".$realisateur['prenom']." ".$realisateur['nom']."</option>";   // La value permet de récupérer l'id_genre
+                            echo "<option value =".$realisateur['id_realisateur'].">
+                            ".$realisateur['prenom']." ".$realisateur['nom']."</option>";       // La value permet de récupérer l'id_realisateur et d'afficher le nom et le prénom d'un réalisateur
                         }           
                     ?>
                 </select>

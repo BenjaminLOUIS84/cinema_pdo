@@ -25,7 +25,8 @@
 
         ///////////////////////////////////////////////////////////FORMULAIRE
 
-        public function openFormulaireGenre(){                                      //Fonction pour accéder au formulaire                                      
+        public function openFormulaireGenre(){                                      //Fonction pour accéder au formulaire      
+                                               
             $dao = new DAO();
 
             $sql2 = "SELECT g.type, g.id_genre                                      
@@ -37,11 +38,13 @@
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         public function addGenre(){                                                 //Fonction pour ajouter un Genre
 
+            $type = filter_input(INPUT_POST, "type", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            
             $dao = new DAO();                                                       //Requête SQL
+            
             $sql1 ="INSERT INTO genre(type)                                         
             VALUES (:type)";                                                        //(:type) correspond au nom du genre inscrit par l'utilisateur
 
-            $type = filter_input(INPUT_POST, "type", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $ajout = $dao->executerRequete($sql1, ["type" => $type]);
 
             $_SESSION['flash_message'] = $type." "."a été ajouté avec succès !";    //Pour afficher un message Flash à chaque ajout inscrire cette variable dans chaque partie
@@ -53,7 +56,7 @@
             $dao = new DAO();                                                       //Requête SQL pour supprimer un genre de film
                                                                  
             $sql1 ="DELETE FROM genre                                        
-            WHERE id_genre=(:id_genre)";                                                //Condition pour éxecuter la suppression
+            WHERE id_genre=(:id_genre)";                                            //Condition pour éxecuter la suppression
 
 
             $id_genre = filter_input(INPUT_POST, "id_genre", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
