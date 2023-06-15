@@ -23,7 +23,7 @@
             <input class="add" type = "submit" name = "addGenre" value = "AJOUTER">     <!-- Bouton pour envoyer la demande -->
         </p>
 
-    </form>
+    </form><br>
 
     <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
@@ -34,7 +34,7 @@
             <option selected>Genre</option> 
                 
             <?php
-                while ($genre = $genres->fetch()){                                      // Utilisaion d'un fetch() pour que les Genres soient dans la liste
+                while ($genre = $genres->fetch()){                                              // Utilisaion d'un fetch() pour que les Genres soient dans la liste
 
                     echo "<option value =".$genre['id_genre'].">".$genre['type']."</option>";   // La value permet de récupérer l'id_genre
                 }

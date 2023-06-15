@@ -11,8 +11,8 @@
             $genres = $dao->executerRequete($sql);
             require "views/genre/listGenres.php"; 
         }
-
-        public function detailGenre($idGenre){
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        public function detailGenre($idGenre){                                      //Fonction pour afficher le détail des genres (La liste des films correspondant au genre)
 
             $dao = new DAO();
             $sql ="SELECT g.type, f.titre, f.id_film FROM film f, classer c, genre g
@@ -34,7 +34,7 @@
 
             require "views/genre/formulaireGenre.php"; 
         }
-
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         public function addGenre(){                                                 //Fonction pour ajouter un Genre
 
             $dao = new DAO();                                                       //Requête SQL
@@ -47,8 +47,8 @@
             $_SESSION['flash_message'] = $type." "."a été ajouté avec succès !";    //Pour afficher un message Flash à chaque ajout inscrire cette variable dans chaque partie
             $this->findAllGenres();                                                 //Etre redirigé sur la même page 
         }
-
-        public function delGenre(){
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        public function delGenre(){                                                 //Fonction pour supprimer un Genre
 
             $dao = new DAO();                                                       //Requête SQL pour supprimer un genre de film
             $sql1 ="DELETE FROM cinema.genre                                        
@@ -57,7 +57,7 @@
             $type = filter_input(INPUT_POST, "type", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $supprimer = $dao->executerRequete($sql1, ["type" => $type]);
 
-            $_SESSION['flash_message'] = $type." "."a été supprimé avec succès !";  //Pour afficher un message Flash à chaque ajout inscrire cette variable dans chaque partie
+            $_SESSION['flash_message'] = "Supprimé avec succès !";                  //Pour afficher un message Flash à chaque ajout inscrire cette variable dans chaque partie
             $this->findAllGenres();                                                 //Etre redirigé sur la même page 
         }
     }
