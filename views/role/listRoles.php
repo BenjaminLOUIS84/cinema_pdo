@@ -7,13 +7,13 @@
 
 <?php
 
-    while ($role = $roles->fetch()){
+    while ($acteur = $acteurs->fetch()){
         
         ?>
-        <a class="detail" href="index.php?action=detailRole&idRole=<?=$role['role_acteur']?>">
-            <h2><?=$role["firstname"]?></h2>
-            <h2><?=$role["name"]?></h2>
-            <h2><?=$role["pseudo"]?></h2>
+        <a class="detail" href="index.php?action=detailRole&idRole=<?=$acteur['role_acteur']?>">
+            <h2><?=$acteur["firstname"]?></h2>
+            <h2><?=$acteur["name"]?></h2>
+            <h2><?=$acteur["pseudo"]?></h2>
         </a>
         <?php
     }

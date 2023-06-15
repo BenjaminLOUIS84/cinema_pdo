@@ -8,7 +8,7 @@
 
             $dao = new DAO();
             $sql = "SELECT r.role_acteur, r.name, r.firstname, r.pseudo FROM role_acteur r";
-            $roles = $dao->executerRequete($sql);
+            $acteurs = $dao->executerRequete($sql);
             require "views/role/listRoles.php"; 
         }
 
@@ -21,7 +21,7 @@
             AND c.id_acteur = a.id_acteur
             AND f.id_film = c.id_film
             AND r.role_acteur = :id";
-            $roles = $dao->executerRequete($sql, [":id" => $idRole]);
+            $acteurs = $dao->executerRequete($sql, [":id" => $idRole]);
             require "views/role/detailRole.php"; 
         }
     }
