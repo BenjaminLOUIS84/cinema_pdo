@@ -5,7 +5,7 @@
 
 <h1>Formulaire Réalisateurs</h1>
 
-<h2>Remplir ce formulaire pour ajouter un nouveau réalisateur la base SQL</h2>
+<h2>Remplir ce formulaire pour supprimer ou ajouter un nouveau réalisateur la base SQL</h2>
 
 <div class="formulaire">
 
