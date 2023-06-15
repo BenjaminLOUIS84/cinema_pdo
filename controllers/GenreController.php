@@ -27,14 +27,19 @@
 
         public function openFormulaireGenre(){                                      //Fonction pour accéder au formulaire                                      
             $dao = new DAO();
+
+            $sql2 = "SELECT g.type, g.id_genre                                      
+            FROM genre g";            
+            $genres = $dao->executerRequete($sql2);                                 //Requête SQL SELECT pour Sélectionner les Genres à supprimer
+
             require "views/genre/formulaireGenre.php"; 
         }
 
-        public function addGenre(){
+        public function addGenre(){                                                 //Fonction pour ajouter un Genre
 
-            $dao = new DAO();
-            $sql1 ="INSERT INTO genre(type)
-            VALUES (:type)";
+            $dao = new DAO();                                                       //Requête SQL
+            $sql1 ="INSERT INTO genre(type)                                         
+            VALUES (:type)";                                                        //(:type) correspond au nom du genre inscrit par l'utilisateur
 
             $type = filter_input(INPUT_POST, "type", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $ajout = $dao->executerRequete($sql1, ["type" => $type]);
@@ -42,7 +47,19 @@
             $_SESSION['flash_message'] = $type." "."a été ajouté avec succès !";    //Pour afficher un message Flash à chaque ajout inscrire cette variable dans chaque partie
             $this->findAllGenres();                                                 //Etre redirigé sur la même page 
         }
-    }
 
-                                                                                    // INFOS    DELETE FROM cinema.genre_film WHERE  genre_film=19;  Requête SQL pour supprimer un genre de film
+        public function delGenre(){
+
+            $dao = new DAO();                                                       //Requête SQL pour supprimer un genre de film
+            $sql1 ="DELETE FROM cinema.genre                                        
+            WHERE type=(:type)";
+
+            $type = filter_input(INPUT_POST, "type", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $supprimer = $dao->executerRequete($sql1, ["type" => $type]);
+
+            $_SESSION['flash_message'] = $type." "."a été supprimé avec succès !";  //Pour afficher un message Flash à chaque ajout inscrire cette variable dans chaque partie
+            $this->findAllGenres();                                                 //Etre redirigé sur la même page 
+        }
+    }
+                              
 ?>

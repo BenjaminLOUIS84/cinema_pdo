@@ -24,7 +24,7 @@
 
 <!-- Bouton pour afficher la view formulaireGenre -->
 
-<a class ="form" href="index.php?action=formulaireGenre">AJOUTER</a>
+<a class ="form" href="index.php?action=formulaireGenre">FORMULAIRE</a>
 
 <?php
 

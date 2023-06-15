@@ -63,7 +63,7 @@
             FROM personne p
             INNER JOIN realisateur r
             ON r.id_personne = p.id_personne"; 
-            $realisateurs = $dao->executerRequete($sql);
+            $realisateurs = $dao->executerRequete($sql);                                                        ////Requête SQL SELECT pour Sélectionner les Genres et les réalisateurs
 
             $sql2 = "SELECT g.type, g.id_genre
             FROM genre g";            
