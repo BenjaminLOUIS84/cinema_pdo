@@ -142,7 +142,7 @@
 
             $dao = new DAO();                                                                                   //Requête SQL pour supprimer un réalisateur
             
-            $sql1 ="DELETE FROM realisateur                                       
+            $sql1 ="DELETE CASCADE FROM realisateur                                       
             WHERE id_realisateur=(:id_realisateur)";                                                            //Condition pour éxecuter la suppression
 
             $id_realisateur = filter_input(INPUT_POST, "id_realisateur", FILTER_SANITIZE_FULL_SPECIAL_CHARS);

@@ -53,7 +53,7 @@
             <!-- Lier les genres aux Films en créant une liste déroulante --> 
 
             <select class="nameGenre" name = "id_genre[]" required> 
-                <option selected>Genre</option> 
+                <option selected>Genres</option> 
                 
                 <?php
 
@@ -73,7 +73,7 @@
             <!-- Lier les réalisateurs aux films en créant aussi une liste déroulante-->
 
             <select class="nameRealisateur" type = "text" name = "id_realisateur" required>          
-                <option selected>Realisateur</option>
+                <option selected>Realisateurs</option>
             
                 <?php
 
