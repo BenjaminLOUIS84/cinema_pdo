@@ -8,11 +8,7 @@
 <?php
 
     while ($role = $roles->fetch()){
-
-        // echo $role["role_acteur"]." ";
-        // echo $role["nom"]." ";
-        // echo $role["prenom"]." ";
-        // echo $role["pseudo"]."<br>";
+        
         ?>
         <a class="detail" href="index.php?action=detailRole&idRole=<?=$role['role_acteur']?>">
             <h2><?=$role["firstname"]?></h2>

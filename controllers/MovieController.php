@@ -103,7 +103,7 @@
             $id_genres = filter_var_array($array['id_genre'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);              // FILTER VAR ARRAY POUR LA SELECTION MULTIPLE DES GENRES id_genre deviendra un array
 
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            //Ajouter les requêtes SQL pour ajouter les réalisateurs et les genres aux films
+            //Ajouter les requêtes SQL pour ajouter les réalisateurs les castings et les genres aux films
             
             $dao = new DAO();                                                                                   // Requête SQL INSERT INTO table(...) VALUES (...) pour ajouter un film, celui ci comprendra un titre, une année de sortie,...(Ajouter les inputs en conséquence dans formulaireMovie)
 

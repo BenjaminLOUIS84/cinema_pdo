@@ -103,9 +103,9 @@
             <select class="nameCasting" type = "text" name = "role_acteur" required>          
                 <option selected>Rôles</option>
                 <?php
-                    while ($role = $roles->fetch()){
-                       echo "<option value = ".$role['role_acteur'].">".$role['firstname']." ".$role['name']." ".$role['pseudo']."</option>";
-                   }
+                    while ($acteur = $acteurs->fetch()){
+                        echo "<option value = ".$acteur['role_acteur'].">".$acteur['firstname']." ".$acteur['name']." ".$acteur['pseudo']."</option>";
+                    }
                 ?>
             </select>
 
