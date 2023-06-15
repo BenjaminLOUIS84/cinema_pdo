@@ -50,8 +50,8 @@
                 <select class="nameR" type = "text" name = "id_realisateur" required>                                               
                     <option selected>Réalisateurs</option> 
         
-                    <?php
-                        while ($realisateur = $realisateurs->fetch()){                          // Utilisaion d'un fetch() pour que les Genres soient dans la liste
+                    <?php                                                                       // Avec le type <select><option> les réalisateurs sont dans une liste déroulante
+                        while ($realisateur = $realisateurs->fetch()){                          // Utilisaion d'un fetch() pour que les réalisateurs soient dans la liste
 
                             echo "<option value =".$realisateur['id_realisateur'].">
                             ".$realisateur['prenom']." ".$realisateur['nom']."</option>";       // La value permet de récupérer l'id_realisateur et d'afficher le nom et le prénom d'un réalisateur

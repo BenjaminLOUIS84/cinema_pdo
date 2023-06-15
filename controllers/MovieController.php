@@ -62,12 +62,28 @@
             $sql = "SELECT p.prenom, p.nom, r.id_realisateur
             FROM personne p
             INNER JOIN realisateur r
-            ON r.id_personne = p.id_personne"; 
+            ON r.id_personne = p.id_personne
+            ORDER BY nom ASC";
+
             $realisateurs = $dao->executerRequete($sql);                                                        ////Requête SQL SELECT pour Sélectionner les Genres et les réalisateurs
 
-            $sql2 = "SELECT g.type, g.id_genre
-            FROM genre g";            
-            $genres = $dao->executerRequete($sql2);
+            $sql2 = "SELECT p.nom, p.prenom, c.id_acteur, ra.name, ra.firstname, ra.pseudo, ra.role_acteur
+            FROM casting c
+            INNER JOIN acteur a
+            ON a.id_acteur = c.id_acteur
+            INNER JOIN personne p
+            ON p.id_personne = a.id_personne
+            INNER JOIN role_acteur ra
+            ON ra.role_acteur = c.role_acteur
+            ORDER BY ra.role_acteur";
+    
+            $acteurs = $dao->executerRequete($sql2);
+
+            $sql3 = "SELECT g.type, g.id_genre
+            FROM genre g
+            ORDER BY type ASC";
+
+            $genres = $dao->executerRequete($sql3);
 
             require "views/movie/formulaireMovie.php"; 
         }
@@ -79,8 +95,12 @@
             $duree = filter_input(INPUT_POST, "duree", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
             $synopsis = filter_input(INPUT_POST, "synopsis", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
             $note = filter_input(INPUT_POST, "note", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
-            $id_genres = filter_var_array($array['id_genre'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);              // FILTER VAR ARRAY POUR LA SELECTION MULTIPLE DES GENRES id_genre deviendra un array
             $id_realisateur = filter_input(INPUT_POST, "id_realisateur", FILTER_VALIDATE_INT);                  // Récupération de l'id_realisateur pour la jonction
+            
+            $id_acteur = filter_input(INPUT_POST, "id_acteur", FILTER_VALIDATE_INT);                            // Récupération de l'id_acteur pour la jonction
+            $role_acteur = filter_input(INPUT_POST, "role_acteur", FILTER_VALIDATE_INT);                        // Récupération de le role_acteur pour la jonction
+
+            $id_genres = filter_var_array($array['id_genre'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);              // FILTER VAR ARRAY POUR LA SELECTION MULTIPLE DES GENRES id_genre deviendra un array
 
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             //Ajouter les requêtes SQL pour ajouter les réalisateurs et les genres aux films
@@ -88,10 +108,12 @@
             $dao = new DAO();                                                                                   // Requête SQL INSERT INTO table(...) VALUES (...) pour ajouter un film, celui ci comprendra un titre, une année de sortie,...(Ajouter les inputs en conséquence dans formulaireMovie)
 
             $sql1 = "INSERT INTO film(titre, annee_sortie, duree, synopsis, note, id_realisateur)                                                                              
-            VALUES (:titre, :annee_sortie, :duree, :synopsis, :note, :id_realisateur)";                         // Les names des inputs doivent correspondre respectivement aux variables $titre, $annee_sortie,...
+            VALUES (:titre, :annee_sortie, :duree, :synopsis, :note, :id_realisateur)";                       
             
+            $sql2 = "INSERT INTO casting(id_acteur, role_acteur)                                                                              
+            VALUES (:id_acteur, :role_acteur)";                                                                 // Les names des inputs doivent correspondre respectivement aux variables $titre, $annee_sortie,...
 
-            $sql2 = "INSERT INTO classer(id_genre, id_film)                                                                              
+            $sql3 = "INSERT INTO classer(id_genre, id_film)                                                                              
             VALUES (:id_genre, :id_film)";                                                                      
             
             $ajouterFilm = $dao->executerRequete($sql1, ["titre" => $titre,"annee_sortie" => $annee_sortie,
@@ -99,12 +121,14 @@
 
             $id_new_film = $dao->getBDD()->lastInsertId();                                                      // Récupèrer l'ID auto incrémenté qui s'est créé lors de l'ajout du film
             
+            $ajouterCasting = $dao->executerRequete($sql2, ["id_acteur" => $id_acteur, "role_acteur" => $role_acteur]);
+
             foreach ($id_genres as $id_genre){
             
-                $ajouterGenre = $dao->executerRequete($sql2, ["id_genre" => $id_genre,"id_film" => $id_new_film]);
+                $ajouterGenre = $dao->executerRequete($sql3, ["id_genre" => $id_genre, "id_film" => $id_new_film]);
             }
 
-            //Pour afficher un message Flash à chaque ajout inscrire cette variable dans chaque partie
+            //Pour afficher un message Flash à chaque ajout de film inscrire cette variable dans chaque partie
 
             $_SESSION['flash_message'] = $titre." "."a été ajouté avec succès !";                               
             $this->findAllMovies();                                                                             // Etre redirigé sur la même page  

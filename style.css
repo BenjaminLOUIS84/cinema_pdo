@@ -280,7 +280,8 @@ h3 {
 }
 
 .nameGenre,
-.nameRealisateur {
+.nameRealisateur,
+.nameCasting {
     color: gray;
     width: 230px;
     height: 50px;

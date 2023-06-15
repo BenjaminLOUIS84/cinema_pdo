@@ -85,6 +85,31 @@
             </select>
 
         </div>
+
+        <div class="formAdd">
+
+            <h3>CASTING</h3>
+
+            <!-- Lier les castings aux films en créant aussi une liste déroulante des acteurs et une liste déroulante des rôles-->
+
+            <select class="nameCasting" type = "text" name = "id_acteur" required>          
+                <option selected>Acteurs</option>
+                <?php
+                    while ($acteur = $acteurs->fetch()){
+                        echo "<option value = ".$acteur['id_acteur'].">".$acteur['prenom']." ".$acteur['nom']."</option>";
+                    }
+                ?>
+            </select>
+            <select class="nameCasting" type = "text" name = "role_acteur" required>          
+                <option selected>Rôles</option>
+                <?php
+                    while ($role = $roles->fetch()){
+                       echo "<option value = ".$role['role_acteur'].">".$role['firstname']." ".$role['name']." ".$role['pseudo']."</option>";
+                   }
+                ?>
+            </select>
+
+        </div>
  
         <p>                                                                             <!-- Bouton pour envoyer la demande au MovieController -->
             <input class="add" type = "submit" name = "addMovie" value = "AJOUTER">     <!-- Le name de l'input doit correspondre à la fonction  addMovie() -->

@@ -30,7 +30,9 @@
             $dao = new DAO();
 
             $sql2 = "SELECT g.type, g.id_genre                                      
-            FROM genre g";            
+            FROM genre g
+            ORDER BY type ASC";
+                        
             $genres = $dao->executerRequete($sql2);                                 //Requête SQL SELECT pour Sélectionner les Genres à supprimer
 
             require "views/genre/formulaireGenre.php"; 

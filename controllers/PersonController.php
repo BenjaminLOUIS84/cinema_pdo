@@ -103,7 +103,8 @@
             $sql2 = "SELECT p.prenom, p.nom, r.id_realisateur
             FROM personne p
             INNER JOIN realisateur r
-            ON r.id_personne = p.id_personne"; 
+            ON r.id_personne = p.id_personne
+            ORDER BY nom ASC"; 
             $realisateurs = $dao->executerRequete($sql2);
 
             require "views/director/formulaireDirector.php"; 
