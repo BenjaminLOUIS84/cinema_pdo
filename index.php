@@ -58,12 +58,15 @@
             case 'formulaireGenre': $genreCtrl->openFormulaireGenre(); break;
             case 'addGenre': $genreCtrl->addGenre($_POST); break;
             
-            //Supprimer Genres
+            //Supprimer les Genres
             case 'delGenre': $genreCtrl->delGenre($_POST); break;
 
             //Ajouter nouveaux réalisateurs
             case 'formulaireDirector': $personCtrl->openFormulaireDirector(); break;
             case 'addDirector': $personCtrl->addDirector($_POST); break;
+
+            //Supprimer les Realisateurs
+            case 'delDirector': $personCtrl->delDirector($_POST); break;
         }
     }
 

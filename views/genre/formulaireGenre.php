@@ -30,13 +30,13 @@
     <form action = "index.php?action=delGenre" method = "post">                         
 
         <p>
-        <select class="nameGenre" name = "type" required>                                               
-            <option selected>Genre</option> 
+        <select class="nameGenre" name = "id_genre" required>                                               
+            <option selected>Genres</option> 
                 
             <?php
                 while ($genre = $genres->fetch()){                                              // Utilisaion d'un fetch() pour que les Genres soient dans la liste
 
-                    echo "<option value =".$genre['id_genre'].">".$genre['type']."</option>";   // La value permet de récupérer l'id_genre
+                    echo "<option value =".$genre['id_genre'].">".$genre['type']."</option>";   // La value permet de récupérer l'id_genre et d'afficher le nom du genre (type)
                 }
             ?>
         </select>

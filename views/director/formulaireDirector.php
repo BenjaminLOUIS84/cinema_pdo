@@ -36,19 +36,31 @@
                 </label>
             </p>
 
-            <!-- <h3>FONCTION</h3>
-
-            <select class="nameR" name = "id_realisateur" required> 
-                <option selected>Réalisateur</option>
-
-                <?php
-                //echo "<option value =".$realisateur['id_realisateur']."></option>";   // La value permet de récupérer l'id_genre
-                ?>
-
-            </select>  -->
-
             <p>
                 <input class="add" type = "submit" name = "addDirector" value = "AJOUTER">
+            </p>
+
+        </form><br>
+
+        <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+        <form action = "index.php?action=delDirector" method = "post">                         
+
+            <p>
+                <select class="nameR" type = "text" name = "id_realisateur" required>                                               
+                    <option selected>Réalisateurs</option> 
+        
+                    <?php
+                        while ($realisateur = $realisateurs->fetch()){                                              // Utilisaion d'un fetch() pour que les Genres soient dans la liste
+
+                            echo "<option value =".$realisateur['id_realisateur'].">".$realisateur['prenom']." ".$realisateur['nom']."</option>";   // La value permet de récupérer l'id_genre
+                        }           
+                    ?>
+                </select>
+            </p> 
+
+            <p>
+                <input class="add" type = "submit" name = "delDirector" value = "SUPPRIMER">           
             </p>
 
         </form>

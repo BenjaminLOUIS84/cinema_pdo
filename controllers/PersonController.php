@@ -100,8 +100,10 @@
             FROM personne p"; 
             $personnes = $dao->executerRequete($sql);                                                           // Pour sélectionner la personne et le réalisateur 
 
-            $sql2 = "SELECT r.id_personne, r.id_realisateur
-            FROM realisateur r";            
+            $sql2 = "SELECT p.prenom, p.nom, r.id_realisateur
+            FROM personne p
+            INNER JOIN realisateur r
+            ON r.id_personne = p.id_personne"; 
             $realisateurs = $dao->executerRequete($sql2);
 
             require "views/director/formulaireDirector.php"; 
@@ -134,6 +136,20 @@
 
             $_SESSION['flash_message'] = $prenom." ".$nom." "."a été ajouté avec succès !";                     //Pour afficher un message Flash à chaque ajout inscrire cette variable dans chaque partie
             $this->findAllDirectors();                     
+        }
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        public function delDirector(){                                                                          //Fonction pour supprimer un Réalisateur
+
+            $dao = new DAO();                                                                                   //Requête SQL pour supprimer un réalisateur
+            
+            $sql1 ="DELETE FROM realisateur                                       
+            WHERE id_realisateur=(:id_realisateur)";                                                            //Condition pour éxecuter la suppression
+
+            $id_realisateur = filter_input(INPUT_POST, "id_realisateur", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $supprimerRealisateur = $dao->executerRequete($sql1, ["id_realisateur" => $id_realisateur]);
+
+            $_SESSION['flash_message'] = "Supprimé avec succès !";                                              //Pour afficher un message Flash à chaque suppression inscrire cette variable dans chaque partie
+            $this->findAllDirectors();                                                                          //Etre redirigé sur la même page 
         }
     }
 

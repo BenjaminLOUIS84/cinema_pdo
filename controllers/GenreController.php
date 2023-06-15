@@ -53,11 +53,11 @@
             $dao = new DAO();                                                       //Requête SQL pour supprimer un genre de film
                                                                  
             $sql1 ="DELETE FROM genre                                        
-            WHERE id_genre=(:type)";                                                //Condition pour éxecuter la suppression
+            WHERE id_genre=(:id_genre)";                                                //Condition pour éxecuter la suppression
 
 
-            $type = filter_input(INPUT_POST, "type", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-            $supprimer = $dao->executerRequete($sql1, ["type" => $type]);
+            $id_genre = filter_input(INPUT_POST, "id_genre", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $supprimer = $dao->executerRequete($sql1, ["id_genre" => $id_genre]);
 
             $_SESSION['flash_message'] = "Supprimé avec succès !";                  //Pour afficher un message Flash à chaque ajout inscrire cette variable dans chaque partie
             $this->findAllGenres();                                                 //Etre redirigé sur la même page 
