@@ -96,9 +96,9 @@
                                                                                        
             $dao = new DAO();
 
-            $sql = "SELECT p.prenom, p.nom, p.id_personne
+            $sql1 = "SELECT p.prenom, p.nom, p.id_personne
             FROM personne p"; 
-            $personnes = $dao->executerRequete($sql);                                                           // Pour sélectionner la personne et le réalisateur 
+            $personnes = $dao->executerRequete($sql1);                                                           // Pour sélectionner la personne et le réalisateur 
 
             $sql2 = "SELECT p.prenom, p.nom, r.id_realisateur
             FROM personne p
