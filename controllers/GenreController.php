@@ -51,8 +51,10 @@
         public function delGenre(){                                                 //Fonction pour supprimer un Genre
 
             $dao = new DAO();                                                       //Requête SQL pour supprimer un genre de film
-            $sql1 ="DELETE FROM cinema.genre                                        
-            WHERE type=(:type)";
+                                                                 
+            $sql1 ="DELETE FROM genre                                        
+            WHERE id_genre=(:type)";                                                //Condition pour éxecuter la suppression
+
 
             $type = filter_input(INPUT_POST, "type", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $supprimer = $dao->executerRequete($sql1, ["type" => $type]);
@@ -60,6 +62,7 @@
             $_SESSION['flash_message'] = "Supprimé avec succès !";                  //Pour afficher un message Flash à chaque ajout inscrire cette variable dans chaque partie
             $this->findAllGenres();                                                 //Etre redirigé sur la même page 
         }
+
     }
                               
 ?>
