@@ -139,16 +139,22 @@
         }
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         public function delDirector(){                                                                          //Fonction pour supprimer un Réalisateur
+ 
+            $supprimerPersonne = $dao->executerRequete($sql1, ["id_personne" => $id_personne]);
+            $supprimerRealisateur = $dao->executerRequete($sql2, ["id_realisateur" => $id_realisateur]);
 
             $dao = new DAO();                                                                                   //Requête SQL pour supprimer un réalisateur
             
-            $sql1 ="DELETE CASCADE FROM realisateur                                       
+            $sql1 ="DELETE FROM personne                                       
+            WHERE id_personne=(:id_personne)";     
+
+            $sql2 ="DELETE FROM realisateur                                       
             WHERE id_realisateur=(:id_realisateur)";                                                            //Condition pour éxecuter la suppression
 
+            $id_personne = filter_input(INPUT_POST, "id_personne", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $id_realisateur = filter_input(INPUT_POST, "id_realisateur", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-            $supprimerRealisateur = $dao->executerRequete($sql1, ["id_realisateur" => $id_realisateur]);
-
-            $_SESSION['flash_message'] = "Supprimé avec succès !";                   //Pour afficher un message Flash à chaque suppression inscrire cette variable dans chaque partie
+           
+            $_SESSION['flash_message'] = "Supprimé avec succès !";                                              //Pour afficher un message Flash à chaque suppression inscrire cette variable dans chaque partie
             $this->findAllDirectors();                                                                          //Etre redirigé sur la même page 
         }
     }
