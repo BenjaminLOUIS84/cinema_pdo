@@ -100,6 +100,7 @@
                     }
                 ?>
             </select>
+            
             <select class="nameCasting" type = "text" name = "role_acteur" required>          
                 <option selected>Rôles</option>
                 <?php

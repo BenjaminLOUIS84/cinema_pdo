@@ -110,10 +110,13 @@
             $sql1 = "INSERT INTO film(titre, annee_sortie, duree, synopsis, note, id_realisateur)                                                                              
             VALUES (:titre, :annee_sortie, :duree, :synopsis, :note, :id_realisateur)";                       
             
-            $sql2 = "INSERT INTO casting(id_film, id_acteur, role_acteur)                                                                              
-            VALUES (:id_film, :id_acteur, :role_acteur)";                                                                 // Les names des inputs doivent correspondre respectivement aux variables $titre, $annee_sortie,...
+            $sql2 = "INSERT INTO acteur(id_film, id_acteur)                                                                              
+            VALUES (:id_film, :id_acteur)";                                                                    // Les names des inputs doivent correspondre respectivement aux variables $titre, $annee_sortie,...
 
-            $sql3 = "INSERT INTO classer(id_genre, id_film)                                                                              
+            $sql3 = "INSERT INTO role(id_film, role_acteur)                                                                              
+            VALUES (:id_film, :role_acteur)";     
+            
+            $sql4 = "INSERT INTO classer(id_genre, id_film)                                                                              
             VALUES (:id_genre, :id_film)";                                                                      
             
             $ajouterFilm = $dao->executerRequete($sql1, ["titre" => $titre,"annee_sortie" => $annee_sortie,
@@ -121,11 +124,12 @@
 
             $id_new_film = $dao->getBDD()->lastInsertId();                                                      // Récupèrer l'ID auto incrémenté qui s'est créé lors de l'ajout du film
             
-            $ajouterCasting = $dao->executerRequete($sql2, ["id_film" => $id_new_film, "id_acteur" => $id_acteur, "role_acteur" => $role_acteur]);
+            $ajouterActeur = $dao->executerRequete($sql2, ["id_film" => $id_new_film, "id_acteur" => $id_acteur]);  
+            $ajouterRole = $dao->executerRequete($sql3, ["id_film" => $id_new_film, "role_acteur" => $role_acteur]);
 
             foreach ($id_genres as $id_genre){
             
-                $ajouterGenre = $dao->executerRequete($sql3, ["id_genre" => $id_genre, "id_film" => $id_new_film]);
+                $ajouterGenre = $dao->executerRequete($sql4, ["id_genre" => $id_genre, "id_film" => $id_new_film]);
             }
 
             //Pour afficher un message Flash à chaque ajout de film inscrire cette variable dans chaque partie
