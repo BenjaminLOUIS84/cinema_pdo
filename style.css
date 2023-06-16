@@ -219,9 +219,9 @@ main {
 
 .role {
     display: flex;
-    align-items: baseline;
+    align-items: center;
+    flex-direction: column;
 }
-
 
 /*//////////////////////////////////GENRES/////////////////////////////////*/
 

@@ -54,41 +54,43 @@
     
     <!-- ///////////////////////////////////////////////////////////////////AFFICHER LA DISTRIBUTION////////////////////////////////////////////////////////////////// -->
     
-    <h2>DISTRIBUTION</h2>
+        <h2>DISTRIBUTION</h2>
 
-    <div class="role">
-        <?php
-            while ($acteur = $acteurs->fetch()){
-                ?>  
-                    <div class="role">
-                        <a class="detail" href="index.php?action=detailActor&idActor=<?=$acteur['id_acteur']?>">
-                            <h2><?=$acteur["prenom"]?></h2>
-                            <h2><?=$acteur["nom"]?></h2>    
-                        </a>
-                    </div> 
 
-                <?php           
-            }
-        ?>
+        <div class="role">
+        <!-- <div class="cast"> -->
+            <?php
+                while ($acteur = $acteurs->fetch()){
+                    ?>
+                    <a class="detail" href="index.php?action=detailActor&idActor=<?=$acteur['id_acteur']?>">
+                        <h2><?=$acteur["prenom"]?></h2>
+                        <h2><?=$acteur["nom"]?></h2>
+                    </a>
+                    
+                    <?php           
+                }
+            ?>
+        <!-- </div>  -->
 
         <p>joue le rôle de</p>
 
-        <?php
-            while ($role = $roles->fetch()){
-                ?>
-                    <div class="role">
-                        <a class="detail" href="index.php?action=detailRole&idRole=<?=$role['role_acteur']?>">
-                            <h2><?=$role["firstname"]?></h2>
-                            <h2><?=$role["name"]?></h2>
-                            <h2><?=$role["pseudo"]?></h2>
-                        </a>
-                    </div>
-
-                <?php
-            }
-        ?>
+        <!-- <div class="cast1"> -->
+            <?php
+                while ($role = $roles->fetch()){
+                    ?>
+                    <a class="detail" href="index.php?action=detailRole&idRole=<?=$role['role_acteur']?>">
+                        <h2><?=$role["firstname"]?></h2>
+                        <h2><?=$role["name"]?></h2>
+                        <h2><?=$role["pseudo"]?></h2>
+                    </a>
+                    <?php
+                }
+            ?>
+        <!-- </div> -->
     </div>
-      
+
+        
+        
     <!-- ///////////////////////////////////////////////////////////////////AFFICHER LE GENRE////////////////////////////////////////////////////////////////// -->
     
     <div class="listG">
