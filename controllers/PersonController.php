@@ -138,25 +138,29 @@
             $_SESSION['flash_message'] = $prenom." ".$nom." "."a été ajouté avec succès !";                     //Pour afficher un message Flash à chaque ajout inscrire cette variable dans chaque partie
             $this->findAllDirectors();                     
         }
+        
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        public function delDirector(){                                                                          //Fonction pour supprimer un Réalisateur
+        
+        public function delDirector(){                                                              //Fonction pour supprimer un Réalisateur
 
-            //$id_personne = filter_input(INPUT_POST, "id_personne", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            // var_dump($_POST);
+
             $id_realisateur = filter_input(INPUT_POST, "id_realisateur", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             
-            $dao = new DAO();                                                                                   //Requête SQL pour supprimer un réalisateur
+            $dao = new DAO();                                                                       //Requête SQL pour supprimer un réalisateur des Tables Réalisateur et Personne
             
-            //$sql1 ="DELETE FROM personne                                       
-            //WHERE id_personne=(:id_personne)";     
+            $sql1 ="DELETE FROM personne p                                     
+            WHERE p.id_personne = (
+            SELECT r.id_personne
+            FROM realisateur r
+            WHERE r.id_personne = p.id_personne
+            AND id_realisateur =(:id_realisateur)
+            )";                                                                                                 
+	    
+            $supprimerRealisateur = $dao->executerRequete($sql1, ["id_realisateur" => $id_realisateur]);
 
-            $sql2 ="DELETE FROM realisateur                                       
-            WHERE id_realisateur=(:id_realisateur)";                                                            //Condition pour éxecuter la suppression
-            
-            //$supprimerPersonne = $dao->executerRequete($sql1, ["id_personne" => $id_personne]);
-            $supprimerRealisateur = $dao->executerRequete($sql2, ["id_realisateur" => $id_realisateur]);
-
-            $_SESSION['flash_message'] = "Supprimé avec succès !";                                              //Pour afficher un message Flash à chaque suppression inscrire cette variable dans chaque partie
-            $this->findAllDirectors();                                                                          //Etre redirigé sur la même page 
+            $_SESSION['flash_message'] = "Supprimé avec succès !";                                  //Pour afficher un message Flash à chaque suppression inscrire cette variable dans chaque partie
+            $this->findAllDirectors();                                                              //Etre redirigé sur la même page 
         }
     }
 
