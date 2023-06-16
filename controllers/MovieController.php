@@ -79,11 +79,23 @@
     
             $acteurs = $dao->executerRequete($sql2);
 
-            $sql3 = "SELECT g.type, g.id_genre
+            $sql3 = "SELECT p.nom, p.prenom, c.id_acteur, ra.name, id_film, ra.firstname, ra.pseudo, ra.role_acteur
+            FROM casting c
+            INNER JOIN acteur a
+            ON a.id_acteur = c.id_acteur
+            INNER JOIN personne p
+            ON p.id_personne = a.id_personne
+            INNER JOIN role_acteur ra
+            ON ra.role_acteur = c.role_acteur
+            ORDER BY ra.role_acteur";
+    
+            $roles = $dao->executerRequete($sql3);
+
+            $sql4 = "SELECT g.type, g.id_genre
             FROM genre g
             ORDER BY type ASC";
 
-            $genres = $dao->executerRequete($sql3);
+            $genres = $dao->executerRequete($sql4);
 
             require "views/movie/formulaireMovie.php"; 
         }

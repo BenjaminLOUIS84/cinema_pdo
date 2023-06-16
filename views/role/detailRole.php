@@ -9,21 +9,31 @@
 
     <?php
 
-        $acteur = $acteurs->fetch();
+        // $acteur = $acteurs->fetch();
 
-        echo "<img src='./public/images/{$acteur['perso']}'>";
+        // echo "<img src='./public/images/{$acteur['perso']}'>";
+        // echo "<br>";
+        // echo $acteur["firstname"]." ";                                                   
+        // echo $acteur["name"]." ";
+        // echo $acteur["pseudo"]." ";
+
+        // echo "est interprété par <br>";
+
+        $role = $roles->fetch();
+
+        echo "<img src='./public/images/{$role['perso']}'>";
         echo "<br>";
-        echo $acteur["firstname"]." ";                                                   
-        echo $acteur["name"]." ";
-        echo $acteur["pseudo"]." ";
+        echo $role["firstname"]." ";                                                   
+        echo $role["name"]." ";
+        echo $role["pseudo"]." ";
 
         echo "est interprété par <br>";
     
     ?>
 
-    <a class="detail" href="index.php?action=detailActor&idActor=<?=$acteur['id_acteur']?>">
-        <h2><?=$acteur["prenom"]?></h2>  
-        <h2><?=$acteur["nom"]?></h2>    
+    <a class="detail" href="index.php?action=detailActor&idActor=<?=$role['id_acteur']?>">
+        <h2><?=$role["prenom"]?></h2>  
+        <h2><?=$role["nom"]?></h2>    
     </a>
 
     <?php
@@ -33,10 +43,9 @@
         //echo $acteur["titre"]."<br>";
     ?>
 
-    <a class="detail" href="index.php?action=detailMovie&idFilm=<?=$acteur['id_film']?>">
-        <h2><?=$acteur["titre"]?></h2>    
+    <a class="detail" href="index.php?action=detailMovie&idFilm=<?=$role['id_film']?>">
+        <h2><?=$role["titre"]?></h2>    
     </a> 
-
 
 
     <a class ="detail" href="index.php?action=listRoles">Retour</a>
