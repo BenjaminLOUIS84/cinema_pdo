@@ -66,16 +66,6 @@
             ORDER BY nom ASC";                                                                          
 
             $realisateurs = $dao->executerRequete($sql);                                                        // Requête SQL SELECT pour Sélectionner les réalisateurs et la variable pour éxecuter la requête                                                      
-
-            // $sql2 = "SELECT p.nom, p.prenom, c.id_acteur, ra.name, id_film, ra.firstname, ra.pseudo, ra.role_acteur
-            // FROM casting c
-            // INNER JOIN acteur a
-            // ON a.id_acteur = c.id_acteur
-            // INNER JOIN personne p
-            // ON p.id_personne = a.id_personne
-            // INNER JOIN role_acteur ra
-            // ON ra.role_acteur = c.role_acteur
-            // ORDER BY ra.role_acteur";
     
             $sql2 = "SELECT p.nom, p.prenom, a.id_acteur
             FROM personne p
@@ -84,16 +74,6 @@
             ORDER BY nom ASC";
             
             $acteurs = $dao->executerRequete($sql2);                                                            // Requête SQL SELECT pour Sélectionner les acteurs et la variable pour éxecuter la requête
-
-            // $sql3 = "SELECT p.nom, p.prenom, c.id_acteur, ra.name, id_film, ra.firstname, ra.pseudo, ra.role_acteur
-            // FROM casting c
-            // INNER JOIN acteur a
-            // ON a.id_acteur = c.id_acteur
-            // INNER JOIN personne p
-            // ON p.id_personne = a.id_personne
-            // INNER JOIN role_acteur ra
-            // ON ra.role_acteur = c.role_acteur
-            // ORDER BY ra.role_acteur";
 
             $sql3 = "SELECT ra.role_acteur, ra.firstname, ra.name, ra.pseudo
             FROM role_acteur ra
@@ -107,6 +87,18 @@
 
             $genres = $dao->executerRequete($sql4);                                                             // Requête SQL SELECT pour Sélectionner les genres et la variable pour éxecuter la requête
 
+            // $sql5 = "SELECT p.nom, p.prenom, c.id_acteur, ra.name, id_film, ra.firstname, ra.pseudo, ra.role_acteur
+            // FROM casting c
+            // INNER JOIN acteur a
+            // ON a.id_acteur = c.id_acteur
+            // INNER JOIN personne p
+            // ON p.id_personne = a.id_personne
+            // INNER JOIN role_acteur ra
+            // ON ra.role_acteur = c.role_acteur
+            // ORDER BY ra.role_acteur";
+
+            // $castings = $dao->executerRequete($sql5);
+            
             require "views/movie/formulaireMovie.php"; 
         }
 
@@ -122,6 +114,9 @@
             
             $id_acteur = filter_input(INPUT_POST, "id_acteur", FILTER_VALIDATE_INT);                            // Récupération de l'id_acteur pour la jonction
             $role_acteur = filter_input(INPUT_POST, "role_acteur", FILTER_VALIDATE_INT);                        // Récupération de le role_acteur pour la jonction
+            
+            //$id_acteurs = filter_var_array($array, ['id_acteur'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);                            // Récupération de l'id_acteur pour la jonction
+            //$role_acteurs = filter_var_array($array, ['role_acteur'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);                        // Récupération de le role_acteur pour la jonction
 
             $id_genres = filter_var_array($array['id_genre'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);              // FILTER VAR ARRAY POUR LA SELECTION MULTIPLE DES GENRES id_genre deviendra un array
 
@@ -133,24 +128,31 @@
             $sql1 = "INSERT INTO film(titre, annee_sortie, duree, synopsis, note, id_realisateur)                                                                              
             VALUES (:titre, :annee_sortie, :duree, :synopsis, :note, :id_realisateur)";                       
             
-            //$sql2 = "INSERT INTO casting(id_film, id_acteur, role_acteur)                                                                              
-            //VALUES (:id_film, :id_acteur, role_acteur)";                                                                    // Les names des inputs doivent correspondre respectivement aux variables $titre, $annee_sortie,...
+            $sql2 = "INSERT INTO classer(id_genre, id_film)                                                                              
+            VALUES (:id_genre, :id_film)";                                                                      // Requête nécessaire pour lier un genre à un film (Pour supprimer un film il faudra supprimer d'abord cette liaison)                                                                     
+            
+            //$sql3 = "INSERT INTO casting(id_film, id_acteur, role_acteur)                                                                              
+            //VALUES (:id_film, :id_acteur, role_acteur)";                                                        // Les names des inputs doivent correspondre respectivement aux variables $titre, $annee_sortie,...
 
-            $sql4 = "INSERT INTO classer(id_genre, id_film)                                                                              
-            VALUES (:id_genre, :id_film)";                                                                      
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            //Ajouter les variables pour autoriser l'éxecution des requêtes SQL
             
             $ajouterFilm = $dao->executerRequete($sql1, ["titre" => $titre,"annee_sortie" => $annee_sortie,
             "duree" => $duree, "synopsis" => $synopsis, "note" => $note, "id_realisateur" => $id_realisateur]); // Pour éxecuter les requêtes SQL et renvoyer les valeurs respectives  
 
-            $id_new_film = $dao->getBDD()->lastInsertId();                                                      // Récupèrer l'ID auto incrémenté qui s'est créé lors de l'ajout du film
-            
-            //$ajouterCasting = $dao->executerRequete($sql2, ["id_film" => $id_new_film, "id_acteur" => $id_acteur, "role_acteur" => $role_acteur]);  
+            $id_new_film = $dao->getBDD()->lastInsertId();                                                      // Récupèrer l'ID auto incrémenté qui s'est créé lors de l'ajout du film  
 
             foreach ($id_genres as $id_genre){
             
-                $ajouterGenre = $dao->executerRequete($sql4, ["id_genre" => $id_genre, "id_film" => $id_new_film]);
+                $ajouterGenre = $dao->executerRequete($sql2, ["id_genre" => $id_genre, "id_film" => $id_new_film]);
             }
 
+
+            // $id_new_film1 = $dao->getBDD()->lastInsertId();
+
+            // $ajouterCasting = $dao->executerRequete($sql3, ["id_film" => $id_new_film1, "id_acteur" => $id_acteur, "role_acteur" => $role_acteur]);
+
+            
             //Pour afficher un message Flash à chaque ajout de film inscrire cette variable dans chaque partie
 
             $_SESSION['flash_message'] = $titre." "."a été ajouté avec succès !";                               
