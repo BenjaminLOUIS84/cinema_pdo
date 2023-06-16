@@ -54,27 +54,9 @@
     
     <!-- ///////////////////////////////////////////////////////////////////AFFICHER LA DISTRIBUTION////////////////////////////////////////////////////////////////// -->
     
-        <h2>DISTRIBUTION</h2>
+    <h2>DISTRIBUTION</h2>
 
-        <?php
-            $acteur = $acteurs->fetch();
-        ?>
-
-        <div class="role">       
-            <a class="detail" href="index.php?action=detailActor&idActor=<?=$acteur['id_acteur']?>">
-                <h2><?=$acteur["prenom"]?></h2>
-                <h2><?=$acteur["nom"]?></h2>
-            </a>
-
-            <p>joue le rôle de</p>
-
-            <a class="detail" href="index.php?action=detailRole&idRole=<?=$acteur['role_acteur']?>">
-                <h2><?=$acteur["firstname"]?></h2>
-                <h2><?=$acteur["name"]?></h2>
-                <h2><?=$acteur["pseudo"]?></h2>
-            </a> 
-        </div>
-
+    <div class="role">
         <?php
             while ($acteur = $acteurs->fetch()){
                 ?>  
@@ -83,20 +65,30 @@
                             <h2><?=$acteur["prenom"]?></h2>
                             <h2><?=$acteur["nom"]?></h2>    
                         </a>
+                    </div> 
 
-                        <p>joue le rôle de</p>
+                <?php           
+            }
+        ?>
 
-                        <a class="detail" href="index.php?action=detailRole&idRole=<?=$acteur['role_acteur']?>">
-                            <h2><?=$acteur["firstname"]?></h2>
-                            <h2><?=$acteur["name"]?></h2>
-                            <h2><?=$acteur["pseudo"]?></h2>
+        <p>joue le rôle de</p>
+
+        <?php
+            while ($role = $roles->fetch()){
+                ?>
+                    <div class="role">
+                        <a class="detail" href="index.php?action=detailRole&idRole=<?=$role['role_acteur']?>">
+                            <h2><?=$role["firstname"]?></h2>
+                            <h2><?=$role["name"]?></h2>
+                            <h2><?=$role["pseudo"]?></h2>
                         </a>
                     </div>
+
                 <?php
             }
         ?>
-        
-        
+    </div>
+      
     <!-- ///////////////////////////////////////////////////////////////////AFFICHER LE GENRE////////////////////////////////////////////////////////////////// -->
     
     <div class="listG">

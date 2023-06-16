@@ -38,7 +38,8 @@
     
             AND c.id_film = :id" ;
     
-            $acteurs = $dao->executerRequete($sql2, [":id" => $idFilm]);
+            $acteurs = $dao->executerRequete($sql2, [":id" => $idFilm]);                                        // Cas particuliers Définir deux variables dans le controlleur pour autoriser l'utlisation de plusieurs variables dans la view détailMovie
+            $roles = $dao->executerRequete($sql2, [":id" => $idFilm]);
 
             ////////////////////////////////////////////////////////////Requête SQL3 GENRE
 
@@ -115,9 +116,6 @@
             $id_acteur = filter_input(INPUT_POST, "id_acteur", FILTER_VALIDATE_INT);                            // Récupération de l'id_acteur pour la jonction
             $role_acteur = filter_input(INPUT_POST, "role_acteur", FILTER_VALIDATE_INT);                        // Récupération de le role_acteur pour la jonction
             
-            //$id_acteurs = filter_var_array($array, ['id_acteur'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);                            // Récupération de l'id_acteur pour la jonction
-            //$role_acteurs = filter_var_array($array, ['role_acteur'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);                        // Récupération de le role_acteur pour la jonction
-
             $id_genres = filter_var_array($array['id_genre'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);              // FILTER VAR ARRAY POUR LA SELECTION MULTIPLE DES GENRES id_genre deviendra un array
 
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -131,8 +129,8 @@
             $sql2 = "INSERT INTO classer(id_genre, id_film)                                                                              
             VALUES (:id_genre, :id_film)";                                                                      // Requête nécessaire pour lier un genre à un film (Pour supprimer un film il faudra supprimer d'abord cette liaison)                                                                     
             
-            //$sql3 = "INSERT INTO casting(id_film, id_acteur, role_acteur)                                                                              
-            //VALUES (:id_film, :id_acteur, role_acteur)";                                                        // Les names des inputs doivent correspondre respectivement aux variables $titre, $annee_sortie,...
+            $sql3 = "INSERT INTO casting(id_film, id_acteur, role_acteur)                                                                              
+            VALUES (:id_film, :id_acteur, role_acteur)";                                                        // Les names des inputs doivent correspondre respectivement aux variables $titre, $annee_sortie,...
 
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             //Ajouter les variables pour autoriser l'éxecution des requêtes SQL
@@ -147,12 +145,8 @@
                 $ajouterGenre = $dao->executerRequete($sql2, ["id_genre" => $id_genre, "id_film" => $id_new_film]);
             }
 
+            $ajouterCasting = $dao->executerRequete($sql3, ["id_film" => $id_new_film, "id_acteur" => $id_acteur, "role_acteur" => $role_acteur]);
 
-            // $id_new_film1 = $dao->getBDD()->lastInsertId();
-
-            // $ajouterCasting = $dao->executerRequete($sql3, ["id_film" => $id_new_film1, "id_acteur" => $id_acteur, "role_acteur" => $role_acteur]);
-
-            
             //Pour afficher un message Flash à chaque ajout de film inscrire cette variable dans chaque partie
 
             $_SESSION['flash_message'] = $titre." "."a été ajouté avec succès !";                               
