@@ -78,7 +78,7 @@
 
             $dao = new DAO();
 
-            $sql1 ="INSERT INTO personne(nom, prenom, sexe, date_naissance, id_personne)                        
+            $sql1 = "INSERT INTO personne(nom, prenom, sexe, date_naissance, id_personne)                        
             VALUES (:nom, :prenom, :sexe, :date_naissance, :id_personne)";                                      // Pour ajouter des nouvelles personnes
 
             $sql2 = "INSERT INTO acteur(id_personne, id_acteur)                                                                              
@@ -120,6 +120,7 @@
         }
 
         //////////////////////////////////////////////////////FONCTIONS POUR LES REALISATEURS
+
         public function findAllDirectors(){
 
             $dao = new DAO();
@@ -195,7 +196,7 @@
 
             $dao = new DAO();
 
-            $sql1 ="INSERT INTO personne(nom, prenom, sexe, date_naissance, id_personne)                        
+            $sql1 = "INSERT INTO personne(nom, prenom, sexe, date_naissance, id_personne)                        
             VALUES (:nom, :prenom, :sexe, :date_naissance, :id_personne)";                                      // Pour ajouter des nouvelles personnes
 
             $sql2 = "INSERT INTO realisateur(id_personne, id_realisateur)                                                                              
