@@ -67,6 +67,13 @@
 
             //Supprimer les Realisateurs
             case 'delDirector': $personCtrl->delDirector($_POST); break;
+
+            //Ajouter nouveaux Acteurs
+            case 'formulaireActor': $personCtrl->openFormulaireActor(); break;
+            case 'addDActor': $personCtrl->addActor($_POST); break;
+
+            //Supprimer les Acteurs
+            case 'delActor': $personCtrl->delActor($_POST); break;
         }
     }
 
