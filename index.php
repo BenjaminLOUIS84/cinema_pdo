@@ -70,7 +70,7 @@
 
             //Ajouter nouveaux Acteurs
             case 'formulaireActor': $personCtrl->openFormulaireActor(); break;
-            case 'addDActor': $personCtrl->addActor($_POST); break;
+            case 'addActor': $personCtrl->addActor($_POST); break;
 
             //Supprimer les Acteurs
             case 'delActor': $personCtrl->delActor($_POST); break;

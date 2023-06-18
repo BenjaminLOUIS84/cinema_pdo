@@ -37,8 +37,12 @@
             </p>
 
             <p>
-                <input class="add" type = "submit" name = "addActor" value = "AJOUTER">
+                <input class="add" type = "submit" name = "addActor" value = "AJOUTER">  
             </p>
+
+            <!-- Le bouton AJOUTER va envoyer la demande POST pour exécuter le cas (case) "addActor" à l'index.php
+            l'index.php obtient la demande GET et va a ensuite exécuter le cas pour envoyer POST à PersonController,
+            PersonneController va exécuter la fonction addActor() qui contient les requêtes SQL pour ajouter une nouvelle personne avec le statut d'acteur -->
 
         </form><br>
 
