@@ -73,8 +73,8 @@
             $sexe = filter_input(INPUT_POST, "sexe", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
             $date_naissance = filter_input(INPUT_POST, "date_naissance", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
             
-            $id_personne = filter_input(INPUT_POST, "id_personne", FILTER_SANITIZE_FULL_SPECIAL_CHARS);         // FILTER VAR ARRAY POUR LA SELECTION MULTIPLE DES GENRES id_genre deviendra un array
-            $id_acteur = filter_input(INPUT_POST, "id_acteur", FILTER_VALIDATE_INT);                  // Récupération de l'id_acteur pour la jonction
+            $id_personne = filter_input(INPUT_POST, "id_personne", FILTER_SANITIZE_FULL_SPECIAL_CHARS);         
+            $id_acteur = filter_input(INPUT_POST, "id_acteur", FILTER_VALIDATE_INT);                            // Récupération de l'id_acteur pour la jonction
 
             $dao = new DAO();
 
@@ -82,14 +82,14 @@
             VALUES (:nom, :prenom, :sexe, :date_naissance, :id_personne)";                                      // Pour ajouter des nouvelles personnes
 
             $sql2 = "INSERT INTO acteur(id_personne, id_acteur)                                                                              
-            VALUES (:id_personne, :id_acteur)";                                                            // Pour attribuer le statut d'acteur aux nouvelles personnes
+            VALUES (:id_personne, :id_acteur)";                                                                 // Pour attribuer le statut d'acteur aux nouvelles personnes
 
             $ajouterPersonne = $dao->executerRequete($sql1, ["nom" => $nom, "prenom" => $prenom,
             "sexe" =>$sexe, "date_naissance" => $date_naissance, "id_personne" => $id_personne]);
 
             $id_new_personne = $dao->getBDD()->lastInsertId();
 
-            $ajouterActeur = $dao->executerRequete($sql2, ["id_personne" => $id_new_personne,"id_acteur" => $id_acteur]);
+            $ajouterActeur = $dao->executerRequete($sql2, ["id_personne" => $id_new_personne, "id_acteur" => $id_acteur]);
 
             $_SESSION['flash_message'] = $prenom." ".$nom." "."a été ajouté avec succès !";                     //Pour afficher un message Flash à chaque ajout inscrire cette variable dans chaque partie
             $this->findAllActors();                     
@@ -97,7 +97,7 @@
         
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         
-        public function delActor(){                                                              //Fonction pour supprimer un Acteur
+        public function delActor(){                                                                 //Fonction pour supprimer un Acteur
 
             // var_dump($_POST);
 
@@ -116,7 +116,7 @@
             $supprimerActeur = $dao->executerRequete($sql1, ["id_acteur" => $id_acteur]);
 
             $_SESSION['flash_message'] = "Supprimé avec succès !";                                  //Pour afficher un message Flash à chaque suppression inscrire cette variable dans chaque partie
-            $this->findAllActors();                                                              //Etre redirigé sur la même page 
+            $this->findAllActors();                                                                 //Etre redirigé sur la même page 
         }
 
         //////////////////////////////////////////////////////FONCTIONS POUR LES REALISATEURS
@@ -191,7 +191,7 @@
             $sexe = filter_input(INPUT_POST, "sexe", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
             $date_naissance = filter_input(INPUT_POST, "date_naissance", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
             
-            $id_personne = filter_input(INPUT_POST, "id_personne", FILTER_SANITIZE_FULL_SPECIAL_CHARS);         // FILTER VAR ARRAY POUR LA SELECTION MULTIPLE DES GENRES id_genre deviendra un array
+            $id_personne = filter_input(INPUT_POST, "id_personne", FILTER_SANITIZE_FULL_SPECIAL_CHARS);         
             $id_realisateur = filter_input(INPUT_POST, "id_realisateur", FILTER_VALIDATE_INT);                  // Récupération de l'id_realisateur pour la jonction
 
             $dao = new DAO();

@@ -51,10 +51,10 @@
                     <option selected>Acteurs</option> 
         
                     <?php                                                                       // Avec le type <select><option> les acteurs sont dans une liste déroulante
-                        while ($acteur = $acteurs->fetch()){                          // Utilisaion d'un fetch() pour que les acteurs soient dans la liste
+                        while ($acteur = $acteurs->fetch()){                                    // Utilisaion d'un fetch() pour que les acteurs soient dans la liste
 
                             echo "<option value =".$acteur['id_acteur'].">
-                            ".$acteur['prenom']." ".$acteur['nom']."</option>";       // La value permet de récupérer l'id_acteur et d'afficher le nom et le prénom d'un acteur
+                            ".$acteur['prenom']." ".$acteur['nom']."</option>";                 // La value permet de récupérer l'id_acteur et d'afficher le nom et le prénom d'un acteur
                         }           
                     ?>
                 </select>
