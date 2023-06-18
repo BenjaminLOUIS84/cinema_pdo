@@ -117,4 +117,4 @@
     $title = "Détail du Film";
     $content = ob_get_clean();  // Récupérer et afficher puis nettoyer la mémoire tampon
     require "views/template.php";
-?>
+?> 
