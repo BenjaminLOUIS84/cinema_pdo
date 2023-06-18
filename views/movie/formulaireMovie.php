@@ -96,7 +96,7 @@
                 <option selected>Acteurs</option>
                 <?php
                     while ($acteur = $acteurs->fetch()){
-                        echo "<option value = ".$acteur['id_acteur'].">".$acteur['prenom']." ".$acteur['nom']."</option>";
+                        echo "<option value = ".$acteur['id_acteur']." ".$acteur['id_film'].">".$acteur['prenom']." ".$acteur['nom']."</option>";
                     }
                 ?>
             </select>
@@ -105,7 +105,7 @@
                 <option selected>Rôles</option>
                 <?php
                     while ($role = $roles->fetch()){
-                        echo "<option value = ".$role['role_acteur'].">".$role['firstname']." ".$role['name']." ".$role['pseudo']."</option>";
+                        echo "<option value = ".$role['role_acteur']." ".$role['id_film'].">".$role['firstname']." ".$role['name']." ".$role['pseudo']."</option>";
                     }
                 ?>
             </select>

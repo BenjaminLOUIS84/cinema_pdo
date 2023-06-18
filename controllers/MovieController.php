@@ -87,18 +87,6 @@
             ORDER BY type ASC";
 
             $genres = $dao->executerRequete($sql4);                                                             // Requête SQL SELECT pour Sélectionner les genres et la variable pour éxecuter la requête
-
-            // $sql5 = "SELECT p.nom, p.prenom, c.id_acteur, ra.name, id_film, ra.firstname, ra.pseudo, ra.role_acteur
-            // FROM casting c
-            // INNER JOIN acteur a
-            // ON a.id_acteur = c.id_acteur
-            // INNER JOIN personne p
-            // ON p.id_personne = a.id_personne
-            // INNER JOIN role_acteur ra
-            // ON ra.role_acteur = c.role_acteur
-            // ORDER BY ra.role_acteur";
-
-            // $castings = $dao->executerRequete($sql5);
             
             require "views/movie/formulaireMovie.php"; 
         }
@@ -129,6 +117,7 @@
             $sql2 = "INSERT INTO classer(id_genre, id_film)                                                                              
             VALUES (:id_genre, :id_film)";                                                                      // Requête nécessaire pour lier un genre à un film (Pour supprimer un film il faudra supprimer d'abord cette liaison)                                                                     
             
+            ///////////////////////////////////////////////////////////////////AF
             $sql3 = "INSERT INTO casting(id_film, id_acteur, role_acteur)                                                                              
             VALUES (:id_film, :id_acteur, role_acteur)";                                                        // Les names des inputs doivent correspondre respectivement aux variables $titre, $annee_sortie,...
 
@@ -145,6 +134,7 @@
                 $ajouterGenre = $dao->executerRequete($sql2, ["id_genre" => $id_genre, "id_film" => $id_new_film]);
             }
 
+             ///////////////////////////////////////////////////////////////////AF
             $ajouterCasting = $dao->executerRequete($sql3, ["id_film" => $id_new_film, "id_acteur" => $id_acteur, "role_acteur" => $role_acteur]);
 
             //Pour afficher un message Flash à chaque ajout de film inscrire cette variable dans chaque partie
