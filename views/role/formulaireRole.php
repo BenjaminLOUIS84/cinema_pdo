@@ -18,17 +18,17 @@
             <p>
                 <label>
                     Prénom <br>
-                    <input class="nameGenre" type = "text" name = "firstname" required>          <!-- Champs de texte de saisie -->           
+                    <input class="nameGenre" type = "text" name = "firstname">          <!-- Champs de texte de saisie -->           
                 </label>
                 <label>
                     Nom <br>
-                    <input class="nameGenre" type = "text" name = "name" required>          <!-- Champs de texte de saisie -->           
+                    <input class="nameGenre" type = "text" name = "name">          <!-- Champs de texte de saisie -->           
                 </label>
             </p> 
             <p>
                 <label>
                     Pseudo <br>
-                    <input class="nameGenre" type = "text" name = "pseudo" required>          <!-- Champs de texte de saisie -->           
+                    <input class="nameGenre" type = "text" name = "pseudo">          <!-- Champs de texte de saisie -->           
                 </label>
             </p> 
 
