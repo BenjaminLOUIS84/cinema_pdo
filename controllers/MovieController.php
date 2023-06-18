@@ -88,6 +88,11 @@
 
             $genres = $dao->executerRequete($sql4);                                                             // Requête SQL SELECT pour Sélectionner les genres et la variable pour éxecuter la requête
             
+            // $sql5 = "SELECT c.id_film, c.id_acteur, c.role_acteur
+            // FROM casting c";
+
+            // $castings = $dao->executerRequete($sql5); 
+
             require "views/movie/formulaireMovie.php"; 
         }
 
@@ -103,6 +108,7 @@
             
             $id_acteur = filter_input(INPUT_POST, "id_acteur", FILTER_VALIDATE_INT);                            // Récupération de l'id_acteur pour la jonction
             $role_acteur = filter_input(INPUT_POST, "role_acteur", FILTER_VALIDATE_INT);                        // Récupération de le role_acteur pour la jonction
+            $id_film = filter_input(INPUT_POST, "id_film", FILTER_VALIDATE_INT);                        // Récupération de le role_acteur pour la jonction
             
             //$id_acteurs = filter_var_array($array, ['id_acteur'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);                            
             //$role_acteurs = filter_var_array($array, ['role_acteur'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);                        
@@ -147,7 +153,7 @@
 
                 //foreach ($role_acteurs as $role_acteur) {
 
-                    $ajouterCasting = $dao->executerRequete($sql3, ["id_film" => $id_new_film, "id_acteur" => $id_acteur, "role_acteur" => $role_acteur]);
+                    $ajouterCasting = $dao->executerRequete($sql3, ["id_film" => $id_film, "id_acteur" => $id_acteur, "role_acteur" => $role_acteur]);
                     //$ajouterCasting = $dao->executerRequete($sql3, ["id_film" => $id_new_film, "id_acteur" => $id_acteur]);
                 //}
             //}

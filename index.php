@@ -50,18 +50,18 @@
             
             //Modifier les données de la base SQL grâce aux formulaires
 
-            //Ajouter nouveaux films
+            //Ajouter nouveaux Films
             case 'formulaireMovie': $movieCtrl->openFormulaireMovie(); break;
             case 'addMovie': $movieCtrl->addMovie($_POST); break;
 
-            //Ajouter nouveaux genres
+            //Ajouter nouveaux Genres
             case 'formulaireGenre': $genreCtrl->openFormulaireGenre(); break;
             case 'addGenre': $genreCtrl->addGenre($_POST); break;
             
             //Supprimer les Genres
             case 'delGenre': $genreCtrl->delGenre($_POST); break;
 
-            //Ajouter nouveaux réalisateurs
+            //Ajouter nouveaux Réalisateurs
             case 'formulaireDirector': $personCtrl->openFormulaireDirector(); break;
             case 'addDirector': $personCtrl->addDirector($_POST); break;
 
