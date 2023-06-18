@@ -28,6 +28,54 @@
             
            require "views/role/detailRole.php"; 
         }
+
+         ///////////////////////////////////////////////////////////FORMULAIRE
+
+         public function openFormulaireRole(){                                      //Fonction pour accéder au formulaire      
+                                               
+            $dao = new DAO();
+
+            $sql2 = "SELECT ra.role_acteur, ra.firstname, ra.name, ra.pseudo                                      
+            FROM role_acteur ra
+            ORDER BY ra.name ASC";
+                        
+            $roles = $dao->executerRequete($sql2);                                 //Requête SQL SELECT pour Sélectionner les Rôles à supprimer
+
+            require "views/role/formulaireRole.php"; 
+        }
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        public function addRole(){                                                 //Fonction pour ajouter un Rôle
+
+            $firstname = filter_input(INPUT_POST, "firstname", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $pseudo = filter_input(INPUT_POST, "pseudo", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            
+            $dao = new DAO();                                                       //Requête SQL
+            
+            $sql1 ="INSERT INTO role_acteur(firstname, name, pseudo)                                         
+            VALUES (:firstname, :name, :pseudo)";                                   //(:firsname, :name, ...) correspondent au prénom, nom ...du rôle inscrit par l'utilisateur
+
+            $ajouterRole = $dao->executerRequete($sql1, ["firstname" => $firstname, "name" => $name, "pseudo" => $pseudo ]);
+
+            $_SESSION['flash_message'] = $firstname." ".$name." ".$pseudo." "."a été ajouté avec succès !";    
+            $this->findAllRoles();                                                 //Etre redirigé sur la même page 
+        }
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        public function delRole(){                                                  //Fonction pour supprimer un Rôle
+
+            $dao = new DAO();                                                       //Requête SQL pour supprimer un rôle
+                                                                 
+            $sql1 ="DELETE FROM role_acteur                                        
+            WHERE role_acteur=(:role_acteur)";                                      //Condition pour éxecuter la suppression
+
+
+            $role_acteur = filter_input(INPUT_POST, "role_acteur", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $supprimerRole = $dao->executerRequete($sql1, ["role_acteur" => $role_acteur]);
+
+            $_SESSION['flash_message'] = "Supprimé avec succès !";                  //Pour afficher un message Flash à chaque ajout inscrire cette variable dans chaque partie
+            $this->findAllRoles();                                                 //Etre redirigé sur la même page 
+        }
+
     }
 
 ?>

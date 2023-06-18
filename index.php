@@ -74,6 +74,13 @@
 
             //Supprimer les Acteurs
             case 'delActor': $personCtrl->delActor($_POST); break;
+
+            //Ajouter nouveaux Rôles
+            case 'formulaireRole': $roleCtrl->openFormulaireRole(); break;
+            case 'addRole': $roleCtrl->addRole($_POST); break;
+
+            //Supprimer les Rôles
+            case 'delRole': $roleCtrl->delRole($_POST); break;
         }
     }
 

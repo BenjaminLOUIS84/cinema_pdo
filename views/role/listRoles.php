@@ -20,6 +20,10 @@
 
 ?>
 
+<!-- Bouton pour afficher la view formulaireRole -->
+
+<a class ="form" href="index.php?action=formulaireRole">FORMULAIRE</a>
+
 <?php
     $title = "Liste des rôles";
     $content = ob_get_clean();  // Récupérer et afficher puis nettoyer la mémoire tampon
