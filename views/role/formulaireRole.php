@@ -15,18 +15,17 @@
 
         <p>
             <label>
+                Prénom <br>
                 <input class="nameGenre" type = "text" name = "firstname" required>          <!-- Champs de texte de saisie -->           
             </label>
-        </p> 
-
-        <p>
             <label>
+                Nom <br>
                 <input class="nameGenre" type = "text" name = "name" required>          <!-- Champs de texte de saisie -->           
             </label>
         </p> 
-
         <p>
             <label>
+                Pseudo <br>
                 <input class="nameGenre" type = "text" name = "pseudo" required>          <!-- Champs de texte de saisie -->           
             </label>
         </p> 
