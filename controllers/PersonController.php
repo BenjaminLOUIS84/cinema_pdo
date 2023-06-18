@@ -74,7 +74,7 @@
             $date_naissance = filter_input(INPUT_POST, "date_naissance", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
             
             $id_personne = filter_input(INPUT_POST, "id_personne", FILTER_SANITIZE_FULL_SPECIAL_CHARS);         // FILTER VAR ARRAY POUR LA SELECTION MULTIPLE DES GENRES id_genre deviendra un array
-            $id_acteur = filter_input(INPUT_POST, "id_acteur", FILTER_VALIDATE_INT);                  // Récupération de l'id_realisateur pour la jonction
+            $id_acteur = filter_input(INPUT_POST, "id_acteur", FILTER_VALIDATE_INT);                  // Récupération de l'id_acteur pour la jonction
 
             $dao = new DAO();
 
@@ -82,7 +82,7 @@
             VALUES (:nom, :prenom, :sexe, :date_naissance, :id_personne)";                                      // Pour ajouter des nouvelles personnes
 
             $sql2 = "INSERT INTO acteur(id_personne, id_acteur)                                                                              
-            VALUES (:id_personne, :id_acteur)";                                                            // Pour attribuer le statut de réalisateur aux nouvelles personnes
+            VALUES (:id_personne, :id_acteur)";                                                            // Pour attribuer le statut d'acteur aux nouvelles personnes
 
             $ajouterPersonne = $dao->executerRequete($sql1, ["nom" => $nom, "prenom" => $prenom,
             "sexe" =>$sexe, "date_naissance" => $date_naissance, "id_personne" => $id_personne]);
@@ -97,13 +97,13 @@
         
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         
-        public function delActor(){                                                              //Fonction pour supprimer un Réalisateur
+        public function delActor(){                                                              //Fonction pour supprimer un Acteur
 
             // var_dump($_POST);
 
             $id_acteur = filter_input(INPUT_POST, "id_acteur", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             
-            $dao = new DAO();                                                                       //Requête SQL pour supprimer un réalisateur des Tables Réalisateur et Personne
+            $dao = new DAO();                                                                       //Requête SQL pour supprimer un acteur des Tables Réalisateur et Personne
             
             $sql1 ="DELETE FROM personne p                                     
             WHERE p.id_personne = (
@@ -118,6 +118,7 @@
             $_SESSION['flash_message'] = "Supprimé avec succès !";                                  //Pour afficher un message Flash à chaque suppression inscrire cette variable dans chaque partie
             $this->findAllActors();                                                              //Etre redirigé sur la même page 
         }
+
         //////////////////////////////////////////////////////FONCTIONS POUR LES REALISATEURS
         public function findAllDirectors(){
 
