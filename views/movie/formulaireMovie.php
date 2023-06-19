@@ -118,6 +118,29 @@
 
     </form>
 
+    <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+    <form action = "index.php?action=delMovie" method = "post">                         
+
+        <p>
+            <select class="nameGenre" name = "id_film" required>                                               
+                <option selected>Films</option> 
+            
+            <?php
+                while ($movie = $movies->fetch()){                                              // Utilisaion d'un fetch() pour que les Genres soient dans la liste
+
+                    echo "<option value =".$movie['id_film'].">".$movie['titre']."</option>";   // La value permet de récupérer l'id_genre et d'afficher le nom du genre (type)
+                }
+            ?>
+            </select>
+        </p> 
+
+        <p>
+            <input class="add" type = "submit" name = "delMovie" value = "SUPPRIMER">           
+        </p>
+
+    </form>
+
 </div>
 
 <a class ="detail" href="index.php">Retour</a>

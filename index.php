@@ -54,6 +54,9 @@
             case 'formulaireMovie': $movieCtrl->openFormulaireMovie(); break;
             case 'addMovie': $movieCtrl->addMovie($_POST); break;
 
+            //Supprimer les Films
+            case 'delMovie': $movieCtrl->delMovie($_POST); break;
+
             //Ajouter nouveaux Genres
             case 'formulaireGenre': $genreCtrl->openFormulaireGenre(); break;
             case 'addGenre': $genreCtrl->addGenre($_POST); break;

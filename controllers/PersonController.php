@@ -101,6 +101,8 @@
 
             // var_dump($_POST);
 
+            //$nom = filter_input(INPUT_POST, "nom", FILTER_SANITIZE_FULL_SPECIAL_CHARS);                         // Mettre les filtres aux inputs pour éviter les injections SQL ou XSS
+            //$prenom = filter_input(INPUT_POST, "prenom", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
             $id_acteur = filter_input(INPUT_POST, "id_acteur", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             
             $dao = new DAO();                                                                       //Requête SQL pour supprimer un acteur des Tables Réalisateur et Personne
@@ -219,6 +221,8 @@
 
             // var_dump($_POST);
 
+            //$nom = filter_input(INPUT_POST, "nom", FILTER_SANITIZE_FULL_SPECIAL_CHARS);                         // Mettre les filtres aux inputs pour éviter les injections SQL ou XSS
+            //$prenom = filter_input(INPUT_POST, "prenom", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
             $id_realisateur = filter_input(INPUT_POST, "id_realisateur", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             
             $dao = new DAO();                                                                       //Requête SQL pour supprimer un réalisateur des Tables Réalisateur et Personne

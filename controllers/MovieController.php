@@ -88,6 +88,13 @@
 
             $genres = $dao->executerRequete($sql4);                                                             // Requête SQL SELECT pour Sélectionner les genres et la variable pour éxecuter la requête
             
+            $sql5 = "SELECT f.id_film, f.titre
+            FROM film f
+            ORDER BY titre ASC";
+
+            $movies = $dao->executerRequete($sql5);
+
+
             require "views/movie/formulaireMovie.php"; 
         }
 
@@ -142,5 +149,27 @@
         
             //$this->detailMovie($id_new_film); Pour afficher directement le détail du nouveau film 
         }
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        public function delMovie(){                                                 //Fonction pour supprimer un Film
+
+            $dao = new DAO();                                                       
+                                                                 
+            $sql1 ="DELETE FROM film f                                     
+            WHERE f.id_film = (
+            SELECT c.id_film
+            FROM casting c
+            WHERE c.id_film = f.id_film
+            AND id_film =(:id_film)
+            )";                                            //Condition pour éxecuter la suppression
+
+            $id_film = filter_input(INPUT_POST, "id_film", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $supprimerFilm = $dao->executerRequete($sql1, ["id_film" => $id_film]);
+
+            $_SESSION['flash_message'] = $titre." "."Supprimé avec succès !";                  //Pour afficher un message Flash à chaque ajout inscrire cette variable dans chaque partie
+            $this->findAllMovies();                                                 //Etre redirigé sur la même page 
+        }
+
+
     }
 ?>
