@@ -43,7 +43,9 @@
 
             require "views/role/formulaireRole.php"; 
         }
+
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        
         public function addRole(){                                                 //Fonction pour ajouter un Rôle
 
             $firstname = filter_input(INPUT_POST, "firstname", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
@@ -64,10 +66,6 @@
         }
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        //-- UPDATE `role_acteur` SET `perso`='role25.jpg' WHERE  `role_acteur`=33; SQL pour intégrer la photo du rôle
-
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         
         public function delRole(){                                                  //Fonction pour supprimer un Rôle
 
@@ -83,6 +81,35 @@
             $_SESSION['flash_message'] = "Supprimé avec succès !";                  //Pour afficher un message Flash à chaque ajout inscrire cette variable dans chaque partie
             $this->findAllRoles();                                                 //Etre redirigé sur la même page 
         }
+
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        //-- UPDATE `role_acteur` SET `perso`='role25.jpg' WHERE  `role_acteur`=33; SQL pour intégrer la photo du rôle
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public function updateRole(){                                               //Fonction pour modifier un Rôle
+
+            $dao = new DAO();                                                       //Requête SQL pour modifier le firstname, le name est le pseudo d'un rôle
+                                                                 
+            $sql1 ="UPDATE role_acteur
+
+            SET firstname = (:firstname) 
+            SET name = (:name)
+            SET pseudo = (:pseudo)
+            SET perso = role25.jpg 
+
+            WHERE  role_acteur= (:role_acteur)";                                    //Condition pour éxecuter la modification
+
+
+            $role_acteur = filter_input(INPUT_POST, "role_acteur", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $supprimerRole = $dao->executerRequete($sql1, ["role_acteur" => $role_acteur]);
+
+            $_SESSION['flash_message'] = "Modifié avec succès !";                   //Pour afficher un message Flash à chaque ajout inscrire cette variable dans chaque partie
+            $this->findAllRoles();                                                  //Etre redirigé sur la même page 
+        }
+
 
     }
 
