@@ -44,18 +44,30 @@
             require "views/role/formulaireRole.php"; 
         }
 
-        public function openUpdateRole($idRole){                                      //Fonction pour accéder au formulaire de modification      
+        public function openUpdateRole(){                                      //Fonction pour accéder au formulaire de modification      
                                                
             $dao = new DAO();
 
             $sql2 = "SELECT ra.role_acteur, ra.firstname, ra.name, ra.pseudo                                      
-            FROM role_acteur ra
-            WHERE ra.role_acteur = :id";
+            FROM role_acteur ra";
                                                     
-            $roles = $dao->executerRequete($sql2, [":id" => $idRole]);                            
+            $roles = $dao->executerRequete($sql2);                            
 
             require "views/role/updateRole.php"; 
         }
+
+        // public function openUpdateRole($idRole){                                      //Fonction pour accéder au formulaire de modification      
+                                               
+        //     $dao = new DAO();
+
+        //     $sql2 = "SELECT ra.role_acteur, ra.firstname, ra.name, ra.pseudo                                      
+        //     FROM role_acteur ra
+        //     WHERE ra.role_acteur = :id";
+                                                    
+        //     $roles = $dao->executerRequete($sql2, [":id" => $idRole]);                            
+
+        //     require "views/role/updateRole.php"; 
+        // }
 
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -108,6 +120,11 @@
             $firstname = filter_input(INPUT_POST, "firstname", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $pseudo = filter_input(INPUT_POST, "pseudo", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+            // $firstnames = filter_var_array($array, ['firstname'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            // $names = filter_var_array($array, ['name'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            // $pseudos = filter_var_array($array, ['pseudo'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
             $role = filter_input(INPUT_POST, "role", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $role_acteur = filter_input(INPUT_POST, "role_acteur", FILTER_VALIDATE_INT);
 

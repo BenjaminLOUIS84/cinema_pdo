@@ -39,7 +39,9 @@
 
     <!-- Bouton pour afficher la view updateRole -->
 
-    <a class ="form" href="index.php?action=updateRole&idRole">MODIFIER</a>
+    <a class ="form" href="index.php?action=updateRole">MODIFIER</a>
+
+    <!-- <a class ="form" href="index.php?action=updateRole&idRole">MODIFIER</a> -->
 
     <a class ="detail" href="index.php?action=listRoles">Retour</a>
 
