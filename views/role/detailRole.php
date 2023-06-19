@@ -9,16 +9,6 @@
 
     <?php
 
-        // $acteur = $acteurs->fetch();
-
-        // echo "<img src='./public/images/{$acteur['perso']}'>";
-        // echo "<br>";
-        // echo $acteur["firstname"]." ";                                                   
-        // echo $acteur["name"]." ";
-        // echo $acteur["pseudo"]." ";
-
-        // echo "est interprété par <br>";
-
         $role = $roles->fetch();
 
         echo "<img src='./public/images/{$role['perso']}'>";
@@ -49,7 +39,7 @@
 
     <!-- Bouton pour afficher la view updateRole -->
 
-    <a class ="form" href="index.php?action=updateRole">MODIFIER</a>
+    <a class ="form" href="index.php?action=updateRole&idRole">MODIFIER</a>
 
     <a class ="detail" href="index.php?action=listRoles">Retour</a>
 

@@ -44,15 +44,15 @@
             require "views/role/formulaireRole.php"; 
         }
 
-        public function openUpdateRole(){                                      //Fonction pour accéder au formulaire de modification      
+        public function openUpdateRole($idRole){                                      //Fonction pour accéder au formulaire de modification      
                                                
             $dao = new DAO();
 
             $sql2 = "SELECT ra.role_acteur, ra.firstname, ra.name, ra.pseudo                                      
             FROM role_acteur ra
-            ORDER BY ra.name ASC";
-                        
-            $roles = $dao->executerRequete($sql2);                            
+            WHERE ra.role_acteur = :id";
+                                                    
+            $roles = $dao->executerRequete($sql2, [":id" => $idRole]);                            
 
             require "views/role/updateRole.php"; 
         }
@@ -103,7 +103,7 @@
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public function updateRole(){                                               //Fonction pour modifier un Rôle
+        public function modifRole(){                                               //Fonction pour modifier un Rôle
 
             $firstname = filter_input(INPUT_POST, "firstname", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
@@ -114,7 +114,7 @@
             $dao = new DAO();                                                       //Requête SQL pour modifier le firstname, le name est le pseudo d'un rôle
                                                                  
             $sql1 ="UPDATE role_acteur
-
+ 
             SET firstname = (:firstname) 
             SET name = (:name)
             SET pseudo = (:pseudo)
