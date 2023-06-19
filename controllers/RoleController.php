@@ -53,6 +53,7 @@
             FROM role_acteur ra
             INNER JOIN casting c
             ON ra.role_acteur = c.role_acteur";
+            
                                                     
             $roles = $dao->executerRequete($sql2);                            
 
