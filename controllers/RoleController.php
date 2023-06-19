@@ -35,9 +35,10 @@
                                                
             $dao = new DAO();
 
-            $sql2 = "SELECT ra.role_acteur, ra.firstname, ra.name, ra.pseudo                                      
+            $sql2 = "SELECT c. role_acteur, ra.role_acteur, ra.firstname, ra.name, ra.pseudo                                      
             FROM role_acteur ra
-            ORDER BY ra.name ASC";
+            INNER JOIN casting c
+            ON ra.role_acteur = c.role_acteur";
                         
             $roles = $dao->executerRequete($sql2);                               
 
@@ -48,8 +49,10 @@
                                                
             $dao = new DAO();
 
-            $sql2 = "SELECT ra.role_acteur, ra.firstname, ra.name, ra.pseudo                                      
-            FROM role_acteur ra";
+            $sql2 = "SELECT c. role_acteur, ra.role_acteur, ra.firstname, ra.name, ra.pseudo                                      
+            FROM role_acteur ra
+            INNER JOIN casting c
+            ON ra.role_acteur = c.role_acteur";
                                                     
             $roles = $dao->executerRequete($sql2);                            
 
