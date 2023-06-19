@@ -11,37 +11,71 @@
 
     <div class="formAdd">
             
-        <h3>ROLES</h3>
+            <h3>ROLES</h3>
+    
+            <form action = "index.php?action=modifRole" method = "post">                               <!-- Pour modifier un nouveau Rôle -->
+    
+                <?php
+                    $role = $roles->fetch()                                                             // Utilisaion d'un fetch() pour que les inputs prennent la valeur du rôle à modifer
+                ?>
+    
+                <p> 
+                    <label>
+                        Prénom <br>                                                                                 <!-- Champs de texte de saisie (value ou placeholder pour afficher le prénom à modifier) -->
+                        <input class="nameGenre" type = "text" name = "firstname" value = "<?=$role["firstname"]?>"> 
+                    </label>
+                    <label>
+                        Nom <br>
+                        <input class="nameGenre" type = "text" name = "name" value = "<?=$role["name"]?>">          <!-- Champs de texte de saisie -->           
+                    </label>
+                </p> 
+                <p>
+                    <label>
+                        Pseudo <br>
+                        <input class="nameGenre" type = "text" name = "pseudo" value = "<?=$role["pseudo"]?>">      <!-- Champs de texte de saisie -->           
+                    </label>
+                </p> 
+    
+                <p>
+                    <input class="add" type = "submit" name = "modifRole" value = "MODIFIER">          <!-- Bouton pour envoyer la demande -->
+                </p>
+    
+            </form><br>
+    </div>      
 
-        <form action = "index.php?action=modifRole" method = "post">                               <!-- Pour modifier un nouveau Rôle -->
+    <!-- <div class="formAdd"> -->
+            
+        <!-- <h3>ROLES</h3> -->
+
+        <!-- <form action = "index.php?action=modifRole" method = "post">                               Pour modifier un nouveau Rôle -->
 
             <?php
-                $role = $roles->fetch()                                                  // Utilisaion d'un fetch() pour que les inputs prennent la valeur du rôle à modifer
+               // $role = $roles->fetch()                                                  // Utilisaion d'un fetch() pour que les inputs prennent la valeur du rôle à modifer
             ?>
 
             <p> 
-                <label>
-                    Prénom <br>                                                                                 <!-- Champs de texte de saisie (value ou placeholder pour afficher le prénom à modifier) -->
-                    <input class="nameGenre" type = "text" name = "firstname" value = "<?=$role["firstname"]?>">                    
-                </label>
-                <label>
-                    Nom <br>
-                    <input class="nameGenre" type = "text" name = "name" value = "<?=$role["name"]?>">          <!-- Champs de texte de saisie -->           
-                </label>
+                <!-- <label> -->
+                    <!-- Prénom <br>                                                                                 Champs de texte de saisie (value ou placeholder pour afficher le prénom à modifier) -->
+                    <!-- <input class="nameGenre" type = "text" name = "firstname" value = "<?=$role["firstname"]?>">  -->
+                <!-- </label> -->
+                <!-- <label> -->
+                    <!-- Nom <br> -->
+                    <!-- <input class="nameGenre" type = "text" name = "name" value = "<?=$role["name"]?>">          Champs de texte de saisie            -->
+                <!-- </label> -->
             </p> 
             <p>
-                <label>
-                    Pseudo <br>
-                    <input class="nameGenre" type = "text" name = "pseudo" value = "<?=$role["pseudo"]?>">      <!-- Champs de texte de saisie -->           
-                </label>
+                <!-- <label> -->
+                    <!-- Pseudo <br> -->
+                    <!-- <input class="nameGenre" type = "text" name = "pseudo" value = "<?=$role["pseudo"]?>">      Champs de texte de saisie            -->
+                <!-- </label> -->
             </p> 
 
             <p>
-                <input class="add" type = "submit" name = "modifRole" value = "MODIFIER">          <!-- Bouton pour envoyer la demande -->
+                <!-- <input class="add" type = "submit" name = "modifRole" value = "MODIFIER">          Bouton pour envoyer la demande -->
             </p>
 
-        </form><br>
-    </div>      
+        <!-- </form><br> -->
+    <!-- </div>       -->
 
 </div>
 
