@@ -66,7 +66,6 @@
                         <h2><?=$acteur["prenom"]?></h2>
                         <h2><?=$acteur["nom"]?></h2>
                     </a>
-                    
                     <?php           
                 }
             ?>

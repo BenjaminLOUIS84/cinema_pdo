@@ -133,14 +133,14 @@
 
             $dao = new DAO();                                                       //Requête SQL pour modifier le firstname, le name est le pseudo d'un rôle
                                                                  
-            $sql1 ="UPDATE role_acteur
+            $sql1 = "UPDATE role_acteur
  
             SET firstname = (:firstname) 
             SET name = (:name)
             SET pseudo = (:pseudo)
             --SET perso = role25.jpg 
 
-            WHERE  role_acteur= (:role_acteur)";                                    //Condition pour éxecuter la modification
+            WHERE  role_acteur = (:role_acteur)";                                    //Condition pour éxecuter la modification
 
             $modifierRole = $dao->executerRequete($sql1, ["role_acteur" => $role_acteur, "firstname" => $firstname, "name" => $name, "pseudo" => $pseudo]);
 

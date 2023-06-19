@@ -29,6 +29,7 @@
                         <input class="nameGenre" type = "text" name = "name" value = "<?=$role["name"]?>">          <!-- Champs de texte de saisie -->           
                     </label>
                 </p> 
+                
                 <p>
                     <label>
                         Pseudo <br>
