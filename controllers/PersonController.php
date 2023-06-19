@@ -214,14 +214,18 @@
             $_SESSION['flash_message'] = $prenom." ".$nom." "."a été ajouté avec succès !";                     //Pour afficher un message Flash à chaque ajout inscrire cette variable dans chaque partie
             $this->findAllDirectors();                     
         }
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         
+        //-- UPDATE `personne` SET `portrait`='realisateur12.jpg' WHERE  `id_personne`=80; SQL pour intégrer la photo d'une personne
+            
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         
         public function delDirector(){                                                              //Fonction pour supprimer un Réalisateur
 
             // var_dump($_POST);
 
-            //$nom = filter_input(INPUT_POST, "nom", FILTER_SANITIZE_FULL_SPECIAL_CHARS);                         // Mettre les filtres aux inputs pour éviter les injections SQL ou XSS
+            //$nom = filter_input(INPUT_POST, "nom", FILTER_SANITIZE_FULL_SPECIAL_CHARS);           // Mettre les filtres aux inputs pour éviter les injections SQL ou XSS
             //$prenom = filter_input(INPUT_POST, "prenom", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
             $id_realisateur = filter_input(INPUT_POST, "id_realisateur", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             

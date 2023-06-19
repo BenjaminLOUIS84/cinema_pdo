@@ -62,7 +62,13 @@
             $_SESSION['flash_message'] = $firstname." ".$name." ".$pseudo." "."a été ajouté avec succès !";    
             $this->findAllRoles();                                                 //Etre redirigé sur la même page 
         }
+
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        //-- UPDATE `role_acteur` SET `perso`='role25.jpg' WHERE  `role_acteur`=33; SQL pour intégrer la photo du rôle
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        
         public function delRole(){                                                  //Fonction pour supprimer un Rôle
 
             $dao = new DAO();                                                       //Requête SQL pour supprimer un rôle
