@@ -11,7 +11,7 @@
         <?php
             
             $genre = $genres->fetch();
-            //echo $genre["type"];
+            echo "Films appartenant au genre: ".$genre["type"];
             //echo "<br>";
         ?>
     </div> 
