@@ -163,6 +163,7 @@
             AND id_film =(:id_film)
             )";                                            //Condition pour éxecuter la suppression
 
+            $titre = filter_input(INPUT_POST, "titre", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $id_film = filter_input(INPUT_POST, "id_film", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $supprimerFilm = $dao->executerRequete($sql1, ["id_film" => $id_film]);
 
