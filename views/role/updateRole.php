@@ -18,7 +18,7 @@
             <p>
                 <label>
                     Prénom <br>
-                    <input class="nameGenre" type = "text" name = "firstname">          <!-- Champs de texte de saisie -->           
+                    <input class="nameGenre" type = "text" name = "firstname" placeholder = "<?=$role["firstname"]?>">          <!-- Champs de texte de saisie (PlaceHolder pour afficher le prénom à modifier) -->           
                 </label>
                 <label>
                     Nom <br>

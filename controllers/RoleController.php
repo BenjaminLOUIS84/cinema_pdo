@@ -31,7 +31,7 @@
 
          ///////////////////////////////////////////////////////////FORMULAIRE
 
-         public function openFormulaireRole(){                                      //Fonction pour accéder au formulaire      
+         public function openFormulaireRole(){                                  //Fonction pour accéder au formulaire      
                                                
             $dao = new DAO();
 
@@ -39,10 +39,24 @@
             FROM role_acteur ra
             ORDER BY ra.name ASC";
                         
-            $roles = $dao->executerRequete($sql2);                                 //Requête SQL SELECT pour Sélectionner les Rôles à supprimer
+            $roles = $dao->executerRequete($sql2);                               
 
             require "views/role/formulaireRole.php"; 
         }
+
+        public function openUpdateRole(){                                      //Fonction pour accéder au formulaire de modification      
+                                               
+            $dao = new DAO();
+
+            $sql2 = "SELECT ra.role_acteur, ra.firstname, ra.name, ra.pseudo                                      
+            FROM role_acteur ra
+            ORDER BY ra.name ASC";
+                        
+            $roles = $dao->executerRequete($sql2);                            
+
+            require "views/role/updateRole.php"; 
+        }
+
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         
@@ -91,6 +105,11 @@
 
         public function updateRole(){                                               //Fonction pour modifier un Rôle
 
+            $firstname = filter_input(INPUT_POST, "firstname", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $pseudo = filter_input(INPUT_POST, "pseudo", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $role_acteur = filter_input(INPUT_POST, "role_acteur", FILTER_VALIDATE_INT);
+
             $dao = new DAO();                                                       //Requête SQL pour modifier le firstname, le name est le pseudo d'un rôle
                                                                  
             $sql1 ="UPDATE role_acteur
@@ -98,13 +117,11 @@
             SET firstname = (:firstname) 
             SET name = (:name)
             SET pseudo = (:pseudo)
-            SET perso = role25.jpg 
+            --SET perso = role25.jpg 
 
             WHERE  role_acteur= (:role_acteur)";                                    //Condition pour éxecuter la modification
 
-
-            $role_acteur = filter_input(INPUT_POST, "role_acteur", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-            $supprimerRole = $dao->executerRequete($sql1, ["role_acteur" => $role_acteur]);
+            $modifierRole = $dao->executerRequete($sql1, ["role_acteur" => $role_acteur, "firstname" => $firstname, "name" => $name, "pseudo" => $pseudo]);
 
             $_SESSION['flash_message'] = "Modifié avec succès !";                   //Pour afficher un message Flash à chaque ajout inscrire cette variable dans chaque partie
             $this->findAllRoles();                                                  //Etre redirigé sur la même page 
