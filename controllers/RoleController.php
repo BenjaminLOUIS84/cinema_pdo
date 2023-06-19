@@ -35,7 +35,7 @@
                                                
             $dao = new DAO();
 
-            $sql2 = "SELECT c. role_acteur, ra.role_acteur, ra.firstname, ra.name, ra.pseudo                                      
+            $sql2 = "SELECT c.role_acteur, ra.role_acteur, ra.firstname, ra.name, ra.pseudo                                      
             FROM role_acteur ra
             INNER JOIN casting c
             ON ra.role_acteur = c.role_acteur";
@@ -49,12 +49,11 @@
                                                
             $dao = new DAO();
 
-            $sql2 = "SELECT c. role_acteur, ra.role_acteur, ra.firstname, ra.name, ra.pseudo                                      
+            $sql2 = "SELECT c.role_acteur, ra.role_acteur, ra.firstname, ra.name, ra.pseudo                                      
             FROM role_acteur ra
             INNER JOIN casting c
             ON ra.role_acteur = c.role_acteur";
-            
-                                                    
+                                        
             $roles = $dao->executerRequete($sql2);                            
 
             require "views/role/updateRole.php"; 
@@ -121,6 +120,7 @@
 
         public function modifRole(){                                               //Fonction pour modifier un Rôle
 
+            
             $firstname = filter_input(INPUT_POST, "firstname", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $pseudo = filter_input(INPUT_POST, "pseudo", FILTER_SANITIZE_FULL_SPECIAL_CHARS);

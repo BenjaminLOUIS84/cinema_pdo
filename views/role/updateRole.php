@@ -16,7 +16,16 @@
             <form action = "index.php?action=modifRole" method = "post">                               <!-- Pour modifier un nouveau Rôle -->
     
                 <?php
+                
                     $role = $roles->fetch()                                                             // Utilisaion d'un fetch() pour que les inputs prennent la valeur du rôle à modifer
+                        
+                        // while($role = $roles->fetch()){
+
+                        //     $role_acteur = $role["role_acteur"];
+                        //     $firstname = $role["firstname"];
+                        //     $name = $role["name"];
+                        //     $pseudo = $role["pseudo"];
+                        // }    
                 ?>
     
                 <p> 
