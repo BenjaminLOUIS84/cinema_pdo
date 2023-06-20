@@ -106,10 +106,10 @@
 
             </select>
 
-            <input class="add" type="submit" name="addMovie" value="AJOUTER">       <!-- Le name de l'input doit correspondre à la fonction  addMovie() -->
-        
         </div>                                                                      <!-- Bouton pour envoyer la demande au MovieController -->
 
+        <input class="add" type="submit" name="addMovie" value="AJOUTER">           <!-- Le name de l'input doit correspondre à la fonction  addMovie() -->
+        
     </form>
 
     <div class="formAdd">
