@@ -11,7 +11,7 @@
 
     <form action = "index.php?action=addMovie" method = "post">                                 <!-- Le formulaire doit déclencher l'action de la fonction addMovie() -->
             
-        <div class="formAdd">
+        <div class="formAddFilm">
 
             <h3>FILMS</h3>
             
@@ -31,7 +31,6 @@
             
             <label for="affiche">Ajouter une image</label>
             <input class="nameGenre" type="file" id="affiche" name="affiche">           <!-- Pour charger une image -->           
-            
             
         </div>
 
@@ -77,13 +76,15 @@
 
         </div>
 
-        <div class="formAdd">
+        <div class="formAddCasting">
 
-            <h3>CASTING</h3>
+            <h3>CASTINGS</h3>
 
             <!-- Lier les castings aux films en créant aussi une liste déroulante des acteurs et une liste déroulante des rôles-->
-
-            <select class="nameCasting" type="text" name="id_acteur" required>          
+            
+            <!-- casting 1 -->
+            <label>Casting n°1</label>
+            <select class="nameCasting" type="text" name="id_acteur">          
                 <option selected>Acteurs</option>
 
                 <?php
@@ -94,7 +95,7 @@
 
             </select>
             
-            <select class="nameCasting" type="text" name="role_acteur" required>          
+            <select class="nameCasting" type="text" name="role_acteur">          
                 <option selected>Rôles</option>
 
                 <?php
@@ -104,10 +105,10 @@
                 ?>
 
             </select>
-
+            
+            <input class="add" type="submit" name="addMovie" value="AJOUTER">       <!-- Le name de l'input doit correspondre à la fonction  addMovie() -->
+        
         </div>                                                                      <!-- Bouton pour envoyer la demande au MovieController -->
-                                          
-        <input class="add" type="submit" name="addMovie" value="AJOUTER">           <!-- Le name de l'input doit correspondre à la fonction  addMovie() -->
 
     </form>
 
