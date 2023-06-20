@@ -384,6 +384,11 @@ form {
     flex-direction: column;
 }
 
+.infos {
+    display: flex;
+    flex-direction: row;
+}
+
 /*//////////////////////////////////FOOTER/////////////////////////////////*/
 
 header,

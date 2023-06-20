@@ -15,18 +15,21 @@
 
         <form action="index.php?action=addActor" method="post">
 
-            <label for="nom">Nom</label>
-            <input id="nom" class="nameR" type="text" name="nom" required>
+            <div class=infos">
+                <label for="nom">Nom</label>
+                <input id="nom" class="nameR" type="text" name="nom" required>
+                
+                <label for="prenom">Prénom</label>
+                <input id=prenom" class="nameR" type="text" name="prenom" required>
+            </div>
+            <div class="infos">
+                <label for="sexe">Sexe</label>
+                <input id="sexe" class="nameR" type="text" name="sexe" required>
+                
+                <label for="date_naissance">Date de naissance</label>
+                <input id="date_naissance" class="nameR" type="date" name="date_naissance" required>
+            </div>
             
-            <label for="prenom">Prénom</label>
-            <input id=prenom" class="nameR" type="text" name="prenom" required>
-            
-            <label for="sexe">Sexe</label>
-            <input id="sexe" class="nameR" type="text" name="sexe" required>
-            
-            <label for="date_naissance">Date de naissance</label>
-            <input id="date_naissance" class="nameR" type="date" name="date_naissance" required>
-
             <label for="portrait">Ajouter une image</label>
             <input class="nameGenre" type="file" id="portrait" name="portrait">           <!-- Pour charger une image -->           
             
