@@ -11,51 +11,39 @@
 
     <h3>GENRES</h3>
 
-    <form action = "index.php?action=addGenre" method = "post">                         <!-- Pour ajouter un nouveau Genre -->
+    <form action="index.php?action=addGenre" method="post">                                     <!-- Pour ajouter un nouveau Genre -->
+            
+        <input class="nameGenre" type="text" name="type" value="Nouveau" required>                              <!-- Champs de texte de saisie -->             
+        
+        <input class="add" type="submit" name="addGenre" value="AJOUTER">                       <!-- Bouton pour envoyer la demande -->
 
-        <p>
-            <label>
-                <input class="nameGenre" type = "text" name = "type" required>          <!-- Champs de texte de saisie -->           
-            </label>
-        </p> 
+    </form>
 
-        <p>
-            <input class="add" type = "submit" name = "addGenre" value = "AJOUTER">     <!-- Bouton pour envoyer la demande -->
-        </p>
+    <form action="index.php?action=delGenre" method="post">                         
 
-    </form><br>
-
-    <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-
-    <form action = "index.php?action=delGenre" method = "post">                         
-
-        <p>
-        <select class="nameGenre" name = "id_genre" required>                                               
+        <select class="nameGenre" name="id_genre" required>                                               
             <option selected>Genres</option> 
                 
             <?php
-                while ($genre = $genres->fetch()){                                              // Utilisaion d'un fetch() pour que les Genres soient dans la liste
-
-                    echo "<option value =".$genre['id_genre'].">".$genre['type']."</option>";   // La value permet de récupérer l'id_genre et d'afficher le nom du genre (type)
+                while ($genre = $genres->fetch()){                                             // Utilisaion d'un fetch() pour que les Genres soient dans la liste
+                    echo "<option value=".$genre['id_genre'].">".$genre['type']."</option>";   // La value permet de récupérer l'id_genre et d'afficher le nom du genre (type)
                 }
             ?>
-        </select>
-        </p> 
 
-        <p>
-            <input class="add" type = "submit" name = "delGenre" value = "SUPPRIMER">           
-        </p>
+        </select>
+        
+        <input class="add" type="submit" name="delGenre" value="SUPPRIMER">           
 
     </form>
 
 </div>
 
-<a class ="detail" href="index.php">Retour</a>                                          <!-- Pour revenir à la page d'accueil -->
+<a class ="detail" href="index.php">Retour</a>                                                  <!-- Pour revenir à la page d'accueil -->
 
 <?php
 
     $title = "Formulaire Genre";
-    $content = ob_get_clean();  // Récupérer et afficher puis nettoyer la mémoire tampon
+    $content = ob_get_clean();                                                                  // Récupérer et afficher puis nettoyer la mémoire tampon
     require "views/template.php";
 
 ?>
