@@ -11,51 +11,38 @@
 
     <div class="formAdd">
             
-            <h3>ROLES</h3>
-    
-            <form action="index.php?action=modifRole" method="post">                                     <!-- Pour modifier un nouveau Rôle -->
-    
-                <?php
-                
-                    $role=$roles->fetch()                                                                // Utilisaion d'un fetch() pour que les inputs prennent la valeur du rôle à modifer
-                        
-                ?>
-    
-                
-                <label for="firstname">Prénom</label>                                                    <!-- Champs de texte de saisie (value ou placeholder pour afficher le prénom à modifier) -->
-                <input class="nameGenre" type="text" id="firstname" name="firstname" value="<?=$role["firstname"]?>" />
-                
-                <label>
-                    Nom <br>
-                    <input class="nameGenre" type="text" name="name" value="<?=$role["name"]?>">          <!-- Champs de texte de saisie -->           
-                </label>
-                
-            
-            
-                <label>
-                    Pseudo <br>
-                    <input class="nameGenre" type="text" name="pseudo" value="<?=$role["pseudo"]?>">      <!-- Champs de texte de saisie -->           
-                </label>
-                
+        <h3>ROLES</h3>
 
-            
-                <input class="add" type="submit" name="modifRole" value="MODIFIER">                       <!-- Bouton pour envoyer la demande -->
-            
+        <form action="index.php?action=modifRole" method="post">                                            <!-- Pour modifier un Rôle -->
 
-                
+            <?php
+                $role=$roles->fetch()                                                                       // Utilisaion d'un fetch() pour que les inputs prennent la valeur du rôle à modifer      
+            ?>
+            
+            <label for="firstname">Prénom</label>                                                           <!-- Champs de texte de saisie (value ou placeholder pour afficher le prénom à modifier) -->
+            <input class="nameGenre" type="text" id="firstname" name="firstname" value="<?=$role["firstname"]?>" />
+            
+            <label for="name">Nom</label>
+            <input class="nameGenre" type="text" id="name" name="name" value="<?=$role["name"]?>">          <!-- Champs de texte de saisie -->           
+            
+            <label for="pseudo">Pseudo</label>
+            <input class="nameGenre" type="text" id="pseudo" name="pseudo" value="<?=$role["pseudo"]?>">    <!-- Champs de texte de saisie -->           
+            
+            <input class="add" type="submit" name="modifRole" value="MODIFIER">                             <!-- Bouton pour envoyer la demande -->
+        
+            <input class="add" type="hidden" name="rome_acteur" valeur="<?=$role["role_acteur"]?>">
 
-            </form><br>
+        </form>
+
     </div>      
 
 </div>
 
-<a class="detail" href="index.php">Retour</a>                                                             <!-- Pour revenir à la page d'accueil -->
+<a class="detail" href="index.php">Retour</a>                                                               <!-- Pour revenir à la page d'accueil -->
 
 <?php
-
     $title = "Modifier Rôles";
-    $content = ob_get_clean();                                                                           // Récupérer et afficher puis nettoyer la mémoire tampon
+    $content = ob_get_clean();                                                                              // Récupérer et afficher puis nettoyer la mémoire tampon
     require "views/template.php";
-
 ?>
 
