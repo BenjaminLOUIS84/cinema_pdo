@@ -87,7 +87,7 @@
             ORDER BY type ASC";
 
             $genres = $dao->executerRequete($sql4);                                                             // Requête SQL SELECT pour Sélectionner les genres et la variable pour éxecuter la requête
-            
+
             $sql5 = "SELECT f.id_film, f.titre, f.affiche
             FROM film f
             ORDER BY titre ASC";
@@ -125,7 +125,7 @@
             
             $sql2 = "INSERT INTO classer(id_genre, id_film)                                                                              
             VALUES (:id_genre, :id_film)";                                                                      // Requête nécessaire pour lier un genre à un film (Pour supprimer un film il faudra supprimer d'abord cette liaison)                                                                      
-           
+
             $sql3 = "INSERT INTO casting(id_film, id_acteur, role_acteur)                                                                              
             VALUES (:id_film, :id_acteur, :role_acteur)";                                                        // Les names des inputs doivent correspondre respectivement aux variables $titre, $annee_sortie,...
 
