@@ -62,8 +62,8 @@
 
             //Modifier les Films
 
-            case 'updateFilm': $movieCtrl->openUpdateFilm($_GET['idFilm']); break;
-            case 'modifFilm': $movieCtrl->modifFilm($_POST); break;
+            //case 'updateFilm': $movieCtrl->openUpdateFilm($_GET['idFilm']); break;
+            //case 'modifFilm': $movieCtrl->modifFilm($_POST); break;
 
             ////////////////////////////////////////////////////////////////////////GENRES
             //Ajouter nouveaux Genres
