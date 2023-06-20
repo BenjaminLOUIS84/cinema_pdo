@@ -28,7 +28,7 @@
 
     <a class ="form" href="index.php?action=updateDirector&idDirector=<?=$realisateur['id_realisateur']?>">MODIFIER</a> 
 
-    <a class ="detail" href="index.php?action=listDirectors">Retour</a>
+    <a class ="detailR" href="index.php?action=listDirectors">Retour</a>
 
 </div>
 

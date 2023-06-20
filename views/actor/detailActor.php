@@ -30,7 +30,7 @@
 
     <a class ="form" href="index.php?action=updateActor&idActor=<?=$acteur['id_acteur']?>">MODIFIER</a> 
 
-    <a class ="detail" href="index.php?action=listActors">Retour</a>
+    <a class ="detailR" href="index.php?action=listActors">Retour</a>
 
 </div>
 

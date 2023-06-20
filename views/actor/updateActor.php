@@ -41,7 +41,7 @@
 
 </div>
 
-<a class="detail" href="index.php?action=listActors">Retour</a>                                                  <!-- Pour revenir à la page d'accueil -->
+<a class="detailR" href="index.php?action=listActors">Retour</a>                                                  <!-- Pour revenir à la page d'accueil -->
 
 <?php
     $title = "Modifier Acteurs";

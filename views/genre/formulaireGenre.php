@@ -38,7 +38,7 @@
 
 </div>
 
-<a class ="detail" href="index.php">Retour</a>                                                  <!-- Pour revenir à la page d'accueil -->
+<a class ="detailR" href="index.php">Retour</a>                                                  <!-- Pour revenir à la page d'accueil -->
 
 <?php
 

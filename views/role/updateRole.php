@@ -38,7 +38,7 @@
 
 </div>
 
-<a class="detail" href="index.php?action=listRoles">Retour</a>                                              <!-- Pour revenir à la page d'accueil -->
+<a class="detailR" href="index.php?action=listRoles">Retour</a>                                              <!-- Pour revenir à la page d'accueil -->
 
 <?php
     $title = "Modifier Rôles";

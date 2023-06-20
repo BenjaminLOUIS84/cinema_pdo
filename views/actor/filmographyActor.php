@@ -26,7 +26,7 @@
         }
     ?>
 
-    <a class ="detail" href="index.php?action=listActors">Retour</a>
+    <a class ="detailR" href="index.php?action=listActors">Retour</a>
 
 </div>
 

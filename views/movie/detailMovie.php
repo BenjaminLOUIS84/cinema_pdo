@@ -110,7 +110,7 @@
 </div>
 
 <!--Requête CI DESSOUS pour revenir à la liste des films  -->
-<a class ="detail" href="index.php?action=listMovies">Retour</a>
+<a class ="detailR" href="index.php?action=listMovies">Retour</a>
 
 <?php
     $title = "Détail du Film";

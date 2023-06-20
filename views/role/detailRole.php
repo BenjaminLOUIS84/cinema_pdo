@@ -41,7 +41,7 @@
 
     <a class ="form" href="index.php?action=updateRole&idRole=<?=$role['role_acteur']?>">MODIFIER</a>
 
-    <a class ="detail" href="index.php?action=listRoles">Retour</a>
+    <a class ="detailR" href="index.php?action=listRoles">Retour</a>
 
 </div>
 
