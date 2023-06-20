@@ -58,12 +58,13 @@ a:hover {
     color: darkslategray;
     font-size: 0.8em;
     border-radius: 10px;
-    padding: 10px;
+    padding: 5px;
 }
 
 .detail:hover {
     background: whitesmoke;
     transition: 0.5s ease-in-out;
+    /* filter: drop-shadow(0 0 20px black); */
 }
 
 h1 {
@@ -333,8 +334,9 @@ form {
 }
 
 .form:hover {
-    padding: 10px;
     font-weight: lighter;
+    transform: scale(0.7);
+    filter: drop-shadow(0 0 20px black);
 }
 
 .formAdd {
