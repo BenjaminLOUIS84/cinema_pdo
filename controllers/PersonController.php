@@ -276,7 +276,7 @@
             nom = :nom,
             sexe = :sexe,
             date_naissance = :date_naissance
-            WHERE  id_personne = :personne";                                                     //Condition pour éxecuter la modification
+            WHERE  id_personne = :id_personne";                                                     //Condition pour éxecuter la modification
 
             $modifierRealisateur = $dao->executerRequete($sql1, ["id_personne" => $id_personne, "prenom" => $prenom, "nom" => $nom, "sexe" => $sexe, "date_naissance" => $date_naissance]);
 
