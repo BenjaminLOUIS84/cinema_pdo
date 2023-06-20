@@ -33,7 +33,7 @@
         
             <input class="add" type="submit" name="modifDirector" value="MODIFIER">                                 <!-- Bouton pour envoyer la demande -->
         
-            <input class="add" type="hidden" name="id_realisateur" value="<?=$realisateur["id_realisateur"]?>">         
+            <input class="add" type="hidden" name="id_personne" value="<?=$realisateur["id_personne"]?>">         
 
         </form>
 
