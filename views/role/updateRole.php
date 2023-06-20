@@ -30,7 +30,7 @@
             
             <input class="add" type="submit" name="modifRole" value="MODIFIER">                             <!-- Bouton pour envoyer la demande -->
         
-            <input class="add" type="hidden" name="role_acteur" value="<?=$role["role_acteur"]?>">
+            <input class="add" type="hidden" name="role_acteur" value="<?=$role["role_acteur"]?>">         
 
         </form>
 
@@ -38,7 +38,7 @@
 
 </div>
 
-<a class="detail" href="index.php?action=listRoles">Retour</a>                                                               <!-- Pour revenir à la page d'accueil -->
+<a class="detail" href="index.php?action=listRoles">Retour</a>                                              <!-- Pour revenir à la page d'accueil -->
 
 <?php
     $title = "Modifier Rôles";
