@@ -28,6 +28,10 @@
 
 </div>
 
+<!-- Bouton pour afficher la view updateRole -->
+
+<a class ="form" href="index.php?action=updateDirector&idDirector=<?=$realisateur['id_realisateur']?>">MODIFIER</a>
+
 
 <?php
     $title = "Détail du réalisateur";
