@@ -78,12 +78,12 @@
 
         <div class="formAddCasting">
 
-            <h3>CASTINGS</h3>
+            <h3>CASTING</h3>
 
             <!-- Lier les castings aux films en créant aussi une liste déroulante des acteurs et une liste déroulante des rôles-->
             
             <!-- casting 1 -->
-            <label>Casting n°1</label>
+            <!-- <label>Casting n°1</label> -->
             <select class="nameCasting" type="text" name="id_acteur">          
                 <option selected>Acteurs</option>
 
@@ -105,7 +105,7 @@
                 ?>
 
             </select>
-            
+
             <input class="add" type="submit" name="addMovie" value="AJOUTER">       <!-- Le name de l'input doit correspondre à la fonction  addMovie() -->
         
         </div>                                                                      <!-- Bouton pour envoyer la demande au MovieController -->
