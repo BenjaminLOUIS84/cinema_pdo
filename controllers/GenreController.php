@@ -61,7 +61,7 @@
             WHERE id_genre=(:id_genre)";                                            //Condition pour éxecuter la suppression
 
 
-            $id_genre = filter_input(INPUT_POST, "id_genre", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $id_genre = filter_input(INPUT_POST, "id_genre", FILTER_SANITIZE_NUMBER_INT);
             $supprimerGenre = $dao->executerRequete($sql1, ["id_genre" => $id_genre]);
 
             $_SESSION['flash_message'] = "Supprimé avec succès !";                  //Pour afficher un message Flash à chaque ajout inscrire cette variable dans chaque partie

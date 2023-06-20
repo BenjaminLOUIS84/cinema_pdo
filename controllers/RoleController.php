@@ -63,7 +63,7 @@
             $firstname = filter_input(INPUT_POST, "firstname", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $pseudo = filter_input(INPUT_POST, "pseudo", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-            $role_acteur = filter_input(INPUT_POST, "role_acteur", FILTER_VALIDATE_INT);
+            $role_acteur = filter_input(INPUT_POST, "role_acteur", FILTER_SANITIZE_NUMBER_INT);
             
 
             $dao = new DAO();                                                       //Requête SQL
@@ -87,7 +87,7 @@
             WHERE role_acteur=(:role_acteur)";                                      //Condition pour éxecuter la suppression
 
 
-            $role_acteur = filter_input(INPUT_POST, "role_acteur", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $role_acteur = filter_input(INPUT_POST, "role_acteur", FILTER_SANITIZE_NUMBER_INT);
             $supprimerRole = $dao->executerRequete($sql1, ["role_acteur" => $role_acteur]);
 
             $_SESSION['flash_message'] = "Supprimé avec succès !";                  //Pour afficher un message Flash à chaque ajout inscrire cette variable dans chaque partie
@@ -113,7 +113,7 @@
 
             $dao = new DAO();                                                       //Requête SQL pour modifier le firstname, le name est le pseudo d'un rôle
                                                                  
-            $sql1 = "UPDATE role_acteur
+            $sql1 ="UPDATE role_acteur
  
             SET firstname = :firstname, 
             name = :name,

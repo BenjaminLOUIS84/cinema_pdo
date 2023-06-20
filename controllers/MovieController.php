@@ -106,12 +106,12 @@
             $synopsis = filter_input(INPUT_POST, "synopsis", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
             $note = filter_input(INPUT_POST, "note", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
 
-            $id_realisateur = filter_input(INPUT_POST, "id_realisateur", FILTER_VALIDATE_INT);                  // Récupération de l'id_realisateur pour la jonction
+            $id_realisateur = filter_input(INPUT_POST, "id_realisateur", FILTER_SANITIZE_NUMBER_INT);                  // Récupération de l'id_realisateur pour la jonction
             
-            $id_acteur = filter_input(INPUT_POST, "id_acteur", FILTER_VALIDATE_INT);                            // Récupération de l'id_acteur pour la jonction
-            $role_acteur = filter_input(INPUT_POST, "role_acteur", FILTER_VALIDATE_INT);                        // Récupération de le role_acteur pour la jonction
+            $id_acteur = filter_input(INPUT_POST, "id_acteur", FILTER_SANITIZE_NUMBER_INT);                            // Récupération de l'id_acteur pour la jonction
+            $role_acteur = filter_input(INPUT_POST, "role_acteur", FILTER_SANITIZE_NUMBER_INT);                        // Récupération de le role_acteur pour la jonction
             
-            $id_genres = filter_var_array($array['id_genre'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);              // FILTER VAR ARRAY POUR LA SELECTION MULTIPLE DES GENRES id_genre deviendra un array
+            $id_genres = filter_var_array($array['id_genre'], FILTER_SANITIZE_NUMBER_INT);              // FILTER VAR ARRAY POUR LA SELECTION MULTIPLE DES GENRES id_genre deviendra un array
 
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             //Ajouter les requêtes SQL pour ajouter les réalisateurs les castings et les genres aux films
@@ -169,7 +169,7 @@
             )";                                                                     //Condition pour éxecuter la suppression
 
             $titre = filter_input(INPUT_POST, "titre", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-            $id_film = filter_input(INPUT_POST, "id_film", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $id_film = filter_input(INPUT_POST, "id_film",FILTER_SANITIZE_NUMBER_INT);
             $supprimerFilm = $dao->executerRequete($sql1, ["id_film" => $id_film]);
 
             $_SESSION['flash_message'] = $titre." "."Supprimé avec succès !";       //Pour afficher un message Flash à chaque ajout inscrire cette variable dans chaque partie

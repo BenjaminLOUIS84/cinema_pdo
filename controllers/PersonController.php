@@ -73,8 +73,8 @@
             $sexe = filter_input(INPUT_POST, "sexe", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
             $date_naissance = filter_input(INPUT_POST, "date_naissance", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
             
-            $id_personne = filter_input(INPUT_POST, "id_personne", FILTER_SANITIZE_FULL_SPECIAL_CHARS);         
-            $id_acteur = filter_input(INPUT_POST, "id_acteur", FILTER_VALIDATE_INT);                            // Récupération de l'id_acteur pour la jonction
+            $id_personne = filter_input(INPUT_POST, "id_personne", FILTER_SANITIZE_NUMBER_INT);         
+            $id_acteur = filter_input(INPUT_POST, "id_acteur", FILTER_SANITIZE_NUMBER_INT);                            // Récupération de l'id_acteur pour la jonction
 
             $dao = new DAO();
 
@@ -101,9 +101,9 @@
 
             // var_dump($_POST);
 
-            //$nom = filter_input(INPUT_POST, "nom", FILTER_SANITIZE_FULL_SPECIAL_CHARS);                         // Mettre les filtres aux inputs pour éviter les injections SQL ou XSS
-            //$prenom = filter_input(INPUT_POST, "prenom", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
-            $id_acteur = filter_input(INPUT_POST, "id_acteur", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            // Mettre les filtres aux inputs pour éviter les injections SQL ou XSS
+            
+            $id_acteur = filter_input(INPUT_POST, "id_acteur", FILTER_SANITIZE_NUMBER_INT);
             
             $dao = new DAO();                                                                       //Requête SQL pour supprimer un acteur des Tables Réalisateur et Personne
             
@@ -193,8 +193,8 @@
             $sexe = filter_input(INPUT_POST, "sexe", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
             $date_naissance = filter_input(INPUT_POST, "date_naissance", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
             
-            $id_personne = filter_input(INPUT_POST, "id_personne", FILTER_SANITIZE_FULL_SPECIAL_CHARS);         
-            $id_realisateur = filter_input(INPUT_POST, "id_realisateur", FILTER_VALIDATE_INT);                  // Récupération de l'id_realisateur pour la jonction
+            $id_personne = filter_input(INPUT_POST, "id_personne", FILTER_SANITIZE_NUMBER_INT);         
+            $id_realisateur = filter_input(INPUT_POST, "id_realisateur",FILTER_SANITIZE_NUMBER_INT);                  // Récupération de l'id_realisateur pour la jonction
 
             $dao = new DAO();
 
@@ -225,9 +225,8 @@
 
             // var_dump($_POST);
 
-            //$nom = filter_input(INPUT_POST, "nom", FILTER_SANITIZE_FULL_SPECIAL_CHARS);           // Mettre les filtres aux inputs pour éviter les injections SQL ou XSS
-            //$prenom = filter_input(INPUT_POST, "prenom", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
-            $id_realisateur = filter_input(INPUT_POST, "id_realisateur", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            // Mettre les filtres aux inputs pour éviter les injections SQL ou XSS
+            $id_realisateur = filter_input(INPUT_POST, "id_realisateur", FILTER_SANITIZE_NUMBER_INT);
             
             $dao = new DAO();                                                                       //Requête SQL pour supprimer un réalisateur des Tables Réalisateur et Personne
             
