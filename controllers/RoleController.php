@@ -17,7 +17,7 @@
         public function detailRole($idRole){
 
             $dao = new DAO();
-            $sql = "SELECT r.firstname, r.name, r.pseudo, r.perso, p.prenom, p.nom, f.titre, f.id_film, a.id_acteur FROM role_acteur r, casting c, personne p, acteur a, film f
+            $sql = "SELECT r.firstname, r.name, r.pseudo, r.perso, p.prenom, p.nom, f.titre, f.id_film, r.role_acteur, a.id_acteur FROM role_acteur r, casting c, personne p, acteur a, film f
             WHERE a.id_personne = p.id_personne
             AND c.role_acteur = r.role_acteur
             AND c.id_acteur = a.id_acteur
@@ -43,32 +43,32 @@
             require "views/role/formulaireRole.php"; 
         }
 
-        public function openUpdateRole(){                                      //Fonction pour accéder au formulaire de modification      
-                                               
-            $dao = new DAO();
-
-            $sql2 = "SELECT c.role_acteur, ra.role_acteur, ra.firstname, ra.name, ra.pseudo                                      
-            FROM role_acteur ra
-            INNER JOIN casting c
-            ON ra.role_acteur = c.role_acteur";
-                                        
-            $roles = $dao->executerRequete($sql2);                            
-
-            require "views/role/updateRole.php"; 
-        }
-
-        // public function openUpdateRole($idRole){                                      //Fonction pour accéder au formulaire de modification      
+        // public function openUpdateRole(){                                      //Fonction pour accéder au formulaire de modification      
                                                
         //     $dao = new DAO();
 
-        //     $sql2 = "SELECT ra.role_acteur, ra.firstname, ra.name, ra.pseudo                                      
+        //     $sql2 = "SELECT c.role_acteur, ra.role_acteur, ra.firstname, ra.name, ra.pseudo                                      
         //     FROM role_acteur ra
-        //     WHERE ra.role_acteur = :id";
-                                                    
-        //     $roles = $dao->executerRequete($sql2, [":id" => $idRole]);                            
+        //     INNER JOIN casting c
+        //     ON ra.role_acteur = c.role_acteur";
+                                        
+        //     $roles = $dao->executerRequete($sql2);                            
 
         //     require "views/role/updateRole.php"; 
         // }
+
+        public function openUpdateRole($idRole){                                      //Fonction pour accéder au formulaire de modification      
+                                               
+            $dao = new DAO();
+
+            $sql2 = "SELECT ra.role_acteur, ra.firstname, ra.name, ra.pseudo                                      
+            FROM role_acteur ra
+            WHERE ra.role_acteur = :id";
+                                                    
+            $roles = $dao->executerRequete($sql2, [":id" => $idRole]);                            
+
+            require "views/role/updateRole.php"; 
+        }
 
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -128,18 +128,19 @@
             // $pseudos = filter_var_array($array, ['pseudo'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
             $role = filter_input(INPUT_POST, "role", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-            $role_acteur = filter_input(INPUT_POST, "role_acteur", FILTER_VALIDATE_INT);
+            $role_acteur = filter_input(INPUT_POST, "role_acteur", FILTER_SANITIZE_NUMBER_INT);
 
             $dao = new DAO();                                                       //Requête SQL pour modifier le firstname, le name est le pseudo d'un rôle
                                                                  
             $sql1 = "UPDATE role_acteur
  
-            SET firstname = (:firstname) 
-            SET name = (:name)
-            SET pseudo = (:pseudo)
-            --SET perso = role25.jpg 
+            SET firstname = :firstname, 
+            name = :name,
+            pseudo = :pseudo
 
-            WHERE  role_acteur = (:role_acteur)";                                    //Condition pour éxecuter la modification
+            
+
+            WHERE  role_acteur = :role_acteur";                                    //Condition pour éxecuter la modification
 
             $modifierRole = $dao->executerRequete($sql1, ["role_acteur" => $role_acteur, "firstname" => $firstname, "name" => $name, "pseudo" => $pseudo]);
 
