@@ -38,7 +38,7 @@
             <input class="add" type="submit" name="addDirector" value="AJOUTER">
         
         </form>
-
+    
         <form action="index.php?action=delDirector" method="post">                         
 
             <select class="nameR" type="text" name="id_realisateur" required>                                               
