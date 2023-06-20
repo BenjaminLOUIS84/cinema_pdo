@@ -58,7 +58,7 @@
 
 </div>
 
-<a class="detail" href="index.php">Retour</a>
+<a class="detail" href="index.php?action=listActors">Retour</a>
 
 <?php
 

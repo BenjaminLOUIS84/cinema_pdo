@@ -54,7 +54,7 @@
 
 </div>
 
-<a class="detail" href="index.php">Retour</a>
+<a class="detail" href="index.php?action=listDirectors">Retour</a>
 
 <?php
     $title = "Formulaire Réalisateur";
