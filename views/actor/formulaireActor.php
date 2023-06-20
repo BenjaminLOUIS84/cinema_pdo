@@ -9,7 +9,7 @@
 
 <div class="formulaire">
 
-    <div class="formAdd">
+    <div class="formAddActeur">
 
         <h3>ACTEURS</h3>
 

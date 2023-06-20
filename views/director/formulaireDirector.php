@@ -9,7 +9,7 @@
 
 <div class="formulaire">
 
-    <div class="formAdd">
+    <div class="formAddRealisateur">
 
         <h3>REALISATEURS</h3>
 
@@ -26,6 +26,9 @@
             
             <label for="date_naissance">Date de naissance</label>
             <input id="date_naissance" class="nameR" type="date" name="date_naissance" required>
+
+            <label for="portrait">Ajouter une image</label>
+            <input class="nameGenre" type="file" id="portrait" name="portrait">           <!-- Pour charger une image -->           
             
             <input class="add" type="submit" name="addDirector" value="AJOUTER">
         

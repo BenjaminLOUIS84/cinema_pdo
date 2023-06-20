@@ -358,7 +358,9 @@ form {
 }
 
 .formAddCasting,
-.formAddFilm {
+.formAddFilm,
+.formAddActeur,
+.formAddRealisateur {
     color: whitesmoke;
     border: 1px solid gray;
     border-radius: 10px;

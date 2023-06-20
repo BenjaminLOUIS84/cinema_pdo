@@ -214,7 +214,7 @@
                                                                                        
             $dao = new DAO();
 
-            $sql1 = "SELECT p.prenom, p.nom, p.id_personne
+            $sql1 = "SELECT p.prenom, p.nom, p.id_personne, p.portrait
             FROM personne p"; 
             $personnes = $dao->executerRequete($sql1);                                                           // Pour sélectionner la personne et le réalisateur 
 
@@ -248,19 +248,21 @@
             $sexe = filter_input(INPUT_POST, "sexe", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
             $date_naissance = filter_input(INPUT_POST, "date_naissance", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
             
+            $portrait = filter_input(INPUT_POST, "portrait", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
             $id_personne = filter_input(INPUT_POST, "id_personne", FILTER_SANITIZE_NUMBER_INT);         
             $id_realisateur = filter_input(INPUT_POST, "id_realisateur",FILTER_SANITIZE_NUMBER_INT);                  // Récupération de l'id_realisateur pour la jonction
 
             $dao = new DAO();
 
-            $sql1 = "INSERT INTO personne(nom, prenom, sexe, date_naissance, id_personne)                        
-            VALUES (:nom, :prenom, :sexe, :date_naissance, :id_personne)";                                      // Pour ajouter des nouvelles personnes
+            $sql1 = "INSERT INTO personne(nom, prenom, sexe, date_naissance, id_personne, portrait)                       
+            VALUES (:nom, :prenom, :sexe, :date_naissance, :id_personne, :portrait)";                                      // Pour ajouter des nouvelles personnes
 
             $sql2 = "INSERT INTO realisateur(id_personne, id_realisateur)                                                                              
             VALUES (:id_personne, :id_realisateur)";                                                            // Pour attribuer le statut de réalisateur aux nouvelles personnes
 
             $ajouterPersonne = $dao->executerRequete($sql1, ["nom" => $nom, "prenom" => $prenom,
-            "sexe" =>$sexe, "date_naissance" => $date_naissance, "id_personne" => $id_personne]);
+            "sexe" =>$sexe, "date_naissance" => $date_naissance, "id_personne" => $id_personne, "portrait" => $portrait]);
 
             $id_new_personne = $dao->getBDD()->lastInsertId();
 
