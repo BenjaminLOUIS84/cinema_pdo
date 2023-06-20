@@ -30,7 +30,7 @@
             
             <input class="add" type="submit" name="modifRole" value="MODIFIER">                             <!-- Bouton pour envoyer la demande -->
         
-            <input class="add" type="hidden" name="rome_acteur" valeur="<?=$role["role_acteur"]?>">
+            <input class="add" type="hidden" name="role_acteur" valeur="<?=$role["role_acteur"]?>">
 
         </form>
 
