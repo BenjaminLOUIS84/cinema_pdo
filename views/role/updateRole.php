@@ -13,11 +13,11 @@
             
             <h3>ROLES</h3>
     
-            <form action="index.php?action=modifRole" method="post">                               <!-- Pour modifier un nouveau Rôle -->
+            <form action="index.php?action=modifRole" method="post">                                     <!-- Pour modifier un nouveau Rôle -->
     
                 <?php
                 
-                    $role=$roles->fetch()                                                             // Utilisaion d'un fetch() pour que les inputs prennent la valeur du rôle à modifer
+                    $role=$roles->fetch()                                                                // Utilisaion d'un fetch() pour que les inputs prennent la valeur du rôle à modifer
                         
                 ?>
     
@@ -39,7 +39,7 @@
                 
 
             
-                <input class="add" type="submit" name="modifRole" value="MODIFIER">          <!-- Bouton pour envoyer la demande -->
+                <input class="add" type="submit" name="modifRole" value="MODIFIER">                       <!-- Bouton pour envoyer la demande -->
             
 
                 
@@ -49,12 +49,12 @@
 
 </div>
 
-<a class="detail" href="index.php">Retour</a>                                                      <!-- Pour revenir à la page d'accueil -->
+<a class="detail" href="index.php">Retour</a>                                                             <!-- Pour revenir à la page d'accueil -->
 
 <?php
 
     $title = "Modifier Rôles";
-    $content = ob_get_clean();                                                                      // Récupérer et afficher puis nettoyer la mémoire tampon
+    $content = ob_get_clean();                                                                           // Récupérer et afficher puis nettoyer la mémoire tampon
     require "views/template.php";
 
 ?>
