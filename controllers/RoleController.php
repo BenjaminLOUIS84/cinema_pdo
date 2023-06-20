@@ -118,7 +118,6 @@
             SET firstname = :firstname, 
             name = :name,
             pseudo = :pseudo
-
             WHERE  role_acteur = :role_acteur";                                    //Condition pour éxecuter la modification
 
             $modifierRole = $dao->executerRequete($sql1, ["role_acteur" => $role_acteur, "firstname" => $firstname, "name" => $name, "pseudo" => $pseudo]);
