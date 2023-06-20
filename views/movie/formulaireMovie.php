@@ -26,9 +26,8 @@
             
             <label for="note">Note</label>
             <input class="name" type="int" id="note" name="note" required>          
-            
-            <label for="synopsis">Synopsis</label>                                                    
-            <input class="nameSynopsis" type="text" id="synospsis" name="synopsis" required>          
+                                                                
+            <input class="nameSynopsis" type="text" value="Synospsis" name="synopsis" required>          
             
         </div>
 
