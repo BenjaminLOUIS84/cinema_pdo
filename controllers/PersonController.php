@@ -264,6 +264,7 @@
             $prenom = filter_input(INPUT_POST, "prenom", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
             $sexe = filter_input(INPUT_POST, "sexe", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
             $date_naissance = filter_input(INPUT_POST, "date_naissance", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
+            $realisateur = filter_input(INPUT_POST, "realisateur", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
             $id_personne = filter_input(INPUT_POST, "id_personne", FILTER_SANITIZE_NUMBER_INT);         
             $id_realisateur = filter_input(INPUT_POST, "id_realisateur",FILTER_SANITIZE_NUMBER_INT); // Récupération de l'id_realisateur pour la jonction
 
