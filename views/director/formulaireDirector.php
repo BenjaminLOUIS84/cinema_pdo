@@ -30,8 +30,10 @@
                 <input id="date_naissance" class="nameR" type="date" name="date_naissance" required>
             </div>
 
-            <label for="portrait">Ajouter une image</label>
-            <input class="nameGenre" type="file" id="portrait" name="portrait">           <!-- Pour charger une image -->           
+            <div class="infos">
+                <label for="portrait">Ajouter une image</label>
+                <input class="nameGenre" type="file" id="portrait" name="portrait">           <!-- Pour charger une image -->           
+            </div>
             
             <input class="add" type="submit" name="addDirector" value="AJOUTER">
         
