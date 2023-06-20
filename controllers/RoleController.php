@@ -31,7 +31,7 @@
 
          ///////////////////////////////////////////////////////////FORMULAIRE
 
-         public function openFormulaireRole(){                                  //Fonction pour accéder au formulaire      
+         public function openFormulaireRole(){                                      //Fonction pour accéder au formulaire      
                                                
             $dao = new DAO();
 
@@ -43,21 +43,7 @@
             require "views/role/formulaireRole.php"; 
         }
 
-        // public function openUpdateRole(){                                      //Fonction pour accéder au formulaire de modification      
-                                               
-        //     $dao = new DAO();
-
-        //     $sql2 = "SELECT c.role_acteur, ra.role_acteur, ra.firstname, ra.name, ra.pseudo                                      
-        //     FROM role_acteur ra
-        //     INNER JOIN casting c
-        //     ON ra.role_acteur = c.role_acteur";
-                                        
-        //     $roles = $dao->executerRequete($sql2);                            
-
-        //     require "views/role/updateRole.php"; 
-        // }
-
-        public function openUpdateRole($idRole){                                      //Fonction pour accéder au formulaire de modification      
+        public function openUpdateRole($idRole){                                    //Fonction pour accéder au formulaire de modification      
                                                
             $dao = new DAO();
 
@@ -69,7 +55,6 @@
 
             require "views/role/updateRole.php"; 
         }
-
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         
@@ -106,7 +91,7 @@
             $supprimerRole = $dao->executerRequete($sql1, ["role_acteur" => $role_acteur]);
 
             $_SESSION['flash_message'] = "Supprimé avec succès !";                  //Pour afficher un message Flash à chaque ajout inscrire cette variable dans chaque partie
-            $this->findAllRoles();                                                 //Etre redirigé sur la même page 
+            $this->findAllRoles();                                                  //Etre redirigé sur la même page 
         }
 
 
@@ -123,10 +108,6 @@
             $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $pseudo = filter_input(INPUT_POST, "pseudo", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-            // $firstnames = filter_var_array($array, ['firstname'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-            // $names = filter_var_array($array, ['name'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-            // $pseudos = filter_var_array($array, ['pseudo'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-
             $role = filter_input(INPUT_POST, "role", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $role_acteur = filter_input(INPUT_POST, "role_acteur", FILTER_SANITIZE_NUMBER_INT);
 
@@ -138,14 +119,12 @@
             name = :name,
             pseudo = :pseudo
 
-            
-
             WHERE  role_acteur = :role_acteur";                                    //Condition pour éxecuter la modification
 
             $modifierRole = $dao->executerRequete($sql1, ["role_acteur" => $role_acteur, "firstname" => $firstname, "name" => $name, "pseudo" => $pseudo]);
 
-            $_SESSION['flash_message'] = "Modifié avec succès !";                   //Pour afficher un message Flash à chaque ajout inscrire cette variable dans chaque partie
-            $this->findAllRoles();                                                  //Etre redirigé sur la même page 
+            $_SESSION['flash_message'] = "Modifié avec succès !";                  //Pour afficher un message Flash à chaque ajout inscrire cette variable dans chaque partie
+            $this->findAllRoles();                                                 //Etre redirigé sur la même page 
         }
 
 

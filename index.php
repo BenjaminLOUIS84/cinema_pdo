@@ -86,7 +86,6 @@
             case 'delRole': $roleCtrl->delRole($_POST); break;
 
             //Modifier les Rôles
-            //case 'updateRole': $roleCtrl->openUpdateRole(); break;
             case 'updateRole': $roleCtrl->openUpdateRole($_GET['idRole']); break;
             case 'modifRole': $roleCtrl->modifRole($_POST); break;
         }
