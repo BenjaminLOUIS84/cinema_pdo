@@ -24,6 +24,9 @@
             <label for="pseudo">Pseudo</label>
             <input class="nameGenre" type="text" id="pseudo" name="pseudo">         <!-- Champs de texte de saisie -->           
             
+            <label for="perso">Ajouter une image</label>
+            <input class="nameGenre" type="file" id="perso" name="perso">           <!-- Pour charger une image -->           
+            
             <input class="add" type="submit" name="addRole" value="AJOUTER">        <!-- Bouton pour envoyer la demande -->
     
         </form>

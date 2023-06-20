@@ -35,7 +35,7 @@
                                                
             $dao = new DAO();
 
-            $sql2 = "SELECT ra.role_acteur, ra.firstname, ra.name, ra.pseudo                                      
+            $sql2 = "SELECT ra.role_acteur, ra.firstname, ra.name, ra.pseudo, ra.perso                                      
             FROM role_acteur ra";
                         
             $roles = $dao->executerRequete($sql2);                               
@@ -63,15 +63,18 @@
             $firstname = filter_input(INPUT_POST, "firstname", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $pseudo = filter_input(INPUT_POST, "pseudo", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+            $perso = filter_input(INPUT_POST, "perso", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
             $role_acteur = filter_input(INPUT_POST, "role_acteur", FILTER_SANITIZE_NUMBER_INT);
             
 
             $dao = new DAO();                                                       //Requête SQL
             
-            $sql1 ="INSERT INTO role_acteur(role_acteur, firstname, name, pseudo)                                         
-            VALUES (:role_acteur, :firstname, :name, :pseudo)";                     //(:firsname, :name, ...) correspondent au prénom, nom ...du rôle inscrit par l'utilisateur
+            $sql1 ="INSERT INTO role_acteur(role_acteur, firstname, name, pseudo, perso)                                         
+            VALUES (:role_acteur, :firstname, :name, :pseudo, :perso)";                     //(:firsname, :name, ...) correspondent au prénom, nom ...du rôle inscrit par l'utilisateur
 
-            $ajouterRole = $dao->executerRequete($sql1, ["role_acteur" => $role_acteur, "firstname" => $firstname, "name" => $name, "pseudo" => $pseudo ]);
+            $ajouterRole = $dao->executerRequete($sql1, ["role_acteur" => $role_acteur, "firstname" => $firstname, "name" => $name, "pseudo" => $pseudo, "perso" => $perso]);
 
             $_SESSION['flash_message'] = $firstname." ".$name." ".$pseudo." "."a été ajouté avec succès !";    
             $this->findAllRoles();                                                 //Etre redirigé sur la même page 

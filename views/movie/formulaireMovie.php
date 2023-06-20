@@ -27,7 +27,11 @@
             <label for="note">Note</label>
             <input class="name" type="int" id="note" name="note" required>          
                                                                 
-            <input class="nameSynopsis" type="text" value="Synospsis" name="synopsis" required>          
+            <input class="nameSynopsis" type="text" value="Synospsis" name="synopsis" required>
+            
+            <label for="affiche">Ajouter une image</label>
+            <input class="nameGenre" type="file" id="affiche" name="affiche">           <!-- Pour charger une image -->           
+            
             
         </div>
 

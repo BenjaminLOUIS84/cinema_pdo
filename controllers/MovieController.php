@@ -88,7 +88,7 @@
 
             $genres = $dao->executerRequete($sql4);                                                             // Requête SQL SELECT pour Sélectionner les genres et la variable pour éxecuter la requête
             
-            $sql5 = "SELECT f.id_film, f.titre
+            $sql5 = "SELECT f.id_film, f.titre, f.affiche
             FROM film f
             ORDER BY titre ASC";
 
@@ -106,6 +106,8 @@
             $synopsis = filter_input(INPUT_POST, "synopsis", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
             $note = filter_input(INPUT_POST, "note", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
 
+            $affiche = filter_input(INPUT_POST, "affiche", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
             $id_realisateur = filter_input(INPUT_POST, "id_realisateur", FILTER_SANITIZE_NUMBER_INT);                  // Récupération de l'id_realisateur pour la jonction
             
             $id_acteur = filter_input(INPUT_POST, "id_acteur", FILTER_SANITIZE_NUMBER_INT);                            // Récupération de l'id_acteur pour la jonction
@@ -118,8 +120,8 @@
             
             $dao = new DAO();                                                                                   // Requête SQL INSERT INTO table(...) VALUES (...) pour ajouter un film, celui ci comprendra un titre, une année de sortie,...(Ajouter les inputs en conséquence dans formulaireMovie)
 
-            $sql1 = "INSERT INTO film(titre, annee_sortie, duree, synopsis, note, id_realisateur)                                                                              
-            VALUES (:titre, :annee_sortie, :duree, :synopsis, :note, :id_realisateur)";                       
+            $sql1 = "INSERT INTO film(titre, annee_sortie, duree, synopsis, note, id_realisateur, affiche)                                                                              
+            VALUES (:titre, :annee_sortie, :duree, :synopsis, :note, :id_realisateur, :affiche)";                       
             
             $sql2 = "INSERT INTO classer(id_genre, id_film)                                                                              
             VALUES (:id_genre, :id_film)";                                                                      // Requête nécessaire pour lier un genre à un film (Pour supprimer un film il faudra supprimer d'abord cette liaison)                                                                      
@@ -131,7 +133,7 @@
             //Ajouter les variables pour autoriser l'éxecution des requêtes SQL
             
             $ajouterFilm = $dao->executerRequete($sql1, ["titre" => $titre,"annee_sortie" => $annee_sortie,
-            "duree" => $duree, "synopsis" => $synopsis, "note" => $note, "id_realisateur" => $id_realisateur]); // Pour éxecuter les requêtes SQL et renvoyer les valeurs respectives  
+            "duree" => $duree, "synopsis" => $synopsis, "note" => $note, "id_realisateur" => $id_realisateur, "affiche" => $affiche]); // Pour éxecuter les requêtes SQL et renvoyer les valeurs respectives  
 
             $id_new_film = $dao->getBDD()->lastInsertId();                                                      // Récupèrer l'ID auto incrémenté qui s'est créé lors de l'ajout du film  
 
