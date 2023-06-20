@@ -26,6 +26,10 @@
         <h2>Filmographie</h2>
     </a>
 
+    <!-- Bouton pour afficher la view updateActor -->
+
+    <a class ="form" href="index.php?action=updateActor&idActor=<?=$acteur['id_acteur']?>">MODIFIER</a> 
+
     <a class ="detail" href="index.php?action=listActors">Retour</a>
 
 </div>

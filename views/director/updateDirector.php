@@ -16,7 +16,7 @@
         <form action="index.php?action=modifDirector" method="post">                                                <!-- Pour modifier un Rôle -->
 
             <?php
-                $realisateur=$realisateurs->fetch()                                                                 // Utilisaion d'un fetch() pour que les inputs prennent la valeur du rôle à modifer      
+                $realisateur = $realisateurs->fetch()                                                                 // Utilisaion d'un fetch() pour que les inputs prennent la valeur du rôle à modifer      
             ?>
 
             <label for="prenom">Prénom</label>                                                                      <!-- Champs de texte de saisie (value ou placeholder pour afficher le prénom à modifier) -->

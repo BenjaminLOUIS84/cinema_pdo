@@ -24,7 +24,7 @@
         <h2>Filmographie</h2>
     </a>
     
-    <!-- Bouton pour afficher la view updateRole -->
+    <!-- Bouton pour afficher la view updateDirector -->
 
     <a class ="form" href="index.php?action=updateDirector&idDirector=<?=$realisateur['id_realisateur']?>">MODIFIER</a> 
 

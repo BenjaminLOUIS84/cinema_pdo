@@ -20,7 +20,7 @@
 
             $dao = new DAO();
 
-            $sql = "SELECT a.id_acteur, p.prenom, p.nom, p.sexe, DATE_FORMAT(p.date_naissance,'%d-%m-%Y') AS date_nais, p.portrait FROM acteur a, personne p
+            $sql = "SELECT p.id_personne, a.id_acteur, p.prenom, p.nom, p.sexe, DATE_FORMAT(p.date_naissance,'%d-%m-%Y') AS date_nais, p.portrait FROM acteur a, personne p
             WHERE a.id_personne = p.id_personne 
             AND a.id_acteur = :id";
 
@@ -64,6 +64,19 @@
             $acteurs = $dao->executerRequete($sql2);
 
             require "views/actor/formulaireActor.php"; 
+        }
+
+        public function openUpdateActor($idActor){                                                        //Fonction pour accéder au formulaire de modification      
+                                               
+            $dao = new DAO();
+
+            $sql2 = "SELECT p.id_personne, a.id_acteur, p.prenom, p.nom, p.sexe, DATE_FORMAT(p.date_naissance,'%d-%m-%Y') AS date_nais, p.portrait FROM acteur a, personne p
+            WHERE a.id_personne = p.id_personne 
+            AND a.id_acteur = :id";
+                                                    
+            $acteurs = $dao->executerRequete($sql2, [":id" => $idActor]);                            
+
+            require "views/actor/updateActor.php"; 
         }
 
         public function addActor($array){
@@ -117,8 +130,35 @@
 	    
             $supprimerActeur = $dao->executerRequete($sql1, ["id_acteur" => $id_acteur]);
 
-            $_SESSION['flash_message'] = "Supprimé avec succès !";                                  //Pour afficher un message Flash à chaque suppression inscrire cette variable dans chaque partie
-            $this->findAllActors();                                                                 //Etre redirigé sur la même page 
+            $_SESSION['flash_message'] = "Supprimé avec succès !";                                      //Pour afficher un message Flash à chaque suppression inscrire cette variable dans chaque partie
+            $this->findAllActors();                                                                     //Etre redirigé sur la même page 
+        }
+
+        public function modifActor(){                                                                   //Fonction pour modifier un Rôle
+
+            
+            $nom = filter_input(INPUT_POST, "nom", FILTER_SANITIZE_FULL_SPECIAL_CHARS);                 // Mettre les filtres aux inputs pour éviter les injections SQL ou XSS
+            $prenom = filter_input(INPUT_POST, "prenom", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
+            $sexe = filter_input(INPUT_POST, "sexe", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
+            $date_naissance = filter_input(INPUT_POST, "date_naissance", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
+            $acteur = filter_input(INPUT_POST, "acteur", FILTER_SANITIZE_FULL_SPECIAL_CHARS); 
+            $id_personne = filter_input(INPUT_POST, "id_personne", FILTER_SANITIZE_NUMBER_INT);         
+            $id_acteur = filter_input(INPUT_POST, "id_acteur",FILTER_SANITIZE_NUMBER_INT);              // Récupération de l'id_realisateur pour la jonction
+
+            $dao = new DAO();                                                                           //Requête SQL pour modifier le firstname, le name est le pseudo d'un rôle
+                                                                 
+            $sql1 ="UPDATE personne
+ 
+            SET prenom = :prenom, 
+            nom = :nom,
+            sexe = :sexe,
+            date_naissance = :date_naissance
+            WHERE  id_personne = :id_personne";                                                         //Condition pour éxecuter la modification
+
+            $modifierActeur = $dao->executerRequete($sql1, ["id_personne" => $id_personne, "prenom" => $prenom, "nom" => $nom, "sexe" => $sexe, "date_naissance" => $date_naissance]);
+
+            $_SESSION['flash_message'] = "Modifié avec succès !";                                       //Pour afficher un message Flash à chaque ajout inscrire cette variable dans chaque partie
+            $this->findAllActors();                                                                     //Etre redirigé sur la même page 
         }
 
         //////////////////////////////////////////////////////FONCTIONS POUR LES REALISATEURS
