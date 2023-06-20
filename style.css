@@ -53,7 +53,8 @@ a:hover {
 
 /*//////////////////////////////////MAIN/////////////////////////////////*/
 
-.detail {
+.detail,
+.detailR {
     display: flex;
     color: darkslategray;
     font-size: 0.8em;
@@ -69,8 +70,7 @@ a:hover {
 
 .detailR:hover {
     background: whitesmoke;
-    transition: 0.5s ease-in-out;
-    
+    transition: 0.5s ease-in-out;   
 }
 
 h1 {
