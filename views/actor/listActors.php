@@ -25,7 +25,7 @@
 
 <!-- Bouton pour afficher la view formulaireActor -->
 
-<a class ="form" href="index.php?action=formulaireActor">FORMULAIRE</a>
+<a class ="formL" href="index.php?action=formulaireActor">FORMULAIRE</a>
 
 <?php
     $title = "Liste des acteurs";

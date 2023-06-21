@@ -22,7 +22,7 @@
 
 <!-- Bouton pour afficher la view formulaireRole -->
 
-<a class ="form" href="index.php?action=formulaireRole">FORMULAIRE</a>
+<a class ="formL" href="index.php?action=formulaireRole">FORMULAIRE</a>
 
 <?php
     $title = "Liste des rôles";

@@ -30,7 +30,7 @@
 
 <!-- Bouton pour afficher la view formulaireMovie -->
 
-<a class ="form" href="index.php?action=formulaireMovie">FORMULAIRE</a>
+<a class ="formL" href="index.php?action=formulaireMovie">FORMULAIRE</a>
 
 <?php 
     $title = "Liste des Films";
