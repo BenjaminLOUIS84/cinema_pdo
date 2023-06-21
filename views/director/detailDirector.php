@@ -21,7 +21,7 @@
     ?>
 
     <a class ="filmo" href="index.php?action=filmographyDirector&idDirector=<?=$realisateur['id_realisateur']?>">
-        <h2>Filmographie</h2>
+        <h3>Filmographie</h3>
     </a>
     
     <!-- Bouton pour afficher la view updateDirector -->

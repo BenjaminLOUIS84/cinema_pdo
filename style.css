@@ -144,7 +144,8 @@ main {
     border-radius: 10px;
     padding: 30px;
     color: whitesmoke;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), gray);
+    border: 1px white solid;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
     backdrop-filter: blur(0px);
 }
 
@@ -182,7 +183,8 @@ main {
     border-radius: 10px;
     padding: 20px;
     color: whitesmoke;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), gray);
+    border: 1px white solid;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
     backdrop-filter: blur(0px);
 }
 
@@ -207,7 +209,9 @@ main {
     margin: 40px;
     border-radius: 10px;
     padding: 20px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), gray);
+    color: whitesmoke;
+    border: 1px white solid;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
     backdrop-filter: blur(0px);
 }
 
@@ -242,8 +246,8 @@ main {
     border: 1px white solid;
     border-radius: 10px;
     padding: 20px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), white);
-    backdrop-filter: blur(8px);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+    backdrop-filter: blur(0px);
 }
 
 .listRO img {
@@ -314,7 +318,8 @@ main {
     flex-direction: column;
     color: white;
     border-radius: 10px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), grey);
+    border: 1px white solid;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
     backdrop-filter: blur(0px);
     justify-content: center;
     align-items: center;
@@ -426,14 +431,13 @@ form {
 
 .formAdd {
     color: whitesmoke;
-    border: 1px solid gray;
     border-radius: 10px;
     margin-top: 40px;
     margin-bottom: 40px;
-
+    border: 1px white solid;
     /*Effet de transparence*/
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), grey);
-    backdrop-filter: blur(8px);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+    backdrop-filter: blur(0px);
     filter: drop-shadow(0 0 20px black);
 }
 
@@ -442,16 +446,15 @@ form {
 .formAddActeur,
 .formAddRealisateur {
     color: whitesmoke;
-    border: 1px solid gray;
     border-radius: 10px;
     margin-top: 40px;
     margin-bottom: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    border: 1px white solid;
     /*Effet de transparence*/
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), grey);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
     backdrop-filter: blur(0px);
     filter: drop-shadow(0 0 20px black);
 }
