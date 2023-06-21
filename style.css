@@ -370,6 +370,12 @@ form {
     filter: drop-shadow(0 0 20px black);
 }
 
+.formL:hover {
+    font-weight: lighter;
+    transform: scale(0.7);
+    filter: drop-shadow(0 0 20px black);
+}
+
 .formAdd {
     color: whitesmoke;
     border: 1px solid gray;
