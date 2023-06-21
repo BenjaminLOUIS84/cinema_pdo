@@ -89,7 +89,6 @@
             $sql1 ="DELETE FROM role_acteur                                        
             WHERE role_acteur=(:role_acteur)";                                      //Condition pour éxecuter la suppression
 
-
             $role_acteur = filter_input(INPUT_POST, "role_acteur", FILTER_SANITIZE_NUMBER_INT);
             $supprimerRole = $dao->executerRequete($sql1, ["role_acteur" => $role_acteur]);
 
@@ -106,7 +105,6 @@
 
         public function modifRole(){                                               //Fonction pour modifier un Rôle
 
-            
             $firstname = filter_input(INPUT_POST, "firstname", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $pseudo = filter_input(INPUT_POST, "pseudo", FILTER_SANITIZE_FULL_SPECIAL_CHARS);

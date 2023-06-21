@@ -27,10 +27,7 @@
     </a>
 
     <?php
-
         echo "dans<br>";
-
-        //echo $acteur["titre"]."<br>";
     ?>
 
     <a class="detail" href="index.php?action=detailMovie&idFilm=<?=$role['id_film']?>">

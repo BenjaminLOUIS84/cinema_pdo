@@ -364,6 +364,14 @@ form {
     transition: 0.5s ease-in-out;
 }
 
+.formS {
+    color: darkslategray;
+    font-size: 1.5em;
+    border-radius: 10px;
+    font-weight: lighter;
+    transition: 0.5s ease-in-out;
+}
+
 .form:hover {
     font-weight: lighter;
     transform: scale(0.7);
@@ -374,6 +382,11 @@ form {
     font-weight: lighter;
     transform: scale(0.7);
     filter: drop-shadow(0 0 20px black);
+}
+
+.formS:hover {
+    font-weight: lighter;
+    transform: scale(0.7);
 }
 
 .formAdd {
