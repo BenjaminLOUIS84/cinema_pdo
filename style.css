@@ -117,6 +117,9 @@ main {
     margin-top: 70px;
     font-weight: bold;
     margin: 40px;
+    border: 1px white solid;
+    border-radius: 10px;
+    padding: 20px;
 }
 
 .listM img {
@@ -149,6 +152,9 @@ main {
     margin-top: 70px;
     font-weight: bold;
     margin: 40px;
+    border: 1px white solid;
+    border-radius: 10px;
+    padding: 20px;
 }
 
 .listA img {
@@ -170,6 +176,9 @@ main {
     margin-top: 70px;
     font-weight: bold;
     margin: 40px;
+    border: 1px white solid;
+    border-radius: 10px;
+    padding: 20px;
 }
 
 .listR img {
@@ -200,10 +209,13 @@ main {
     margin-top: 70px;
     font-weight: bold;
     margin: 40px;
+    border: 1px white solid;
+    border-radius: 10px;
+    padding: 20px;
 }
 
 .listRO img {
-    width: 130%;
+    width: 100%;
     filter: drop-shadow(0 0 20px black);
     border-radius: 10px;
 }
@@ -229,7 +241,7 @@ main {
 /*//////////////////////////////////GENRES/////////////////////////////////*/
 
 .titreGenre {
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 .listG {
