@@ -144,9 +144,8 @@ main {
     border-radius: 10px;
     padding: 30px;
     color: whitesmoke;
-    border: 1px white solid;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
-    backdrop-filter: blur(0px);
+    backdrop-filter: blur(8px);
 }
 
 .listM img {
@@ -183,9 +182,8 @@ main {
     border-radius: 10px;
     padding: 20px;
     color: whitesmoke;
-    border: 1px white solid;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
-    backdrop-filter: blur(0px);
+    backdrop-filter: blur(8px);
 }
 
 .listA img {
@@ -210,9 +208,8 @@ main {
     border-radius: 10px;
     padding: 20px;
     color: whitesmoke;
-    border: 1px white solid;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
-    backdrop-filter: blur(0px);
+    backdrop-filter: blur(8px);
 }
 
 .listR img {
@@ -243,11 +240,10 @@ main {
     margin-top: 70px;
     font-weight: bold;
     margin: 40px;
-    border: 1px white solid;
     border-radius: 10px;
     padding: 20px;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
-    backdrop-filter: blur(0px);
+    backdrop-filter: blur(8px);
 }
 
 .listRO img {
@@ -318,9 +314,8 @@ main {
     flex-direction: column;
     color: white;
     border-radius: 10px;
-    border: 1px white solid;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
-    backdrop-filter: blur(0px);
+    backdrop-filter: blur(8px);
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -434,10 +429,9 @@ form {
     border-radius: 10px;
     margin-top: 40px;
     margin-bottom: 40px;
-    border: 1px white solid;
     /*Effet de transparence*/
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
-    backdrop-filter: blur(0px);
+    backdrop-filter: blur(8px);
     filter: drop-shadow(0 0 20px black);
 }
 
@@ -452,10 +446,9 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px white solid;
     /*Effet de transparence*/
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
-    backdrop-filter: blur(0px);
+    backdrop-filter: blur(8px);
     filter: drop-shadow(0 0 20px black);
 }
 
@@ -481,8 +474,8 @@ form {
 header,
 footer {
     width: -webkit-fill-available;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), gray);
-    backdrop-filter: blur(0px);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+    backdrop-filter: blur(8px);
     padding: 20px;
     text-align: center;
 }
