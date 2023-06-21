@@ -11,8 +11,8 @@
         <?php
             
             $genre = $genres->fetch();
-            echo "Films appartenant au genre: ".$genre["type"];
-            //echo "<br>";
+            echo "Liste des films appartenant au genre: ".$genre["type"];
+
         ?>
     </div> 
 
@@ -20,7 +20,7 @@
         
         ?>
         <!-- Pour afficher le premier film créer un lien sur le titre de film dans le genre afin d'accéder au film -->
-
+        
         <a class="detail" href="index.php?action=detailMovie&idFilm=<?=$genre['id_film']?>">
             <h2><?=$genre["titre"]?></h2>    
         </a> 

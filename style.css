@@ -3,14 +3,20 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: radial-gradient(white, gray);
+
+    /* background: radial-gradient(white, gray); */
+
+    background-image: url(./public/images/espace.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /*//////////////////////////////////HEADER/////////////////////////////////*/
 
-nav {
-    background: darkslategrey;
-}
+/* nav {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), white);
+    backdrop-filter: blur(0px);
+} */
 
 ul {
     display: flex;
@@ -45,7 +51,9 @@ a:hover {
     position: relative;
     width: 220%;
     right: 170px;
+    opacity: 50%;
 }
+
 
 /*//////////////////////////////////MAIN/////////////////////////////////*/
 
@@ -59,23 +67,39 @@ a:hover {
 }
 
 .detail:hover {
-    background: whitesmoke;
+    background: darkslategray;
     transition: 0.5s ease-in-out;
     filter: drop-shadow(0 0 20px black);
 }
 
 .detailR:hover {
-    background: whitesmoke;
-    transition: 0.5s ease-in-out;   
+    background: darkslategray;
+    transition: 0.5s ease-in-out;
+    color: whitesmoke;   
 }
 
 h1 {
+    color: whitesmoke;
     margin-bottom: 50px;
     font-size: 4em;
 }
 
 h2 {
+    color: whitesmoke;
     margin: 5px;
+}
+
+h3 {
+    color: darkslategray;
+    filter: drop-shadow(0 0 20px black);
+}
+
+h3:hover {
+    filter:none;
+}
+
+p {
+    color: darkslategray;
 }
 
 main {
@@ -117,21 +141,22 @@ main {
     margin-top: 70px;
     font-weight: bold;
     margin: 40px;
-    border: 1px white solid;
     border-radius: 10px;
-    padding: 20px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), white);
-    backdrop-filter: blur(8px);
+    padding: 30px;
+    color: whitesmoke;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), gray);
+    backdrop-filter: blur(0px);
 }
 
 .listM img {
-    width: 50%;
+    width: 70%;
     filter: drop-shadow(0 0 20px black);
     border-radius: 10px;
 }
 
 .synopsis {
     background: white;
+    color: darkslategray;
     font-weight: 200;
     border-radius: 10px;
     width: max-content;
@@ -154,11 +179,11 @@ main {
     margin-top: 70px;
     font-weight: bold;
     margin: 40px;
-    border: 1px white solid;
     border-radius: 10px;
     padding: 20px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), white);
-    backdrop-filter: blur(8px);
+    color: whitesmoke;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), gray);
+    backdrop-filter: blur(0px);
 }
 
 .listA img {
@@ -180,11 +205,10 @@ main {
     margin-top: 70px;
     font-weight: bold;
     margin: 40px;
-    border: 1px white solid;
     border-radius: 10px;
     padding: 20px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), white);
-    backdrop-filter: blur(8px);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), gray);
+    backdrop-filter: blur(0px);
 }
 
 .listR img {
@@ -250,6 +274,8 @@ main {
 
 .titreGenre {
     font-size: 1.5em;
+    color: whitesmoke;
+    margin-bottom: 20px;
 }
 
 .listG {
@@ -265,11 +291,6 @@ main {
     margin: 40px;
     border-radius: 10px;
     padding: 20px;
-
-    /*Effet de transparence*/
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), white);
-    backdrop-filter: blur(8px);
-    filter: drop-shadow(0 0 20px black);
 }
 
 /*//////////////////////////////////FORMULAIRES/////////////////////////////////*/
@@ -278,9 +299,23 @@ main {
 .formulaire {
     display: flex;
     flex-direction: column;
-    background: darkslategray;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    filter: drop-shadow(0 0 20px black);
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 20px;
+}
+
+.formulaireG {
+    display: flex;
+    flex-direction: column;
     color: white;
     border-radius: 10px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), grey);
+    backdrop-filter: blur(0px);
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -417,7 +452,7 @@ form {
 
     /*Effet de transparence*/
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), grey);
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(0px);
     filter: drop-shadow(0 0 20px black);
 }
 
@@ -443,13 +478,13 @@ form {
 header,
 footer {
     width: -webkit-fill-available;
-    background: darkslategray;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), gray);
+    backdrop-filter: blur(0px);
     padding: 20px;
     text-align: center;
 }
 
 span {
-    background: darkslategrey;
     color: whitesmoke;
 }
 

@@ -23,7 +23,7 @@
     ?>
 
     <a class ="filmo" href="index.php?action=filmographyActor&idActor=<?=$acteur['id_acteur']?>">
-        <h2>Filmographie</h2>
+        <h3>Filmographie</h3>
     </a>
 
     <!-- Bouton pour afficher la view updateActor -->

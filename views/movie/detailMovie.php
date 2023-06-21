@@ -54,7 +54,7 @@
     
     <!-- ///////////////////////////////////////////////////////////////////AFFICHER LA DISTRIBUTION////////////////////////////////////////////////////////////////// -->
     
-        <h2>DISTRIBUTION</h2>
+        <h3>DISTRIBUTION</h3>
 
 
         <div class="role">
@@ -94,7 +94,7 @@
     
     <div class="listG">
 
-        <h2>GENRE</h2>
+        <h3>GENRE</h3>
 
         <?php
             while ($genre = $genres->fetch()){

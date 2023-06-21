@@ -7,7 +7,7 @@
 
 <h2>Remplir ce formulaire pour supprimer ou ajouter un nouveau genre la base SQL</h2>
 
-<div class="formulaire">
+<div class="formulaireG">
 
     <h3>GENRES</h3>
 
