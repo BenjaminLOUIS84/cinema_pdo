@@ -54,10 +54,9 @@
     
     <!-- ///////////////////////////////////////////////////////////////////AFFICHER LA DISTRIBUTION////////////////////////////////////////////////////////////////// -->
     
-        <h3>DISTRIBUTION</h3>
+    <h3>DISTRIBUTION</h3>
 
-
-        <div class="role">
+    <div class="role">
         <!-- <div class="cast"> -->
             <?php
                 while ($acteur = $acteurs->fetch()){
