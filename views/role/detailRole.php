@@ -21,18 +21,20 @@
     
     ?>
 
-    <a class="detail" href="index.php?action=detailActor&idActor=<?=$role['id_acteur']?>">
-        <h2><?=$role["prenom"]?></h2>  
-        <h2><?=$role["nom"]?></h2>    
-    </a>
+    <div class="inter">
+        <a class="detail" href="index.php?action=detailActor&idActor=<?=$role['id_acteur']?>">
+            <h2><?=$role["prenom"]?></h2>  
+            <h2><?=$role["nom"]?></h2>    
+        </a>
 
-    <?php
-        echo "dans<br>";
-    ?>
+        <?php
+            echo "dans<br>";
+        ?>
 
-    <a class="detail" href="index.php?action=detailMovie&idFilm=<?=$role['id_film']?>">
-        <h2><?=$role["titre"]?></h2>    
-    </a> 
+        <a class="detail" href="index.php?action=detailMovie&idFilm=<?=$role['id_film']?>">
+            <h2><?=$role["titre"]?></h2>    
+        </a> 
+    </div>
 
     <!-- Bouton pour afficher la view updateRole -->
 
