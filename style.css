@@ -11,6 +11,10 @@ body {
     background-size: cover;
 }
 
+.flash {
+    color: white;
+}
+
 /*//////////////////////////////////HEADER/////////////////////////////////*/
 
 /* nav {
