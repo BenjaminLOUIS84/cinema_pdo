@@ -47,7 +47,7 @@
     </main>
 
     <footer>
-        <span>Cinema ©2023 Make with love by Benjamin LOUIS</span>
+        <span>Cinema ©2023 Réalisé par Benjamin LOUIS</span>
     </footer>
 
     <!-- Lien pour utiliser les fonctionnalités de BOOTSTRAP -->
