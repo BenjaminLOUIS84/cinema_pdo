@@ -5,7 +5,7 @@
 
 <h1>Modifier le rôle</h1>
 
-<h2>Remplir ce formulaire pour modifier un rôle de la base SQL</h2>
+<p>Remplir ce formulaire pour modifier un rôle</p>
 
 <div class="formulaire">
 

@@ -5,7 +5,7 @@
 
 <h1>Formulaire Réalisateurs</h1>
 
-<p>Remplir ce formulaire pour supprimer ou ajouter un nouveau réalisateur</p>
+<p>Remplir ce formulaire pour ajouter un nouveau réalisateur</p>
 
 <div class="formulaire">
 

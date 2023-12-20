@@ -5,7 +5,7 @@
 
 <h1>Modifier l'acteur</h1>
 
-<h2>Remplir ce formulaire pour modifier un acteur de la base SQL</h2>
+<p>Remplir ce formulaire pour modifier un acteur</p>
 
 <div class="formulaire">
 

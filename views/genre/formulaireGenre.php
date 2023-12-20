@@ -5,7 +5,7 @@
 
 <h1>Formulaire Genres</h1>
 
-<p>Remplir ce formulaire pour supprimer ou ajouter un nouveau genre</p>
+<p>Remplir ce formulaire pour ajouter un nouveau genre</p>
 
 <div class="formulaireG">
 

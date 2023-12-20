@@ -5,7 +5,7 @@
 
 <h1>Formulaire Acteurs</h1>
 
-<p>Remplir ce formulaire pour supprimer ou ajouter un nouvel acteur</p>
+<p>Remplir ce formulaire pour ajouter un nouvel acteur</p>
 
 <div class="formulaire">
 

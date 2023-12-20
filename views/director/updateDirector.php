@@ -5,7 +5,7 @@
 
 <h1>Modifier le réalisateur</h1>
 
-<h2>Remplir ce formulaire pour modifier un réalisateur de la base SQL</h2>
+<p>Remplir ce formulaire pour modifier un réalisateur</p>
 
 <div class="formulaire">
 
