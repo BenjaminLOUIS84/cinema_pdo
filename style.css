@@ -607,6 +607,13 @@ span {
         margin-top: 0px;
     }
 
+    .formAdd {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        display: flex;
+        text-align: justify;
+    }
+
     a {
         padding: 10px;
         font-size: 0.7em;

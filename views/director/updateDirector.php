@@ -10,8 +10,6 @@
 <div class="formulaire">
 
     <div class="formAdd">
-            
-        <h3>REALISATEURS</h3>
 
         <form action="index.php?action=modifDirector" method="post">                                                <!-- Pour modifier un Rôle -->
 

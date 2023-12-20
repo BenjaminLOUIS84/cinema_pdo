@@ -10,8 +10,6 @@
 <div class="formulaire">
 
     <div class="formAdd">
-            
-        <h3>ACTEURS</h3>
 
         <form action="index.php?action=modifActor" method="post">                                              <!-- Pour modifier un Rôle -->
 
