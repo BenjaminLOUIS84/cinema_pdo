@@ -504,9 +504,9 @@ span {
 
 @media (min-width: 0) and (max-width: 768px) {
 
-     /* Animation Faire apparaitre certains éléments Zoom*/
+    /* Animation Faire apparaitre certains éléments Zoom*/
 
-     @keyframes appear {
+    @keyframes appear {
         from {
             transform: scale(0)
         }
@@ -517,13 +517,30 @@ span {
 
     }
 
+    .formAddCasting,
+    .formAddFilm,
+    .formAddActeur,
+    .formAddRealisateur {
+        border-radius: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .infos {
+        flex-direction: column;
+        line-height: 1;
+    }
+
+    .nameR {
+        height: 40px;
+    }
 
     main {
         font-size: 0.8em;
     }
 
     h1 {
-        font-size: 3.5em;
+        font-size: 2.8em;
         margin-bottom: 0px;
         color: black;
         background: white;
@@ -532,10 +549,8 @@ span {
         margin-bottom: 10px;
         animation: appear 1s;
         transition: ease-in-out 0.5s;
-        
+
     }
-
-
 
     p {
         font-size: 0.9em;
@@ -571,6 +586,7 @@ span {
 
     .formulaire {
         margin-top: 0px;
+        border-radius: 0px;
     }
 
     a {
