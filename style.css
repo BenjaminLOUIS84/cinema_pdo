@@ -610,8 +610,10 @@ span {
     .formAdd {
         margin-top: 0px;
         margin-bottom: 0px;
-        display: flex;
-        text-align: justify;
+    }
+
+    form {
+        margin: 50px;
     }
 
     a {
