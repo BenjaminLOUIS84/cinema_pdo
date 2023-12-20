@@ -55,7 +55,6 @@ a:hover {
     position: relative;
     width: 220%;
     right: 170px;
-    opacity: 30%;
     filter: grayscale(50%);
 }
 
@@ -80,7 +79,7 @@ a:hover {
 .detailR:hover {
     background: darkslategray;
     transition: 0.5s ease-in-out;
-    color: whitesmoke;   
+    color: whitesmoke;
 }
 
 h1 {
@@ -100,7 +99,7 @@ h3 {
 }
 
 h3:hover {
-    filter:none;
+    filter: none;
 }
 
 p {
@@ -151,7 +150,7 @@ main {
     font-size: 1.5em;
     color: whitesmoke;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
-    backdrop-filter: blur(8px);
+    /* backdrop-filter: blur(8px); */
 }
 
 .listM img {
@@ -189,7 +188,7 @@ main {
     padding: 20px;
     color: whitesmoke;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
-    backdrop-filter: blur(8px);
+    /* backdrop-filter: blur(8px); */
 }
 
 .listA img {
@@ -215,7 +214,7 @@ main {
     padding: 20px;
     color: whitesmoke;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
-    backdrop-filter: blur(8px);
+    /* backdrop-filter: blur(8px); */
 }
 
 .listR img {
@@ -250,7 +249,7 @@ main {
     border-radius: 10px;
     padding: 20px;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
-    backdrop-filter: blur(8px);
+    /* backdrop-filter: blur(8px); */
 }
 
 .listRO img {
@@ -315,7 +314,7 @@ main {
     color: white;
     border-radius: 10px;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
-    backdrop-filter: blur(8px);
+    /* backdrop-filter: blur(8px); */
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -331,7 +330,7 @@ main {
     color: white;
     border-radius: 10px;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
-    backdrop-filter: blur(8px);
+    /* backdrop-filter: blur(8px); */
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -360,10 +359,9 @@ h3 {
 .nameCasting {
     color: gray;
     width: 230px;
-    height: 50px;
+    height: 40px;
     border-radius: 10px;
-    margin-bottom: 20px;
-    margin: 20px;
+    margin: 10px;
 }
 
 .nameR {
@@ -447,7 +445,7 @@ form {
     margin-bottom: 40px;
     /*Effet de transparence*/
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
-    backdrop-filter: blur(8px);
+    /* backdrop-filter: blur(8px); */
     filter: drop-shadow(0 0 20px black);
 }
 
@@ -464,7 +462,7 @@ form {
     align-items: center;
     /*Effet de transparence*/
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
-    backdrop-filter: blur(8px);
+    /* backdrop-filter: blur(8px); */
     filter: drop-shadow(0 0 20px black);
 }
 
@@ -491,7 +489,7 @@ header,
 footer {
     width: -webkit-fill-available;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
-    backdrop-filter: blur(8px);
+    /* backdrop-filter: blur(8px); */
     padding: 20px;
     text-align: center;
 }
@@ -506,14 +504,73 @@ span {
 
 @media (min-width: 0) and (max-width: 768px) {
 
+     /* Animation Faire apparaitre certains éléments Zoom*/
+
+     @keyframes appear {
+        from {
+            transform: scale(0)
+        }
+
+        to {
+            transform: scale(1)
+        }
+
+    }
+
+
+    main {
+        font-size: 0.8em;
+    }
+
     h1 {
-        font-size: 2em;
+        font-size: 3.5em;
+        margin-bottom: 0px;
+        color: black;
+        background: white;
+        padding: 10px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        animation: appear 1s;
+        transition: ease-in-out 0.5s;
+        
+    }
+
+
+
+    p {
+        font-size: 0.9em;
+        color: white;
+    }
+
+    h3 {
+        font-size: 1.5em;
     }
 
     ul {
         display: flex;
         justify-content: space-around;
         margin-right: 30px;
+    }
+
+    .listM {
+        font-size: 0.5em;
+    }
+
+    .listM img {
+        border-radius: 0px;
+        width: 100%;
+    }
+
+    .titreGenre {
+        padding: 10px;
+        color: black;
+        background: white;
+        border-radius: 10px;
+        font-size: 0.5em;
+    }
+
+    .formulaire {
+        margin-top: 0px;
     }
 
     a {
@@ -528,9 +585,18 @@ span {
 
     header,
     footer {
-        width: max-content;
         padding: 25px;
+    }
 
+    .synopsis {
+        width: 400px;
+        font-weight: bold;
+        border-radius: 0px;
+        padding: 10px;
+    }
+
+    .nameSynopsis {
+        width: 400px;
     }
 
 }

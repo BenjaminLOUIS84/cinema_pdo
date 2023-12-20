@@ -5,7 +5,7 @@
 
 <h1>Formulaire Acteurs</h1>
 
-<h2>Remplir ce formulaire pour supprimer ou ajouter un nouvel acteur à la base SQL</h2>
+<h2>Remplir ce formulaire pour supprimer ou ajouter un nouvel acteur</h2>
 
 <div class="formulaire">
 

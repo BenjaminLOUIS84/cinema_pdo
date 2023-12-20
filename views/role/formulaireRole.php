@@ -5,7 +5,7 @@
 
 <h1>Formulaire Rôles</h1>
 
-<h2>Remplir ce formulaire pour supprimer ou ajouter un nouveau rôle à la base SQL</h2>
+<h2>Remplir ce formulaire pour supprimer ou ajouter un nouveau rôle</h2>
 
 <div class="formulaire">
 

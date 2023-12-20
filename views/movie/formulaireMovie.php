@@ -5,7 +5,7 @@
 
 <h1>Formulaire Films</h1>
 
-<h2>Remplir ce formulaire pour ajouter un nouveau film dans la base SQL</h2>
+<p>Remplir ce formulaire pour ajouter un nouveau film</p>
 
 <div class="formulaire">
 
