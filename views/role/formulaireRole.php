@@ -5,7 +5,7 @@
 
 <h1>Formulaire Rôles</h1>
 
-<h2>Remplir ce formulaire pour supprimer ou ajouter un nouveau rôle</h2>
+<p>Remplir ce formulaire pour supprimer ou ajouter un nouveau rôle</p>
 
 <div class="formulaire">
 
