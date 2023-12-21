@@ -7,9 +7,12 @@
     <img class= logo src="public/images/accueil.jpg" alt="symbole cinema">
 </figure>
 
+<!-- Formulaire pour télécharger des images de n'importe où dans le dossier uploads -->
+
 <div class="up">
     <form action="upload.php" method="post" enctype="multipart/form-data">
-        <h2>Télécharger des images</h2><br>
+        <h3>Pour ajouter un nouveau film, acteur, réalisateur ou rôle</h3>
+        <h2>Télécharger les images dont vous avez besoin</h2><br>
         <input class="nameGenre" type="file" id="fileToUpload" name="fileToUpload">
         <input type="submit" value="Valider" name="submit">
     </form>
