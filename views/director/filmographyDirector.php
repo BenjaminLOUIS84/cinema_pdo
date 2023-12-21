@@ -10,23 +10,29 @@
 
         $realisateur = $realisateurs->fetch();
 
-        //echo $realisateur["titre"]."<br>";
+        // Gérer l'affichage en cas d'erreur
+        if (!isset($realisateur['id_film'])) {
+            
+            echo "Aucuns films trouvé";
+
+        } else {
         
-        ?>
-            <a class="detail" href="index.php?action=detailMovie&idFilm=<?=$realisateur['id_film']?>">
-                <h2><?=$realisateur["titre"]?></h2>   
-            </a>
-        <?php
-
-        while ($realisateur = $realisateurs->fetch()){
-
             ?>
                 <a class="detail" href="index.php?action=detailMovie&idFilm=<?=$realisateur['id_film']?>">
                     <h2><?=$realisateur["titre"]?></h2>   
-                </a> 
+                </a>
             <?php
 
-            // echo "<img src='./public/images/{$film['affiche']}'>";
+            while ($realisateur = $realisateurs->fetch()){
+
+                ?>
+                    <a class="detail" href="index.php?action=detailMovie&idFilm=<?=$realisateur['id_film']?>">
+                        <h2><?=$realisateur["titre"]?></h2>   
+                    </a> 
+                <?php
+
+                // echo "<img src='./public/images/{$film['affiche']}'>";
+            }
         }
     ?>
 
