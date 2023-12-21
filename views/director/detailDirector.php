@@ -17,7 +17,8 @@
         echo "est de sexe ".$realisateur["sexe"]."<br>";
         echo "Date de naissance le ".$realisateur["date_nais"]."<br>";
         echo "<br>";
-        echo "<img src='./public/images/{$realisateur["portrait"]}'>"."<br>";
+        // echo "<img src='./public/images/{$realisateur["portrait"]}'>"."<br>";
+        echo "<img src='./uploads/{$realisateur["portrait"]}'>"."<br>";
     ?>
 
     <a class ="filmo" href="index.php?action=filmographyDirector&idDirector=<?=$realisateur['id_realisateur']?>">

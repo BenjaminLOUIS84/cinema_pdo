@@ -125,6 +125,7 @@ main {
     margin-top: 70px;
     font-weight: bold;
     font-size: 1.5em;
+    color: white;
 }
 
 .list {
@@ -546,6 +547,7 @@ span {
 
     main {
         font-size: 0.8em;
+        padding: 10px;
     }
 
     .detail,

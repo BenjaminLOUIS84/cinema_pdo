@@ -11,7 +11,8 @@
 
         $role = $roles->fetch();
 
-        echo "<img src='./public/images/{$role['perso']}'>";
+        // echo "<img src='./public/images/{$role['perso']}'>";
+        echo "<img src='./uploads/{$role["perso"]}'>"."<br>";
         echo "<br>";
         echo $role["firstname"]." ";                                                   
         echo $role["name"]." ";

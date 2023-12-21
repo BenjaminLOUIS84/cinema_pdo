@@ -37,7 +37,8 @@
 
         echo "<br>";
         //echo $film["affiche"]."<br>";//Pour afficher la même image dans tous les films
-        echo "<img src='./public/images/{$film['affiche']}'>";//Pour afficher les images de chaque films 
+        // echo "<img src='./public/images/{$film['affiche']}'>";//Pour afficher les images de chaque films 
+        echo "<img src='./uploads/{$film["affiche"]}'>"."<br>";
         echo "Note: ".$film["note"]." /10<br>";
         echo "<br>";
         echo "SYNOPSIS<br>";

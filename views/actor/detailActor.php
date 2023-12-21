@@ -18,7 +18,8 @@
         echo "Date de naissance le ".$acteur["date_nais"]."<br>";    //Changer le format de la date de naissance avec DATE_FORMAT(date_naissance, '%d-%m-%Y') AS date_nais
         //                                                              (dans PersonController)
         echo "<br>";
-        echo "<img src='./public/images/{$acteur["portrait"]}'>"."<br>";
+        // echo "<img src='./public/images/{$acteur["portrait"]}'>"."<br>";
+        echo "<img src='./uploads/{$acteur["portrait"]}'>"."<br>";
 
     ?>
 

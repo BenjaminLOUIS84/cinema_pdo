@@ -1,4 +1,9 @@
 <?php
+    // Démarrer la temporisation de sortie
+    ob_start();
+?>
+
+<?php
     $target_dir = "uploads/";
     $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
     $uploadOk = 1;
@@ -46,5 +51,13 @@
         echo "Erreur lors du téléchargement.";
     }
     }
-    
+
+?>
+
+<a class="detailR" href="index.php?action=homePage">Retour</a>
+
+<?php
+    $title = "Message";
+    $content = ob_get_clean();  // Récupérer et afficher puis nettoyer la mémoire tampon
+    require "views/template.php";
 ?>
