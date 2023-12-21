@@ -54,7 +54,7 @@
 
 ?>
 
-<a class="detailR" href="index.php?action=homePage">Retour</a>
+<a class="detailR" href="index.php">Retour</a>
 
 <?php
     $title = "Message";
