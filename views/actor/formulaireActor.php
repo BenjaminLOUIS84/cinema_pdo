@@ -29,10 +29,12 @@
                 <label for="date_naissance">Date de naissance</label>
                 <input id="date_naissance" class="nameR" type="date" name="date_naissance" required>
             </div>
+
             <div class="infos">
                 <label for="portrait">Ajouter une image</label>
-                <input class="nameGenre" type="file" id="portrait" name="portrait">           <!-- Pour charger une image -->           
+                <input class="nameGenre" type="file" id="portrait" name="portrait">          <!-- Pour charger une image -->           
             </div>
+            
             <input class="add" type="submit" name="addActor" value="AJOUTER">  
             
             <!-- Le bouton AJOUTER va envoyer la demande POST pour exécuter le cas (case) "addActor" à l'index.php
