@@ -13,7 +13,7 @@
         // Gérer l'affichage en cas d'erreur
         if (!isset($realisateur['id_film'])) {
             
-            echo "Aucuns films trouvé";
+            echo "Aucuns films trouvés";
 
         } else {
         

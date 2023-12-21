@@ -9,11 +9,11 @@
     <?php
 
         $acteur = $acteurs->fetch();
-        
+
         // Gérer l'affichage en cas d'erreur
         if (!isset($acteur['id_film'])) {
             
-            echo "Aucuns films trouvé";
+            echo "Aucuns films trouvés";
 
         } else {
             

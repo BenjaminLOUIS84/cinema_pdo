@@ -607,9 +607,8 @@ span {
     .titreGenre {
         display: flex;
         align-items: center;
+        flex-direction: column;
         padding: 10px;
-        color: black;
-        background: white;
         border-radius: 10px;
         font-size: 0.9em;
     }
