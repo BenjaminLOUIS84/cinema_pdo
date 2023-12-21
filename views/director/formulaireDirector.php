@@ -31,7 +31,7 @@
             </div>
 
             <div class="infos">
-                <label for="portrait">Ajouter une image</label>
+                <label for="portrait">Ajouter votre image téléchargée</label>
                 <input class="nameGenre" type="file" id="portrait" name="portrait">           <!-- Pour charger une image -->           
             </div>
             

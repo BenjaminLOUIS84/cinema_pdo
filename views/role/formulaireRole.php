@@ -26,7 +26,7 @@
                 <label for="pseudo">Pseudo</label>
                 <input class="nameGenre" type="text" id="pseudo" name="pseudo">         <!-- Champs de texte de saisie -->           
             
-                <label for="perso">Ajouter une image</label>
+                <label for="perso">Ajouter votre image téléchargée</label>
                 <input class="nameGenre" type="file" id="perso" name="perso">           <!-- Pour charger une image -->           
             </div>
             

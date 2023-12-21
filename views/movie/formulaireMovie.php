@@ -29,7 +29,7 @@
                                                                 
             <input class="nameSynopsis" type="text" value="Synospsis" name="synopsis" required>
             
-            <label for="affiche">Ajouter une image</label>
+            <label for="affiche">Ajouter votre image téléchargée</label>
             <input class="nameGenre" type="file" id="affiche" name="affiche">           <!-- Pour charger une image -->           
             
         </div>
