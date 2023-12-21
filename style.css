@@ -111,7 +111,7 @@ h3:hover {
 }
 
 p {
-    color: darkslategray;
+    color: white;
 }
 
 main {
@@ -605,11 +605,13 @@ span {
     }
 
     .titreGenre {
+        display: flex;
+        align-items: center;
         padding: 10px;
         color: black;
         background: white;
         border-radius: 10px;
-        font-size: 0.5em;
+        font-size: 0.9em;
     }
 
     .formulaire {
@@ -622,7 +624,7 @@ span {
     }
 
     form {
-        margin: 30px;
+        margin: 40px;
     }
 
     a {

@@ -11,31 +11,40 @@
         <?php
             
             $genre = $genres->fetch();
-            echo "Liste des films appartenant au genre: ".$genre["type"];
+            // Gérer l'affichage en cas d'erreur
+            if (!isset($genre['id_film'])) {
+                
+                echo "Aucuns films trouvé";
+        
+            } else {
+                
+                echo "Liste des films appartenant au genre: ".$genre["type"];
 
         ?>
     </div> 
 
     <?php
-        
-        ?>
-        <!-- Pour afficher le premier film créer un lien sur le titre de film dans le genre afin d'accéder au film -->
-        
-        <a class="detail" href="index.php?action=detailMovie&idFilm=<?=$genre['id_film']?>">
-            <h2><?=$genre["titre"]?></h2>    
-        </a> 
 
-        <?php
-
-        while ($genre = $genres->fetch()){
 
             ?>
+            <!-- Pour afficher le premier film créer un lien sur le titre de film dans le genre afin d'accéder au film -->
             
             <a class="detail" href="index.php?action=detailMovie&idFilm=<?=$genre['id_film']?>">
                 <h2><?=$genre["titre"]?></h2>    
             </a> 
 
             <?php
+
+            while ($genre = $genres->fetch()){
+
+                ?>
+                
+                <a class="detail" href="index.php?action=detailMovie&idFilm=<?=$genre['id_film']?>">
+                    <h2><?=$genre["titre"]?></h2>    
+                </a> 
+
+                <?php
+            }
         }
     ?>
 
