@@ -18,6 +18,10 @@
     </form>
 </div>
 
+<div class="link">
+    <br><a href="https://www.benjaminlouis.eu/">Réalisé par Benjamin LOUIS</a><br>
+</div>
+
 <?php
     $title = "Page d'accueil";
     $content = ob_get_clean();  // Récupérer et afficher puis nettoyer la mémoire tampon
